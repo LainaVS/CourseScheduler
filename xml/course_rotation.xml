@@ -1,0 +1,6831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Change log: 
+			Spring semester 2016:
+									CS 5700 moved to Fall Semester starting with year 2016
+									CS 4410 changed to E/D starting with year 2017 
+									CS 5410 added to year 2017 with same rotation as CS 4410 
+			Fall semester 2016:
+									CS 5130, 5500, 5700 offered every Spring and Fall
+									Removed Rotation for years 2013, 2014, and 2015
+									
+-->
+<Rotations xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/Rotation.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<rotation_year>
+
+		<year>2016</year>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>1250</course_number>
+
+			<course_name>Introduction to Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2250</course_number>
+
+			<course_name>Programming and Data Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2261</course_number>
+
+			<course_name>ObjectOriented Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2700</course_number>
+
+			<course_name>Computer Architecture and Organization</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2750</course_number>
+
+			<course_name>System Programming and Tools</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3010</course_number>
+
+			<course_name>Web Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3130</course_number>
+
+			<course_name>Design and Analysis of Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3710</course_number>
+
+			<course_name>Assembly Language Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4010</course_number>
+
+			<course_name>Advanced Web Development with Java</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4250</course_number>
+
+			<course_name>Programming Languages</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4280</course_number>
+
+			<course_name>Program Translation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4500</course_number>
+
+			<course_name>Introduction to Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4610</course_number>
+
+			<course_name>Database Management Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4730</course_number>
+
+			<course_name>Computer Networks and Communications</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4760</course_number>
+
+			<course_name>Operating Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5010</course_number>
+
+			<course_name>Enterprise Web Development</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5130</course_number>
+
+			<course_name>Advanced Data Structures and Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5320</course_number>
+
+			<course_name>Introduction to Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5420</course_number>
+
+			<course_name>Digital Image Processing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5500</course_number>
+
+			<course_name>Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5700</course_number>
+
+			<course_name>Computer Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5740</course_number>
+
+			<course_name>High Performance Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6320</course_number>
+
+			<course_name>Advances in Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6340</course_number>
+
+			<course_name>Genetic Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6410</course_number>
+
+			<course_name>Topics in Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6420</course_number>
+
+			<course_name>Topics in Image Processing and Multimedia</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1320</course_number>
+
+			<course_name>Applied Statistics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1800</course_number>
+
+			<course_name>Analytic Geometry and Calculus I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1900</course_number>
+
+			<course_name>Analytic Geometry and Calculus II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2000</course_number>
+
+			<course_name>Analytic Geometry and Calculus III</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2020</course_number>
+
+			<course_name>Introduction to Differential Equations</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2450</course_number>
+
+			<course_name>Elementary Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>3000</course_number>
+
+			<course_name>Discrete Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4100</course_number>
+
+			<course_name>Real Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4160</course_number>
+
+			<course_name>Complex Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4200</course_number>
+
+			<course_name>Mathematical Statistics II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4400</course_number>
+
+			<course_name>Introduction to Abstract Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4450</course_number>
+
+			<course_name>Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4660</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4670</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4xxx</course_number>
+
+			<course_name>Math Elective</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5100</course_number>
+
+			<course_name>Real Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5140</course_number>
+
+			<course_name>Set Theory and Metric Spaces</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5160</course_number>
+
+			<course_name>Complex Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5820</course_number>
+
+			<course_name>Topics In Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+	</rotation_year>
+
+	<rotation_year>
+
+		<year>2017</year>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>1250</course_number>
+
+			<course_name>Introduction to Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2250</course_number>
+
+			<course_name>Programming and Data Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2261</course_number>
+
+			<course_name>ObjectOriented Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2700</course_number>
+
+			<course_name>Computer Architecture and Organization</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2750</course_number>
+
+			<course_name>System Programming and Tools</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3010</course_number>
+
+			<course_name>Web Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3130</course_number>
+
+			<course_name>Design and Analysis of Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3710</course_number>
+
+			<course_name>Assembly Language Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4010</course_number>
+
+			<course_name>Advanced Web Development with Java</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4250</course_number>
+
+			<course_name>Programming Languages</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4280</course_number>
+
+			<course_name>Program Translation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4500</course_number>
+
+			<course_name>Introduction to Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4610</course_number>
+
+			<course_name>Database Management Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4730</course_number>
+
+			<course_name>Computer Networks and Communications</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4760</course_number>
+
+			<course_name>Operating Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5012</course_number>
+
+			<course_name>Enterprise Web Development</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5130</course_number>
+
+			<course_name>Advanced Data Structures and Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5320</course_number>
+
+			<course_name>Introduction to Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+		
+		
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5420</course_number>
+
+			<course_name>Digital Image Processing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5500</course_number>
+
+			<course_name>Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5700</course_number>
+
+			<course_name>Computer Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5740</course_number>
+
+			<course_name>High Performance Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6320</course_number>
+
+			<course_name>Advances in Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6340</course_number>
+
+			<course_name>Genetic Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6410</course_number>
+
+			<course_name>Topics in Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6420</course_number>
+
+			<course_name>Topics in Image Processing and Multimedia</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1320</course_number>
+
+			<course_name>Applied Statistics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1800</course_number>
+
+			<course_name>Analytic Geometry and Calculus I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1900</course_number>
+
+			<course_name>Analytic Geometry and Calculus II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2000</course_number>
+
+			<course_name>Analytic Geometry and Calculus III</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2020</course_number>
+
+			<course_name>Introduction to Differential Equations</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2450</course_number>
+
+			<course_name>Elementary Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>3000</course_number>
+
+			<course_name>Discrete Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4100</course_number>
+
+			<course_name>Real Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4160</course_number>
+
+			<course_name>Complex Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4200</course_number>
+
+			<course_name>Mathematical Statistics II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4400</course_number>
+
+			<course_name>Introduction to Abstract Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4450</course_number>
+
+			<course_name>Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4660</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4670</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4xxx</course_number>
+
+			<course_name>Math Elective</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5100</course_number>
+
+			<course_name>Real Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5140</course_number>
+
+			<course_name>Set Theory and Metric Spaces</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5160</course_number>
+
+			<course_name>Complex Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5820</course_number>
+
+			<course_name>Topics In Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+	</rotation_year>
+	
+	<rotation_year>
+
+		<year>2018</year>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>1250</course_number>
+
+			<course_name>Introduction to Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2250</course_number>
+
+			<course_name>Programming and Data Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2261</course_number>
+
+			<course_name>ObjectOriented Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2700</course_number>
+
+			<course_name>Computer Architecture and Organization</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2750</course_number>
+
+			<course_name>System Programming and Tools</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3010</course_number>
+
+			<course_name>Web Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3130</course_number>
+
+			<course_name>Design and Analysis of Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3710</course_number>
+
+			<course_name>Assembly Language Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4010</course_number>
+
+			<course_name>Advanced Web Development with Java</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4250</course_number>
+
+			<course_name>Programming Languages</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4280</course_number>
+
+			<course_name>Program Translation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4500</course_number>
+
+			<course_name>Introduction to Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4610</course_number>
+
+			<course_name>Database Management Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4730</course_number>
+
+			<course_name>Computer Networks and Communications</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4760</course_number>
+
+			<course_name>Operating Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5012</course_number>
+
+			<course_name>Enterprise Web Development</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5130</course_number>
+
+			<course_name>Advanced Data Structures and Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5320</course_number>
+
+			<course_name>Introduction to Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+		
+		
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5420</course_number>
+
+			<course_name>Digital Image Processing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5500</course_number>
+
+			<course_name>Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5700</course_number>
+
+			<course_name>Computer Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5740</course_number>
+
+			<course_name>High Performance Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6320</course_number>
+
+			<course_name>Advances in Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6340</course_number>
+
+			<course_name>Genetic Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6410</course_number>
+
+			<course_name>Topics in Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6420</course_number>
+
+			<course_name>Topics in Image Processing and Multimedia</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1320</course_number>
+
+			<course_name>Applied Statistics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1800</course_number>
+
+			<course_name>Analytic Geometry and Calculus I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1900</course_number>
+
+			<course_name>Analytic Geometry and Calculus II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2000</course_number>
+
+			<course_name>Analytic Geometry and Calculus III</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2020</course_number>
+
+			<course_name>Introduction to Differential Equations</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2450</course_number>
+
+			<course_name>Elementary Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>3000</course_number>
+
+			<course_name>Discrete Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4100</course_number>
+
+			<course_name>Real Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4160</course_number>
+
+			<course_name>Complex Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4200</course_number>
+
+			<course_name>Mathematical Statistics II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4400</course_number>
+
+			<course_name>Introduction to Abstract Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4450</course_number>
+
+			<course_name>Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4660</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4670</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4xxx</course_number>
+
+			<course_name>Math Elective</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5100</course_number>
+
+			<course_name>Real Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5140</course_number>
+
+			<course_name>Set Theory and Metric Spaces</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5160</course_number>
+
+			<course_name>Complex Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5820</course_number>
+
+			<course_name>Topics In Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+	</rotation_year>
+
+	<rotation_year>
+
+		<year>2019</year>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>1250</course_number>
+
+			<course_name>Introduction to Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2250</course_number>
+
+			<course_name>Programming and Data Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2261</course_number>
+
+			<course_name>ObjectOriented Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2700</course_number>
+
+			<course_name>Computer Architecture and Organization</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2750</course_number>
+
+			<course_name>System Programming and Tools</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3010</course_number>
+
+			<course_name>Web Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3130</course_number>
+
+			<course_name>Design and Analysis of Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3710</course_number>
+
+			<course_name>Assembly Language Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4010</course_number>
+
+			<course_name>Advanced Web Development with Java</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4250</course_number>
+
+			<course_name>Programming Languages</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4280</course_number>
+
+			<course_name>Program Translation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4500</course_number>
+
+			<course_name>Introduction to Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4610</course_number>
+
+			<course_name>Database Management Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4730</course_number>
+
+			<course_name>Computer Networks and Communications</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4760</course_number>
+
+			<course_name>Operating Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5012</course_number>
+
+			<course_name>Enterprise Web Development</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5130</course_number>
+
+			<course_name>Advanced Data Structures and Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5320</course_number>
+
+			<course_name>Introduction to Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+		
+		
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5420</course_number>
+
+			<course_name>Digital Image Processing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5500</course_number>
+
+			<course_name>Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5700</course_number>
+
+			<course_name>Computer Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5740</course_number>
+
+			<course_name>High Performance Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6320</course_number>
+
+			<course_name>Advances in Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6340</course_number>
+
+			<course_name>Genetic Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6410</course_number>
+
+			<course_name>Topics in Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6420</course_number>
+
+			<course_name>Topics in Image Processing and Multimedia</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1320</course_number>
+
+			<course_name>Applied Statistics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1800</course_number>
+
+			<course_name>Analytic Geometry and Calculus I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1900</course_number>
+
+			<course_name>Analytic Geometry and Calculus II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2000</course_number>
+
+			<course_name>Analytic Geometry and Calculus III</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2020</course_number>
+
+			<course_name>Introduction to Differential Equations</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2450</course_number>
+
+			<course_name>Elementary Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>3000</course_number>
+
+			<course_name>Discrete Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4100</course_number>
+
+			<course_name>Real Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4160</course_number>
+
+			<course_name>Complex Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4200</course_number>
+
+			<course_name>Mathematical Statistics II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4400</course_number>
+
+			<course_name>Introduction to Abstract Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4450</course_number>
+
+			<course_name>Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4660</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4670</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4xxx</course_number>
+
+			<course_name>Math Elective</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5100</course_number>
+
+			<course_name>Real Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5140</course_number>
+
+			<course_name>Set Theory and Metric Spaces</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5160</course_number>
+
+			<course_name>Complex Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5820</course_number>
+
+			<course_name>Topics In Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+	</rotation_year>
+	
+	<rotation_year>
+
+		<year>2020</year>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>1250</course_number>
+
+			<course_name>Introduction to Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2250</course_number>
+
+			<course_name>Programming and Data Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2261</course_number>
+
+			<course_name>ObjectOriented Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2700</course_number>
+
+			<course_name>Computer Architecture and Organization</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>2750</course_number>
+
+			<course_name>System Programming and Tools</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3010</course_number>
+
+			<course_name>Web Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3130</course_number>
+
+			<course_name>Design and Analysis of Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>3710</course_number>
+
+			<course_name>Assembly Language Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4010</course_number>
+
+			<course_name>Advanced Web Development with Java</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4250</course_number>
+
+			<course_name>Programming Languages</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4280</course_number>
+
+			<course_name>Program Translation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4500</course_number>
+
+			<course_name>Introduction to Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4610</course_number>
+
+			<course_name>Database Management Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4730</course_number>
+
+			<course_name>Computer Networks and Communications</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>4760</course_number>
+
+			<course_name>Operating Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5012</course_number>
+
+			<course_name>Enterprise Web Development</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5130</course_number>
+
+			<course_name>Advanced Data Structures and Algorithms</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5320</course_number>
+
+			<course_name>Introduction to Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5410</course_number>
+
+			<course_name>Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+		
+		
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5420</course_number>
+
+			<course_name>Digital Image Processing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5500</course_number>
+
+			<course_name>Software Engineering</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5700</course_number>
+
+			<course_name>Computer Systems</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>5740</course_number>
+
+			<course_name>High Performance Computing</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6320</course_number>
+
+			<course_name>Advances in Evolutionary Computation</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6340</course_number>
+
+			<course_name>Genetic Programming</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6410</course_number>
+
+			<course_name>Topics in Computer Graphics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>CMP SCI</subject>
+
+			<course_number>6420</course_number>
+
+			<course_name>Topics in Image Processing and Multimedia</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1320</course_number>
+
+			<course_name>Applied Statistics</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1800</course_number>
+
+			<course_name>Analytic Geometry and Calculus I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>1900</course_number>
+
+			<course_name>Analytic Geometry and Calculus II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2000</course_number>
+
+			<course_name>Analytic Geometry and Calculus III</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2020</course_number>
+
+			<course_name>Introduction to Differential Equations</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>2450</course_number>
+
+			<course_name>Elementary Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>D,E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>3000</course_number>
+
+			<course_name>Discrete Structures</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4100</course_number>
+
+			<course_name>Real Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4160</course_number>
+
+			<course_name>Complex Analysis I</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4200</course_number>
+
+			<course_name>Mathematical Statistics II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4400</course_number>
+
+			<course_name>Introduction to Abstract Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4450</course_number>
+
+			<course_name>Linear Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4660</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4670</course_number>
+
+			<course_name>Geometry</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>4xxx</course_number>
+
+			<course_name>Math Elective</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>D</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5100</course_number>
+
+			<course_name>Real Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5140</course_number>
+
+			<course_name>Set Theory and Metric Spaces</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code>E</time_code>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5160</course_number>
+
+			<course_name>Complex Analysis II</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+
+		<course>
+
+			<subject>MATH</subject>
+
+			<course_number>5820</course_number>
+
+			<course_name>Topics In Algebra</course_name>
+
+
+			<rotation_term>
+
+				<term>Spring</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+
+			<rotation_term>
+
+				<term>Fall</term>
+
+				<time_code/>
+
+			</rotation_term>
+
+		</course>
+
+	</rotation_year>
+	
+</Rotations>

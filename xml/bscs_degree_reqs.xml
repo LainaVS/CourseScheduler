@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CSBSReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/BSCSDegreeReq.xsd"> 
+    <CoreCourses>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>1250</course_number>
+            <course_name>Introduction to Computing </course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>2250</course_number>
+            <course_name>Programming and Data Structures</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>2261</course_number>
+            <course_name>Object-Oriented Programming</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>2700</course_number>
+            <course_name>Computer Architecture and Organization </course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>2750</course_number>
+            <course_name>System Programming and Tools</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>3010</course_number>
+            <course_name>Web Programming</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>3130</course_number>
+            <course_name>Design and Analysis of Algorithms </course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>4250</course_number>
+            <course_name>Programming Languages</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>4280</course_number>
+            <course_name>Program Translation</course_name>            
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>4500</course_number>
+            <course_name>Software Engineering</course_name>     
+        </corecourse>
+        <corecourse>
+	    <subject>CMP SCI</subject>
+            <course_number>4760</course_number>
+            <course_name>Operating Systems</course_name>                 
+        </corecourse>        
+    </CoreCourses>
+    <Electives>
+        <Elective>        
+            <noofelecctives>5</noofelecctives>
+            <abovelevel>3000</abovelevel>
+            <relationwithotherelectives>none</relationwithotherelectives>
+        </Elective>                
+    </Electives>
+    <MathandStatistcs>
+        <course>
+	    <subject>MATH</subject>
+            <course_number>1320</course_number>
+            <course_name>Applied Statistics I </course_name>                 
+        </course>  
+        <course>
+	    <subject>MATH</subject>
+            <course_number>1800</course_number>
+            <course_name>Analytic Geometry and Calculus I </course_name>                 
+        </course>         
+        <course>
+	    <subject>MATH</subject>
+            <course_number>1900</course_number>
+            <course_name>Analytic Geometry and Calculus II </course_name>                 
+        </course> 
+        <course>
+	    <subject>MATH</subject>
+            <course_number>2450</course_number>
+            <course_name>Elementary Linear Algebra  </course_name>                 
+        </course> 
+        <course>
+	    <subject>MATH</subject>
+            <course_number>3000</course_number>
+            <course_name>Discrete Structures</course_name>                 
+        </course>     
+        
+    </MathandStatistcs>
+    <OtherCourses>
+        <course>
+	    <subject>ENGL</subject>
+            <course_number>3130</course_number>
+            <course_name>Technical Writing</course_name>                 
+        </course>    
+         
+    </OtherCourses>
+     
+</CSBSReq>
+
+   
+
