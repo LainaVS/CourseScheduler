@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
 <CSBSReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/BSCSDegreeReq.xsd"> 
     <CoreCourses>
+        <corecourse>
+            <subject>CMP SCI</subject>
+                <course_number>1000</course_number>
+                <course_name>Computer Science Experiences</course_name>
+            </corecourse>
         <corecourse>
 	    <subject>CMP SCI</subject>
             <course_number>1250</course_number>
@@ -19,12 +27,12 @@
         <corecourse>
 	    <subject>CMP SCI</subject>
             <course_number>2700</course_number>
-            <course_name>Computer Architecture and Organization </course_name>            
+            <course_name>Computer Organization and Architecture </course_name>
         </corecourse>
         <corecourse>
 	    <subject>CMP SCI</subject>
             <course_number>2750</course_number>
-            <course_name>System Programming and Tools</course_name>            
+            <course_name>Linux Environment and Programming</course_name>
         </corecourse>
         <corecourse>
 	    <subject>CMP SCI</subject>
@@ -44,12 +52,12 @@
         <corecourse>
 	    <subject>CMP SCI</subject>
             <course_number>4280</course_number>
-            <course_name>Program Translation</course_name>            
+            <course_name>Program Translation Project</course_name>
         </corecourse>
         <corecourse>
 	    <subject>CMP SCI</subject>
             <course_number>4500</course_number>
-            <course_name>Software Engineering</course_name>     
+            <course_name>Introduction to the Software Profession</course_name>
         </corecourse>
         <corecourse>
 	    <subject>CMP SCI</subject>
@@ -68,7 +76,7 @@
         <course>
 	    <subject>MATH</subject>
             <course_number>1320</course_number>
-            <course_name>Applied Statistics I </course_name>                 
+            <course_name>Introduction to Probability and Statistics</course_name>
         </course>  
         <course>
 	    <subject>MATH</subject>
@@ -97,10 +105,8 @@
 	    <subject>ENGL</subject>
             <course_number>3130</course_number>
             <course_name>Technical Writing</course_name>                 
-        </course>    
-         
+        </course>
     </OtherCourses>
-     
 </CSBSReq>
 
    
