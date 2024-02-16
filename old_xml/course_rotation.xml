@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Text -->
+<!-- Notes:
+	There are 3 sets of classes that are included in this file:
+		All Computer Science courses < 5000
+		Math courses - only those required for the BS in CS (no other Math courses are included)
+		English course - only one required for the BS in CS (no other English courses are included)
+
+	Rotation terms were provided by the Undergraduate Course Rotation Document
+		https://www.umsl.edu/cmpsci/undergraduate-studies/3yearcourse.html
+		From comparing the Rotations on this document to myView, some of the rotations
+		do not seem to be updated.
+
+	Rotation terms for Math/English courses were provided by the Course Dependencies Flyer
+		on the UMSL CS website
+		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
+
+-->
 <Rotations xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/Rotation.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<rotation_year>
 		<year>2024</year>
-		<!-- Computer Science Classes -->
+		<!-- Computer Science Courses < 5000 -->
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>1000</course_number>
 			<course_name>Computer Science Experiences</course_name>
 			<rotation_term>
 				<term>Spring</term>
-				<time_code>E</time_code>
+				<time_code>D, E</time_code>
 			</rotation_term>
 			<rotation_term>
 				<term>Fall</term>
-				<time_code>D, E</time_code>
+				<time_code>E</time_code>
 			</rotation_term>
 			<rotation_term>
 				<term>Summer</term>
@@ -103,7 +118,7 @@
 			</rotation_term>
 			<rotation_term>
 				<term>Summer</term>
-				<time_code>D, E, O</time_code>
+				<time_code>O</time_code>
 			</rotation_term>
 		</course>
 		<course>
@@ -215,14 +230,6 @@
 				<term>Spring</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<rotation_term>
-				<term>Fall</term>
-				<time_code>O</time_code>
-			</rotation_term>
-			<rotation_term>
-				<term>Summer</term>
-				<time_code>O</time_code>
-			</rotation_term>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -274,7 +281,7 @@
 			<course_name>Introduction to iOS Programming and Apps</course_name>
 			<rotation_term>
 				<term>Summer</term>
-				<time_code>O</time_code>
+				<time_code>H</time_code>
 			</rotation_term>
 		</course>
 		<course>
@@ -305,11 +312,11 @@
 			<course_name>Program Translation Project</course_name>
 			<rotation_term>
 				<term>Spring</term>
-				<time_code>H</time_code>
+				<time_code>E, O</time_code>
 			</rotation_term>
 			<rotation_term>
 				<term>Fall</term>
-				<time_code>H, O</time_code>
+				<time_code>D, O</time_code>
 			</rotation_term>
 		</course>
 		<course>
@@ -383,7 +390,7 @@
 			<course_number>4410</course_number>
 			<course_name>Introduction to Computer Graphics</course_name>
 			<rotation_term>
-				<term>Spring</term>
+				<term>Fall</term>
 				<time_code>O, H</time_code>
 			</rotation_term>
 		</course>
@@ -520,7 +527,7 @@
 			</rotation_term>
 		</course>
 
-		<!-- Math Classes -->
+		<!-- Mathematics Courses (Required for BSCS) -->
 		<course>
 			<subject>MATH</subject>
 			<course_number>1320</course_number>
@@ -606,6 +613,8 @@
 				<time_code>O</time_code>
 			</rotation_term>
 		</course>
+
+		<!-- English Course (Required for BSCS)-->
 		<course>
 			<subject>ENGLISH</subject>
 			<course_number>3130</course_number>

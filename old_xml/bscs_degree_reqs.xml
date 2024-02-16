@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
+<!-- Notes:
+	The only classes included in this file are those required by the BS in CS
+	Requirements are provided by Course Dependencies Flyer on the UMSL CS website
+		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
+    No other courses are included.
 
 -->
 <CSBSReq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/BSCSDegreeReq.xsd"> 
