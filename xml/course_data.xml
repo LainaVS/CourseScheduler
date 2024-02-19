@@ -23,7 +23,7 @@
 		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
 -->
 <CSBSReq
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/BSCSDegreeReq.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./course_data.xsd">
 	<CoreCourses>
 		<course>
 			<subject>CMP SCI</subject>
@@ -1086,6 +1086,3 @@
 		</course>
 	</OtherCourses>
 </CSBSReq>
-
-
-

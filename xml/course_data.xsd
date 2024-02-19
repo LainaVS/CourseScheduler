@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CSBSReq" type="CSBSReqType">
+    <xs:annotation>
+      <xs:documentation>
+	There are 3 sets of classes that are included in this file:
+		All Computer Science courses &lt; 5000 (Core Courses and Electives)
+		Math courses - only those required for the BS in CS (no other Math courses are included)
+		English course - only one required for the BS in CS (no other English courses are included)
+
+	This file started with data from the following files:
+		BSCSDegreeReq.xml (provided by Janikow)
+		Rotation.xml (provided by Janikow)
+		Courses2016.xml (provided by Janikow)
+
+	Requirements are provided by Course Dependencies Flyer on the UMSL CS website
+		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
+
+	Rotation terms were provided by the Undergraduate Course Rotation Document
+		https://www.umsl.edu/cmpsci/undergraduate-studies/3yearcourse.html
+		From comparing the Rotations on this document to myView, some of the rotations
+		do not seem to be updated.
+
+	Rotation terms for Math/English courses were provided by the Course Dependencies Flyer
+		on the UMSL CS website
+		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
+</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="rotation_termType">
+    <xs:sequence>
+      <xs:element name="term">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Spring"/>
+            <xs:enumeration value="Fall"/>
+            <xs:enumeration value="Summer"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="time_code"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="courseType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element name="subject">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="CMP SCI"/>
+            <xs:enumeration value="MATH"/>
+            <xs:enumeration value="ENGLISH"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="course_number"/>
+      <xs:element type="xs:string" name="course_name"/>
+      <xs:element name="credit">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="3"/>
+            <xs:enumeration value="1-3"/>
+            <xs:enumeration value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="rotation_termType" name="rotation_term"/>
+      <xs:element type="xs:string" name="course_description"/>
+      <xs:element type="prerequisiteType" name="prerequisite"/>
+      <xs:element type="xs:string" name="paired"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="or_choiceType" mixed="true">
+    <xs:sequence>
+      <xs:element type="xs:string" name="and_required" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prerequisiteType">
+    <xs:sequence>
+      <xs:element type="or_choiceType" name="or_choice" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="xs:string" name="additional_preq" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoreCoursesType">
+    <xs:sequence>
+      <xs:element type="courseType" name="course" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ElectivesType">
+    <xs:sequence>
+      <xs:element type="courseType" name="course" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MathandStatisticsType">
+    <xs:sequence>
+      <xs:element type="courseType" name="course" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherCoursesType">
+    <xs:sequence>
+      <xs:element type="courseType" name="course"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CSBSReqType">
+    <xs:sequence>
+      <xs:element type="CoreCoursesType" name="CoreCourses"/>
+      <xs:element type="ElectivesType" name="Electives"/>
+      <xs:element type="MathandStatisticsType" name="MathandStatistics"/>
+      <xs:element type="OtherCoursesType" name="OtherCourses"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
