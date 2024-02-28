@@ -943,7 +943,9 @@
 				<or_choice>
 					<and_required>MATH 1045</and_required>
 				</or_choice>
-				<or_choice>Department approval</or_choice>
+				<or_choice>
+					<and_required>Department approval</and_required>
+				</or_choice>
 			</prerequisite>
 			<paired>MATH 1105</paired>
 			<paired>MATH 1310</paired>
