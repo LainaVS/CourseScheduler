@@ -86,48 +86,29 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
     # create empty dict to store course information
     updated_course_dict = {}
 
-    # `courses` is a dictionary (i.e. one course of a certain type)
-    if isinstance(courses, Mapping):
+    if isinstance(courses, Mapping): # Checks if 'courses' is a dictionary
+        courses = [courses]
+    for course in courses:
         # add pre-requisites to dictionary
-        courses['prerequisite'] = build_prerequisites(courses)
+        course['prerequisite'] = build_prerequisites(course)
+
+        key = course["subject"] + " " + course["course_number"]
 
         # add rest of information to dictionary
         course_dict = { 
-            courses["course_number"]: courses
+            key: course 
         }
 
-        # add semesters offered list to dictionary
-        courses["semesters_offered"] = []
-        if isinstance(courses['rotation_term'], list):
-            for term in courses['rotation_term']:
-                courses["semesters_offered"].append(term['term'])
+        # add list of semesters offered to dictionary
+        course["semesters_offered"] = []
+        if isinstance(course['rotation_term'], list):
+            for term in course['rotation_term']:
+                course["semesters_offered"].append(term['term'])
         else:
-            courses["semesters_offered"] = courses['rotation_term']['term']
+            course["semesters_offered"] = course['rotation_term']['term']
 
         # make final update to course dictionary
         updated_course_dict.update(course_dict)
-
-    # `courses` is a list of dictionaries (i.e. multiple courses of a certain type)
-    else:
-        for course in courses:
-            # add pre-requisites to dictionary
-            course['prerequisite'] = build_prerequisites(course)
-
-            # add rest of information to dictionary
-            course_dict = { 
-                course["course_number"]: course 
-            }
-
-            # add list of semesters offered to dictionary
-            course["semesters_offered"] = []
-            if isinstance(course['rotation_term'], list):
-                for term in course['rotation_term']:
-                    course["semesters_offered"].append(term['term'])
-            else:
-                course["semesters_offered"] = course['rotation_term']['term']
-
-            # make final update to course dictionary
-            updated_course_dict.update(course_dict)
 
     # return dictionary with finalized course type dictionary
     return updated_course_dict
@@ -168,8 +149,22 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
     # return finalized dictionary of the course type
     return build_dictionary(csbs_req[course_type][course_tag])
 
-# create course dictionaries
-core_courses = parse_courses("CoreCourses", "course")
-elective_courses = parse_courses("Electives", "course")
-math_courses =parse_courses("MathandStatistics", "course")
-other_courses = parse_courses("OtherCourses", "course")
+def schedule_courses():
+    # create course dictionaries
+    core_courses = parse_courses("CoreCourses", "course")
+    elective_courses = parse_courses("Electives", "course")
+    math_courses =parse_courses("MathandStatistics", "course")
+    other_courses = parse_courses("OtherCourses", "course")
+
+    required_courses = core_courses.update(math_courses)
+
+    required_courses_list = sorted(list(required_courses.items()), key=lambda d: d[1]["course_number"])
+
+    classes_taken = []
+    current_semester_classes = []
+
+    classes_per_semester = 5 # update later to be user input
+
+    for i in range(0, classes_per_semester):
+        for x in core_courses_list:
+

@@ -907,6 +907,44 @@
 	<MathandStatistics>
 		<course>
 			<subject>MATH</subject>
+			<course_number>1030</course_number>
+			<course_name>College Algebra</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<credit>3</credit>
+			<course_description>Topics may include factoring, complex numbers, rational exponents, simplifying rational functions, functions and their graphs, transformations, inverse functions, solving linear and nonlinear equations and inequalities, polynomial functions, inverse functions, logarithms, exponentials, solutions to systems of linear and nonlinear equations, systems of inequalities, matrices, and rates of change.</course_description>
+		</course>
+		<course>
+			<subject>MATH</subject>
+			<course_number>1035</course_number>
+			<course_name>Trigonometry</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<credit>2</credit>
+			<course_description>This course is a study of the trigonometric and inverse trigonometric functions with emphasis on trigonometric identities and equations.</course_description>
+		</course>
+		<course>
+			<subject>MATH</subject>
 			<course_number>1320</course_number>
 			<course_name>Applied Statistics I</course_name>
 			<rotation_term>
@@ -1054,6 +1092,25 @@
 		</course>
 	</MathandStatistics>
 	<OtherCourses>
+		<course>
+			<subject>ENGLISH</subject>
+			<course_number>1100</course_number>
+			<course_name>First-Year Writing</course_name>
+			<credit>3</credit>
+			<course_description>This course integrates critical reading, writing, and thinking skills and studies actual writing practices. Sequenced reading and writing assignments build cumulatively to more complex assignments. Course activities may include formal and informal writing, drafting and revising, editing for correctness, synthesizing source material, and documenting sources accurately.</course_description>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
 		<course>
 			<subject>ENGLISH</subject>
 			<course_number>3130</course_number>

@@ -58,8 +58,10 @@
         <xs:simpleType>
           <xs:restriction base="xs:string">
             <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
             <xs:enumeration value="3"/>
             <xs:enumeration value="1-3"/>
+            <xs:enumeration value="4"/>
             <xs:enumeration value="5"/>
           </xs:restriction>
         </xs:simpleType>
@@ -98,7 +100,7 @@
   </xs:complexType>
   <xs:complexType name="OtherCoursesType">
     <xs:sequence>
-      <xs:element type="courseType" name="course"/>
+      <xs:element type="courseType" name="course" maxOccurs="unbounded" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="CSBSReqType">
