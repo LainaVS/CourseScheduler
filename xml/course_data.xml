@@ -287,6 +287,14 @@
 			<course_name>Introduction to the Software Profession</course_name>
 			<credit>3</credit>
 			<course_description>Focuses on software development and on the skills required for success in the software profession. Topics related to software development may include software process, models and views, software architectures, documentation, and testing strategies. Topics related to the profession may include licensing, copyright, trademarks, and professional conduct. Individual and group projects, research, and presentations may be required in this capstone course.</course_description>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -321,18 +329,6 @@
 		</course>
 	</CoreCourses>
 	<Electives>
-		<course>
-			<subject>CMP SCI</subject>
-			<course_number>3410</course_number>
-			<course_name>Video Game Design and Development</course_name>
-			<credit>3</credit>
-			<prerequisite>
-				<or_choice>
-					<and_required>CMP SCI 2261</and_required>
-				</or_choice>
-			</prerequisite>
-			<course_description>This course covers major aspects of the design and development of video games, including world/level design, game UI design, game character design, game engine programming, 2D/3D modeling and rendering, game physics and animation. This is a project-based course in which students learn to apply acquired knowledge and skills to building a video game in a team environment.</course_description>
-		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>3411</course_number>
@@ -546,19 +542,6 @@
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
-			<course_number>4222</course_number>
-			<course_name>iOS Apps</course_name>
-			<credit>3</credit>
-			<course_description>This course focuses on building more sophisticated apps using Objective-C and the scripting language Swift. May include networking such as web services, Bluetooth and wifi connectivity, graphics and animation in 2-d and 3-d, autolayouts, OpenGL, advanced data sources such as plist and core data, source control and unit testing. May also discuss security topics. Credit not granted for both CMP SCI 4222 and CMP SCI 5222.</course_description>
-			<prerequisite>
-				<or_choice>
-					<and_required>CMP SCI 4220</and_required>
-				</or_choice>
-			</prerequisite>
-			<paired>CMP SCI 5222</paired>
-		</course>
-		<course>
-			<subject>CMP SCI</subject>
 			<course_number>4300</course_number>
 			<course_name>Introduction to Artificial Intelligence</course_name>
 			<rotation_term>
@@ -667,6 +650,10 @@
 			<course_number>4390</course_number>
 			<course_name>Introduction to Deep Learning</course_name>
 			<credit>3</credit>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 3130</and_required>
