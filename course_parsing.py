@@ -38,7 +38,11 @@ def build_prerequisites(course: dict) -> list:
 
         # prerequisite is a dictionary (i.e. one pre-requisite)
         if isinstance(prereqs, Mapping):
-            prereqs_list.append(prereqs['and_required'])
+            prereq = prereqs['and_required']
+            if isinstance(prereq, list):
+                prereqs_list.append([prereq])
+            else:
+                prereqs_list.append(prereq)
 
         # prerequisite is a list of dictionaries (i.e. multiple pre-requisites)
         else:
@@ -113,6 +117,16 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
     # return dictionary with finalized course type dictionary
     return updated_course_dict
 
+def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
+    course_added = False
+    if current_semester in course_info['semesters_offered']:
+        current_semester_classes.append(course)
+        courses_taken.append(course)
+        total_credits_accumulated = total_credits_accumulated + int(course_info['credit'])
+        current_semester_credits = current_semester_credits + int(course_info['credit'])
+        course_added = True
+    return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
+
 def parse_courses(course_type: str, course_tag: str) -> dict:
     """
     Parses relevant information from XML and return dictionaries.
@@ -152,19 +166,95 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
 def schedule_courses():
     # create course dictionaries
     core_courses = parse_courses("CoreCourses", "course")
-    elective_courses = parse_courses("Electives", "course")
+    # elective_courses = parse_courses("Electives", "course")
     math_courses =parse_courses("MathandStatistics", "course")
     other_courses = parse_courses("OtherCourses", "course")
 
-    required_courses = core_courses.update(math_courses)
+    core_courses.update(math_courses)
+    core_courses.update(other_courses)
 
-    required_courses_list = sorted(list(required_courses.items()), key=lambda d: d[1]["course_number"])
+    required_courses_list = sorted(list(core_courses.items()), key=lambda d: d[1]["course_number"])
+    required_courses = sorted(list(core_courses.keys()), key=lambda d: d[0])
 
-    classes_taken = []
+    current_semester = "Fall"
+    course_schedule = []
+    courses_taken = []
     current_semester_classes = []
+    current_semester_credits = 0
+    total_credits_accumulated = 0
 
-    classes_per_semester = 5 # update later to be user input
+    all_courses_selected = False
+    summer_courses = False
+    min_credits_per_semester = 15
+    semester = 1
+    while (not all_courses_selected):
+        for x in required_courses_list:
+            course = x[0]
+            course_info = x[1]
+            if (course not in courses_taken):
+                if len(course_info["prerequisite"]) == 0:
+                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                    )
+                    break
+                else:
+                    course_added = False
+                    prereqs = course_info["prerequisite"]
+                    for prereqs in course_info["prerequisite"]:
+                        if isinstance(prereqs, str):
+                            if prereqs in courses_taken:
+                                course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                                    current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                )
+                                break
+                        else:
+                            if (len(prereqs) == 1):
+                                if prereqs[0] in courses_taken:
+                                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                    )
+                                    break
+                            else:
+                                required_courses_taken = False
+                                for prereq in prereqs:
+                                    if prereq in courses_taken:
+                                        required_courses_taken = True
+                                    else:
+                                        required_courses_taken = False
+                                if required_courses_taken:
+                                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                    )
+                                    break
 
-    for i in range(0, classes_per_semester):
-        for x in core_courses_list:
+                    if course_added:
+                        if sorted(courses_taken) == sorted(required_courses):
+                            current_semester_info = {
+                                'semester': current_semester,
+                                'credits': current_semester_credits,
+                                'schedule': current_semester_classes
+                            }
+                            course_schedule.append(current_semester_info)
+                            all_courses_selected = True
+                        elif current_semester_credits >= min_credits_per_semester:
+                            current_semester_info = {
+                                'semester': current_semester,
+                                'credits': current_semester_credits,
+                                'schedule': current_semester_classes
+                            }
+                            course_schedule.append(current_semester_info)
+                            current_semester_credits = 0
+                            current_semester_classes = []
+                            semester = semester + 1
+                            if current_semester == 'Fall':
+                                current_semester = 'Spring'
+                            elif current_semester == 'Summer':
+                                current_semester = 'Fall'
+                            else:
+                                if (summer_courses):
+                                    current_semester = 'Summer'
+                                else:
+                                    current_semester = 'Fall'
+                        break
 
+    print(course_schedule)
