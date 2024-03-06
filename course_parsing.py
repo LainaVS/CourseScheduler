@@ -164,29 +164,7 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
     return build_dictionary(csbs_req[course_type][course_tag])
 
 def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
-    """
-    Add course, credits to current semester and list of courses taken, credits earned
-    Parameters
-    ----------
-    current_semester:           str
-                                the semester that is currently being enrolled, i.e. "Fall", "Spring," or "Summer"
-    course_info:                dict
-                                all information about the course
-    current_semester_classes:   list
-                                the courses that have been added for this semester
-    course:                     str
-                                the subject + number of the course being added
-    courses_taken:              list
-                                all courses that have been taken by student, regardless of semester
-    total_credits_accumulated   int
-                                all credits that have been accumulated by student, regardless of semester
-    current_semester_credits    int
-                                the total number of credits student has earned in current semester being enrolled
-
-    Returns
-    ----------
-
-    """
+    # Add course, credits to current semester and list of courses taken, credits earned
     course_added = False
     if current_semester in course_info['semesters_offered']:
         current_semester_classes.append(course)
@@ -195,7 +173,6 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
         current_semester_credits = current_semester_credits + int(course_info['credit'])
         course_added = True
     return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
-
 
 def build_semester_list(first_season="Fall", include_fall=True, include_spring=True, include_summer=True) -> list:
     possible_semesters = ["Fall", "Spring", "Summer"]
@@ -222,14 +199,6 @@ def build_semester_list(first_season="Fall", include_fall=True, include_spring=T
 def schedule_core_courses() -> None:
     """
     Create the multi-semester course schedule for core courses.
-
-    Parameters
-    ----------
-    None
-
-    Returns
-    ----------
-    None
     """
     # create dictionaries for each course type
     core_courses = parse_courses("CoreCourses", "course")
@@ -245,7 +214,7 @@ def schedule_core_courses() -> None:
     required_courses = sorted(list(core_courses.keys()), key=lambda d: d[0])
 
     # set user's scheduling preferences
-    current_semester = "Spring"
+    current_semester = "Fall"
     include_fall = True
     include_spring = True
     include_summer = False
