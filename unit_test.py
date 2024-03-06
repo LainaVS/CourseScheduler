@@ -1,9 +1,9 @@
 import unittest
-from course_parsing import schedule_courses
+from course_parsing import schedule_core_courses
 
 class TestStringMethods(unittest.TestCase):
     def test_upper(self):
-        schedule_courses()
+        schedule_core_courses()
 
 if __name__ == '__main__':
     unittest.main()

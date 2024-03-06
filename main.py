@@ -1,1 +1,0 @@
-from course_parsing import core_courses, elective_courses, math_courses, other_courses

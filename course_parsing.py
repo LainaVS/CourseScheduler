@@ -10,24 +10,33 @@ root = tree.getroot()
 
 def print_dictionary(course_dictionary: dict) -> None:
     """
-    prints a dictionary in readable format
-    :param  course_dictionary: dict
+    prints a dictionary in readable format.
+
+    Parameters
+    ----------
+    course_dictionary:      dict
+                            holds the information for the courses
+    Returns
+    ----------
+    None
     """
     print(json.dumps(course_dictionary, indent=4))
 
 def build_prerequisites(course: dict) -> list:
     """
-    Creates the list of pre-requisites for a given course.
+    creates the list of pre-requisites for a given course.
 
-    :parameter
+    Parameters
     ----------
     course:     dict
                 holds all information about a particular course, including
                 `subject`, `course_number`, etc. (the keys of the dictionary).
-    :return:    list
+    Returns
+    ----------
+    list
                 this will hold either:
                 - a single list of courses that are pre-requisites
-                - a lists of lists: i.e. multiple lists of possible pre-requisites.
+                - a lists of lists: i.e. multiple lists of possible pre-requisites within a list.
     """
     # creates an empty list to hold any potential pre-requisites
     prereqs_list = []
@@ -36,7 +45,7 @@ def build_prerequisites(course: dict) -> list:
     if ('prerequisite' in course.keys()):
         prereqs = course['prerequisite']['or_choice']
 
-        # prerequisite is a dictionary (i.e. one pre-requisite)
+        # prerequisite is a dictionary (i.e. one pre-requisite exists)
         if isinstance(prereqs, Mapping):
             prereq = prereqs['and_required']
             if isinstance(prereq, list):
@@ -44,10 +53,10 @@ def build_prerequisites(course: dict) -> list:
             else:
                 prereqs_list.append(prereq)
 
-        # prerequisite is a list of dictionaries (i.e. multiple pre-requisites)
+        # prerequisite is a list of dictionaries (i.e. multiple pre-requisites exist)
         else:
             for prereq in prereqs:
-                # Checks if the prequisite is an array or a comp sci/math class prerequisite
+                # Checks if the prerequisite is an array or a comp sci/math class prerequisite
                 prereq = prereq['and_required']
                 if isinstance(prereq, list):
                     prereqs_list.append(prereq)
@@ -57,45 +66,46 @@ def build_prerequisites(course: dict) -> list:
     # flatten lists of >1 length to keep consistency
     if len(prereqs_list) == 1 and isinstance(prereqs_list[0], list):
         prereqs_list = prereqs_list[0]
+
+    # return a list of pre-requisites
     return prereqs_list
     
 def build_dictionary(courses: Union[dict, list]) -> dict:
     """
-    Builds a dictionary with the information of each course of a certain type.
+    Builds a dictionary with the information for each course included in a course type.
 
-    :parameters
-    -----------
+    Course type includes "core courses," "elective courses," etc.
+
+    Parameters
+    ----------
     courses:    dict or list
                 holds the information for all courses of a certain type (core,
                 electives, etc.).
 
-                This parameter is a list of dictionaries if
-                there are multiple courses of a certain type. In each dictionary,
-                each key is the XML tag, i.e. `subject`, `course_number`, etc.
+                This parameter is a list of dictionaries if there are multiple courses of a certain type.
+                In each dictionary, each key is the XML tag, i.e. `subject`, `course_number`, etc.
                 with the corresponding value.
 
-                This parameter is a single dictionary if there is only
-                one course of that type. In the dictionary, each key is the XML tag, i.e. `subject`,
-                `course_number`, etc. with the corresponding value.
+                This parameter is a single dictionary if there is only one course of that type.
+                In the dictionary, each key is the XML tag, i.e. `subject`, `course_number`, etc.
+                with the corresponding value.
 
-    :returns:   dict
+    Returns
+    ----------
+    dict
                 The finalized dictionary of the course type.
-                Each key is the course number.
-                The corresponding value is a dictionary holding all of the information
-                about that course number.
-
-    -----------
-
+                Each key is the course subject and course number.
+                The corresponding value is a dictionary holding all the information about that course.
     """
     # create empty dict to store course information
     updated_course_dict = {}
 
-    if isinstance(courses, Mapping): # Checks if 'courses' is a dictionary
+    # Checks if 'courses' is a dictionary
+    if isinstance(courses, Mapping):
         courses = [courses]
     for course in courses:
         # add pre-requisites to dictionary
         course['prerequisite'] = build_prerequisites(course)
-
         key = course["subject"] + " " + course["course_number"]
 
         # add rest of information to dictionary
@@ -117,16 +127,6 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
     # return dictionary with finalized course type dictionary
     return updated_course_dict
 
-def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
-    course_added = False
-    if current_semester in course_info['semesters_offered']:
-        current_semester_classes.append(course)
-        courses_taken.append(course)
-        total_credits_accumulated = total_credits_accumulated + int(course_info['credit'])
-        current_semester_credits = current_semester_credits + int(course_info['credit'])
-        course_added = True
-    return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
-
 def parse_courses(course_type: str, course_tag: str) -> dict:
     """
     Parses relevant information from XML and return dictionaries.
@@ -136,11 +136,11 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
     the function.
 
     csbs_req is a dictionary that represents a section of parsed XML data. It
-    holds each course type as a key and each value for the key is either
-        a list(if only one course for that key exists) or
-        a dictionary (if multiple courses for that key exist)
+    holds each course type as a key and each value for the key is either:
+        - a list(if only one course for that key exists) or
+        - a dictionary (if multiple courses for that key exist)
 
-    :parameter
+    Parameters
     ----------
     course_type:    str
                     defines the XML tag for the first child of the root, i.e.
@@ -148,9 +148,9 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
     course_tag      str
                     defines the XML tag for the first child of the course_type
 
-    :returns
-    ---------
-    returns         dict
+    Returns
+    ----------
+    dict
                     The dictionary that holds all course information
     """
     # open xml document to begin parsing
@@ -163,64 +163,144 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
     # return finalized dictionary of the course type
     return build_dictionary(csbs_req[course_type][course_tag])
 
-def schedule_courses():
-    # create course dictionaries
+def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
+    """
+    Add course, credits to current semester and list of courses taken, credits earned
+    Parameters
+    ----------
+    current_semester:           str
+                                the semester that is currently being enrolled, i.e. "Fall", "Spring," or "Summer"
+    course_info:                dict
+                                all information about the course
+    current_semester_classes:   list
+                                the courses that have been added for this semester
+    course:                     str
+                                the subject + number of the course being added
+    courses_taken:              list
+                                all courses that have been taken by student, regardless of semester
+    total_credits_accumulated   int
+                                all credits that have been accumulated by student, regardless of semester
+    current_semester_credits    int
+                                the total number of credits student has earned in current semester being enrolled
+
+    Returns
+    ----------
+
+    """
+    course_added = False
+    if current_semester in course_info['semesters_offered']:
+        current_semester_classes.append(course)
+        courses_taken.append(course)
+        total_credits_accumulated = total_credits_accumulated + int(course_info['credit'])
+        current_semester_credits = current_semester_credits + int(course_info['credit'])
+        course_added = True
+    return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
+
+def build_semester_list(summer = False, fall = True, spring = True):
+    possible_semesters = ["Summer", "Fall", "Spring"]
+    user_semesters = [possible_semesters[i] for i, param in enumerate((summer, fall, spring)) if param]
+    if "Fall" not in user_semesters and "Spring" not in user_semesters:
+        raise ValueError("User must select Fall or Spring")
+
+def schedule_core_courses():
+    """
+    Create the multi-semester course schedule for core courses.
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    ----------
+    None
+    """
+    # create dictionaries for each course type
     core_courses = parse_courses("CoreCourses", "course")
-    # elective_courses = parse_courses("Electives", "course")
-    math_courses =parse_courses("MathandStatistics", "course")
+    math_courses = parse_courses("MathandStatistics", "course")
     other_courses = parse_courses("OtherCourses", "course")
 
+    # add math and other courses to core courses so that all BSCS requirements are included
     core_courses.update(math_courses)
     core_courses.update(other_courses)
 
+    # sort required courses by course number
     required_courses_list = sorted(list(core_courses.items()), key=lambda d: d[1]["course_number"])
     required_courses = sorted(list(core_courses.keys()), key=lambda d: d[0])
 
+    # set user's scheduling preferences
     current_semester = "Fall"
+    summer_courses = False
+    min_credits_per_semester = 15
+
+
+    # set scheduling information
+    semester = 1                                # incremented with each completed semester
+    all_courses_selected = False                # ensures that all requirements have been met
+
+    # store temporary semester schedule information
     course_schedule = []
     courses_taken = []
     current_semester_classes = []
     current_semester_credits = 0
     total_credits_accumulated = 0
 
-    all_courses_selected = False
-    summer_courses = False
-    min_credits_per_semester = 15
-    semester = 1
+    # continue adding courses until all requirements have been met
     while (not all_courses_selected):
+        # iterate through list of required courses
         for x in required_courses_list:
-            course = x[0]
-            course_info = x[1]
+            course: str = x[0]                      # holds course subject + number
+            course_info: dict = x[1]                # holds all other information about course
+
+            # add course to schedule if it has not already been added
             if (course not in courses_taken):
+
+                # if the course has no pre-requisites, add current course to schedule
                 if len(course_info["prerequisite"]) == 0:
-                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
-                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
-                    )
+                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                    = add_course(
+                    current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
                     break
+
+                # if the course has at least one pre-requisite
                 else:
+                    # look up list of pre-requisites for current course
                     course_added = False
                     prereqs = course_info["prerequisite"]
+                    print(f"Now on {course}: {prereqs}")
+
+                    # iterate through pre-requisites for the current course
                     for prereqs in course_info["prerequisite"]:
+                        # if there is only one pre-requisite (a string)
                         if isinstance(prereqs, str):
+                            # add the current course because pre-requisite has already been taken
                             if prereqs in courses_taken:
-                                course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
-                                    current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                                = add_course(
+                                current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
                                 )
                                 break
+
+                        # if there is a list of pre-requisites
                         else:
+                            # if there is only one pre-requisite
                             if (len(prereqs) == 1):
+                                # add the current course because pre-requisite has already been taken
                                 if prereqs[0] in courses_taken:
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
                                         current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
                                     )
                                     break
+
+                            # if there is >1 pre-requisite
                             else:
                                 required_courses_taken = False
+                                # iterate through each pre-requisite
                                 for prereq in prereqs:
                                     if prereq in courses_taken:
                                         required_courses_taken = True
                                     else:
                                         required_courses_taken = False
+                                # add the current course because pre-requisite has already been taken
                                 if required_courses_taken:
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
                                         current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
@@ -243,9 +323,12 @@ def schedule_courses():
                                 'schedule': current_semester_classes
                             }
                             course_schedule.append(current_semester_info)
+
+                            # update semester info
+                            # THIS IS WHERE I STOPPED!
                             current_semester_credits = 0
                             current_semester_classes = []
-                            semester = semester + 1
+                            semester += 1
                             if current_semester == 'Fall':
                                 current_semester = 'Spring'
                             elif current_semester == 'Summer':
@@ -258,3 +341,6 @@ def schedule_courses():
                         break
 
     print(course_schedule)
+
+schedule_core_courses()
+print(build_semester_list())
