@@ -196,13 +196,30 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
         course_added = True
     return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
 
-def build_semester_list(summer = False, fall = True, spring = True):
-    possible_semesters = ["Summer", "Fall", "Spring"]
-    user_semesters = [possible_semesters[i] for i, param in enumerate((summer, fall, spring)) if param]
-    if "Fall" not in user_semesters and "Spring" not in user_semesters:
-        raise ValueError("User must select Fall or Spring")
 
-def schedule_core_courses():
+def build_semester_list(first_season="Fall", include_fall=True, include_spring=True, include_summer=True) -> list:
+    possible_semesters = ["Fall", "Spring", "Summer"]
+
+    # Reorder the seasons based on the user's preference for the first season
+    first_index = possible_semesters.index(first_season)
+    possible_seasons = possible_semesters[first_index:] + possible_semesters[:first_index]
+
+    # Filter out seasons based on user preferences
+    selected_semesters = []
+    if include_fall:
+        selected_semesters.append("Fall")
+    if include_spring:
+        selected_semesters.append("Spring")
+    if include_summer:
+        selected_semesters.append("Summer")
+
+    if first_season not in selected_semesters:
+        return ValueError("First season is not in selected seasons")
+    if "Fall" not in selected_semesters or "Spring" not in selected_semesters:
+        return ValueError("Fall or Spring must be selected")
+    return [season for season in possible_seasons if season in selected_semesters]
+
+def schedule_core_courses() -> None:
     """
     Create the multi-semester course schedule for core courses.
 
@@ -228,10 +245,13 @@ def schedule_core_courses():
     required_courses = sorted(list(core_courses.keys()), key=lambda d: d[0])
 
     # set user's scheduling preferences
-    current_semester = "Fall"
-    summer_courses = False
+    current_semester = "Spring"
+    include_fall = True
+    include_spring = True
+    include_summer = False
+    user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
     min_credits_per_semester = 15
-
+    print(user_semesters)
 
     # set scheduling information
     semester = 1                                # incremented with each completed semester
@@ -266,7 +286,6 @@ def schedule_core_courses():
                     # look up list of pre-requisites for current course
                     course_added = False
                     prereqs = course_info["prerequisite"]
-                    print(f"Now on {course}: {prereqs}")
 
                     # iterate through pre-requisites for the current course
                     for prereqs in course_info["prerequisite"]:
@@ -311,6 +330,7 @@ def schedule_core_courses():
                         if sorted(courses_taken) == sorted(required_courses):
                             current_semester_info = {
                                 'semester': current_semester,
+                                'semester number': semester,
                                 'credits': current_semester_credits,
                                 'schedule': current_semester_classes
                             }
@@ -319,28 +339,19 @@ def schedule_core_courses():
                         elif current_semester_credits >= min_credits_per_semester:
                             current_semester_info = {
                                 'semester': current_semester,
+                                'semester number': semester,
                                 'credits': current_semester_credits,
                                 'schedule': current_semester_classes
                             }
                             course_schedule.append(current_semester_info)
 
                             # update semester info
-                            # THIS IS WHERE I STOPPED!
                             current_semester_credits = 0
                             current_semester_classes = []
                             semester += 1
-                            if current_semester == 'Fall':
-                                current_semester = 'Spring'
-                            elif current_semester == 'Summer':
-                                current_semester = 'Fall'
-                            else:
-                                if (summer_courses):
-                                    current_semester = 'Summer'
-                                else:
-                                    current_semester = 'Fall'
+                            current_semester = user_semesters[(semester + 1) % len(user_semesters)]
                         break
 
-    print(course_schedule)
+    print_dictionary(course_schedule)
 
 schedule_core_courses()
-print(build_semester_list())
