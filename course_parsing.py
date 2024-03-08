@@ -217,7 +217,7 @@ def schedule_core_courses() -> None:
     current_semester = "Fall"
     include_fall = True
     include_spring = True
-    include_summer = False
+    include_summer = True
     user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
     min_credits_per_semester = 15
     print(user_semesters)
@@ -232,6 +232,8 @@ def schedule_core_courses() -> None:
     current_semester_classes = []
     current_semester_credits = 0
     total_credits_accumulated = 0
+
+    course_added = False
 
     # continue adding courses until all requirements have been met
     while (not all_courses_selected):
@@ -320,6 +322,34 @@ def schedule_core_courses() -> None:
                             semester += 1
                             current_semester = user_semesters[(semester + 1) % len(user_semesters)]
                         break
+        if (not course_added):
+            current_semester_classes.append("Gen Ed or Elective")
+            total_credits_accumulated = total_credits_accumulated + 3
+            current_semester_credits = current_semester_credits + 3
+
+            if sorted(courses_taken) == sorted(required_courses):
+                current_semester_info = {
+                    'semester': current_semester,
+                    'semester number': semester,
+                    'credits': current_semester_credits,
+                    'schedule': current_semester_classes
+                }
+                course_schedule.append(current_semester_info)
+                all_courses_selected = True
+            elif current_semester_credits >= min_credits_per_semester:
+                current_semester_info = {
+                    'semester': current_semester,
+                    'semester number': semester,
+                    'credits': current_semester_credits,
+                    'schedule': current_semester_classes
+                }
+                course_schedule.append(current_semester_info)
+
+                # update semester info
+                current_semester_credits = 0
+                current_semester_classes = []
+                semester += 1
+                current_semester = user_semesters[(semester + 1) % len(user_semesters)]
 
     print_dictionary(course_schedule)
 
