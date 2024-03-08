@@ -247,11 +247,16 @@ def schedule_core_courses() -> None:
 
                 # if the course has no pre-requisites, add current course to schedule
                 if len(course_info["prerequisite"]) == 0:
-                    course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
-                    = add_course(
-                    current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
-                    break
-
+                    if (course != "ENGLISH 3130"):
+                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                        = add_course(
+                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
+                        break
+                    elif (course == "ENGLISH 3130") and (total_credits_accumulated >= 56):
+                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                        = add_course(
+                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
+                        break
                 # if the course has at least one pre-requisite
                 else:
                     # look up list of pre-requisites for current course
@@ -263,7 +268,7 @@ def schedule_core_courses() -> None:
                         # if there is only one pre-requisite (a string)
                         if isinstance(prereqs, str):
                             # add the current course because pre-requisite has already been taken
-                            if prereqs in courses_taken:
+                            if (prereqs in courses_taken) and (prereqs not in current_semester_classes):
                                 course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
                                 = add_course(
                                 current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
@@ -275,7 +280,7 @@ def schedule_core_courses() -> None:
                             # if there is only one pre-requisite
                             if (len(prereqs) == 1):
                                 # add the current course because pre-requisite has already been taken
-                                if prereqs[0] in courses_taken:
+                                if (prereqs[0] in courses_taken) and (prereqs[0] not in current_semester_classes):
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
                                         current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
                                     )
@@ -286,7 +291,7 @@ def schedule_core_courses() -> None:
                                 required_courses_taken = False
                                 # iterate through each pre-requisite
                                 for prereq in prereqs:
-                                    if prereq in courses_taken:
+                                    if (prereq in courses_taken) and (prereq not in current_semester_classes):
                                         required_courses_taken = True
                                     else:
                                         required_courses_taken = False
