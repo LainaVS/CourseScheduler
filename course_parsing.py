@@ -214,13 +214,12 @@ def schedule_core_courses() -> None:
     required_courses = sorted(list(core_courses.keys()), key=lambda d: d[0])
 
     # set user's scheduling preferences
-    current_semester = "Fall"
+    current_semester = "Spring"
     include_fall = True
     include_spring = True
-    include_summer = True
+    include_summer = False
     user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
     min_credits_per_semester = 15
-    print(user_semesters)
 
     # set scheduling information
     semester = 1                                # incremented with each completed semester
@@ -233,10 +232,11 @@ def schedule_core_courses() -> None:
     current_semester_credits = 0
     total_credits_accumulated = 0
 
-    course_added = False
+    min_3000_course = 5
 
     # continue adding courses until all requirements have been met
     while (not all_courses_selected):
+        course_added = False
         # iterate through list of required courses
         for x in required_courses_list:
             course: str = x[0]                      # holds course subject + number
@@ -303,7 +303,7 @@ def schedule_core_courses() -> None:
                                     break
 
                     if course_added:
-                        if sorted(courses_taken) == sorted(required_courses):
+                        if total_credits_accumulated >= 120:
                             current_semester_info = {
                                 'semester': current_semester,
                                 'semester number': semester,
@@ -328,11 +328,15 @@ def schedule_core_courses() -> None:
                             current_semester = user_semesters[(semester + 1) % len(user_semesters)]
                         break
         if (not course_added):
-            current_semester_classes.append("Gen Ed or Elective")
+            if total_credits_accumulated > 80 and min_3000_course != 0:
+                current_semester_classes.append("CMP SCI 3000+ level elective")
+                min_3000_course = min_3000_course - 1
+            else:
+                current_semester_classes.append("Gen Ed or Elective")
             total_credits_accumulated = total_credits_accumulated + 3
             current_semester_credits = current_semester_credits + 3
 
-            if sorted(courses_taken) == sorted(required_courses):
+            if total_credits_accumulated >= 120:
                 current_semester_info = {
                     'semester': current_semester,
                     'semester number': semester,
@@ -359,3 +363,9 @@ def schedule_core_courses() -> None:
     print_dictionary(course_schedule)
 
 schedule_core_courses()
+
+##########################################################
+import unittest
+
+if __name__ == '__main__':
+    unittest.main()
