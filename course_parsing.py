@@ -363,9 +363,3 @@ def schedule_core_courses() -> None:
     print_dictionary(course_schedule)
 
 schedule_core_courses()
-
-##########################################################
-import unittest
-
-if __name__ == '__main__':
-    unittest.main()
