@@ -69,6 +69,7 @@
       <xs:element type="rotation_termType" name="rotation_term"/>
       <xs:element type="xs:string" name="course_description"/>
       <xs:element type="prerequisiteType" name="prerequisite"/>
+      <xs:element type="xs:string" name="concurrent"/>
       <xs:element type="xs:string" name="paired"/>
     </xs:choice>
   </xs:complexType>
