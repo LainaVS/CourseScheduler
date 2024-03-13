@@ -127,6 +127,9 @@
 					<and_required>CMP SCI 2250</and_required>
 				</or_choice>
 			</prerequisite>
+			<concurrent>
+				CMP SCI 2250
+			</concurrent>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -151,6 +154,9 @@
 					<and_required>CMP SCI 2250</and_required>
 				</or_choice>
 			</prerequisite>
+			<concurrent>
+				CMP SCI 2250
+			</concurrent>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -176,6 +182,9 @@
 					<and_required>CMP SCI 2700</and_required>
 				</or_choice>
 			</prerequisite>
+			<concurrent>
+				CMP SCI 2700
+			</concurrent>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -200,6 +209,9 @@
 					<and_required>CMP SCI 2250</and_required>
 				</or_choice>
 			</prerequisite>
+			<concurrent>
+				CMP SCI 2250
+			</concurrent>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -1129,6 +1141,11 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
+			<prerequisite>
+				<or_choice>
+					<and_required>ENGLISH 1100</and_required>
+				</or_choice>
+			</prerequisite>
 		</course>
 	</OtherCourses>
 </CSBSReq>
