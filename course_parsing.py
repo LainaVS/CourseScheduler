@@ -171,6 +171,9 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
 
 def add_course(current_semester, course_info, current_semester_classes, course, courses_taken,
                total_credits_accumulated, current_semester_credits):
+    """
+    adds course to current semester's class load.
+    """
     # Add course, credits to current semester and list of courses taken, credits earned
     course_added = False
     if current_semester in course_info['semesters_offered']:
@@ -183,6 +186,23 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
 
 
 def build_semester_list(first_season="Fall", include_fall=True, include_spring=True, include_summer=True) -> list:
+    """
+    Creates a user-defined list of the semesters in which student wishes to take courses
+
+    Parameters
+    ----------
+    first_season        str
+                        holds the first semester that student will start classes
+    include_fall
+    include_spring
+    include_summer
+                        bool
+                        determines if the student will be in session during fall, spring, summer
+
+    Return
+    ------
+    list                holds a list of all semesters student will be attending class
+    """
     possible_semesters = ["Fall", "Spring", "Summer"]
 
     # Reorder the seasons based on the user's preference for the first season
@@ -204,7 +224,25 @@ def build_semester_list(first_season="Fall", include_fall=True, include_spring=T
         return ValueError("Fall or Spring must be selected")
     return [season for season in possible_seasons if season in selected_semesters]
 
-def update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes):
+def update_semester_info(current_semester:str, semester:int,
+                         current_semester_credits:int, current_semester_classes:list) -> dict:
+    """
+    Updates all relevant information when a class is added
+
+    Parameters
+    ----------
+    current_semester:               str
+                                    holds the current semester, i.e. 'Fall', 'Spring', or 'Summer'
+    semester:                       int
+                                    holds the semester that the student is currently in
+    current_semester_credits:       int
+                                    holds the number of credits the student has earned
+    current_semester_classes:       list
+                                    holds the classes the student is currently enrolled in
+    Return
+    ---------
+    dict                            returns all information above
+    """
     current_semester_info = {
         'semester': current_semester,
         'semester number': semester,
@@ -245,17 +283,16 @@ def schedule_core_courses() -> None:
     include_summer = False
     user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
     minimum_credits = {
-        'Fall': 12,
-        'Spring': 12,
+        'Fall': 15,
+        'Spring': 15,
         'Summer': 3
     }
-    if(include_summer):
+    if(include_summer): # if summer is not included, overwrite the minimum credits
         minimum_credits['Summer'] = 0
-    max_CS_credit_percent = 0.50 # sets the total % of courses per semester that will be core/required classes
+    max_CS_credit_percent = 0.50  # sets the total % of courses per semester that will be core/required classes
     total_credits_for_degree = 120
     max_CS_electives_per_semester = 2
-    credits_for_3000_level = sum(minimum_credits.values()) * 2.5
-
+    credits_for_3000_level = sum(minimum_credits.values()) * 2.5  # 3000+ level credits will not be taken for 2 years
 
     # store temporary semester schedule information
     course_schedule = []
@@ -264,7 +301,7 @@ def schedule_core_courses() -> None:
     current_semester_credits = 0
     total_credits_accumulated = 0
 
-    # continue adding courses until all requirements have been met
+    # add courses until all requirements have been met
     while (not all_courses_selected):
         course_added = False
 
@@ -276,10 +313,10 @@ def schedule_core_courses() -> None:
             if "concurrent" in course_info.keys():
                 concurrent = course_info["concurrent"]
 
-            # add course to schedule if it has not already been added
+            # attempt to add course to schedule if it has not already been added
             if (course not in courses_taken):
 
-                # ensure that no more than half of credits are CS
+                # ensure that current semester does not have more than a user-defined # of CS credits
                 if(current_semester_credits < (math.floor(minimum_credits[current_semester] * max_CS_credit_percent))):
 
                     # if the course has no pre-requisites, add current course to schedule
@@ -327,7 +364,7 @@ def schedule_core_courses() -> None:
                                     )
                                     break
 
-                            # if there is a list of pre-requisites
+                            # if there is a list of pre-requisites (from 1 to inf)
                             else:
 
                                 # if there is only one pre-requisite
@@ -336,7 +373,8 @@ def schedule_core_courses() -> None:
                                     # add the current course because pre-requisite has already been taken
                                     if (prereqs[0] in courses_taken) and (
                                             (prereqs[0] not in current_semester_classes) or (prereqs[0] == concurrent)):
-                                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                                            = add_course(
                                             current_semester, course_info, current_semester_classes, course, courses_taken,
                                             total_credits_accumulated, current_semester_credits
                                         )
@@ -356,7 +394,8 @@ def schedule_core_courses() -> None:
 
                                     # add the current course because pre-requisite has already been taken
                                     if required_courses_taken:
-                                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
+                                            = add_course(
                                             current_semester, course_info, current_semester_classes, course, courses_taken,
                                             total_credits_accumulated, current_semester_credits
                                         )
@@ -367,7 +406,7 @@ def schedule_core_courses() -> None:
                         if total_credits_accumulated >= total_credits_for_degree:
                             current_semester_info = update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes)
                             course_schedule.append(current_semester_info)
-                            all_courses_selected = True
+                            all_courses_selected = True # this will end the while loop
 
                         # semester credit requirements reached, BSCS requirements NOT reached
                         elif current_semester_credits >= minimum_credits[current_semester]:
@@ -384,12 +423,11 @@ def schedule_core_courses() -> None:
 
         # if no required course was added
         if (not course_added):
-
             # if in a pre-determined amount of time to NOT take 3000+ level classes
             if total_credits_accumulated < credits_for_3000_level:
                 current_semester_classes.append("Gen Ed or Elective")
             else:
-                if min_3000_course != 0 and current_semester_classes.count("CMP SCI 3000+ level elective") < max_CS_electives_per_semester:
+                if min_3000_course != 0 and (current_semester_classes.count("CMP SCI 3000+") <= max_CS_electives_per_semester):
                     current_semester_classes.append("CMP SCI 3000+ level elective")
                     min_3000_course -= 1
                 else:
@@ -416,7 +454,14 @@ def schedule_core_courses() -> None:
                 semester += 1
                 current_semester = user_semesters[(semester - 1) % len(user_semesters)]
     print_dictionary(course_schedule)
-    print(f"number of 3000-level left to take: {min_3000_course}")
-    print(f"number of credits earned: {total_credits_accumulated}")
+    gen_ed_count = 0
+    cmp_sci_3000_count = 0
+    for index, entry in enumerate(course_schedule):
+        gen_ed_count += entry['schedule'].count("Gen Ed or Elective")
+        cmp_sci_3000_count += entry['schedule'].count("CMP SCI 3000+ level elective")
+    print(f"Gen-Ed Credits: {gen_ed_count * 3}")
+    print(f"CMP SCI elective credits: {cmp_sci_3000_count * 3}")
+    print(f"Required CMP SCI core (non-elective) credits: {total_credits_accumulated - (cmp_sci_3000_count * 3) - (gen_ed_count * 3)}")
+    print(f"Total credits: {total_credits_accumulated}")
 
 schedule_core_courses()
