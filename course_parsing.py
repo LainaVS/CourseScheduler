@@ -204,13 +204,18 @@ def build_semester_list(first_season="Fall", include_fall=True, include_spring=T
         return ValueError("Fall or Spring must be selected")
     return [season for season in possible_seasons if season in selected_semesters]
 
-def update_semester_info():
-    pass
-
+def update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes):
+    current_semester_info = {
+        'semester': current_semester,
+        'semester number': semester,
+        'credits': current_semester_credits,
+        'schedule': current_semester_classes
+    }
+    return current_semester_info
 
 def schedule_core_courses() -> None:
     """
-    Create the multi-semester course schedule for core courses.
+    Create the multi-semester course schedule.
     """
     # create dictionaries for each course type
     core_courses = parse_courses("CoreCourses", "course")
@@ -234,18 +239,23 @@ def schedule_core_courses() -> None:
     min_3000_course = 5
 
     # set user's scheduling preferences
-    current_semester = "Spring"
+    current_semester = "Fall"
     include_fall = True
     include_spring = True
-    include_summer = True
+    include_summer = False
     user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
     minimum_credits = {
-        'Fall': 15,
-        'Spring': 15,
-        'Summer': 6
+        'Fall': 12,
+        'Spring': 12,
+        'Summer': 3
     }
+    if(include_summer):
+        minimum_credits['Summer'] = 0
     max_CS_credit_percent = 0.50 # sets the total % of courses per semester that will be core/required classes
     total_credits_for_degree = 120
+    max_CS_electives_per_semester = 2
+    credits_for_3000_level = sum(minimum_credits.values()) * 2.5
+
 
     # store temporary semester schedule information
     course_schedule = []
@@ -355,23 +365,13 @@ def schedule_core_courses() -> None:
                     if course_added:
                         # overall BSCS requirements reached
                         if total_credits_accumulated >= total_credits_for_degree:
-                            current_semester_info = {
-                                'semester': current_semester,
-                                'semester number': semester,
-                                'credits': current_semester_credits,
-                                'schedule': current_semester_classes
-                            }
+                            current_semester_info = update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes)
                             course_schedule.append(current_semester_info)
                             all_courses_selected = True
 
                         # semester credit requirements reached, BSCS requirements NOT reached
                         elif current_semester_credits >= minimum_credits[current_semester]:
-                            current_semester_info = {
-                                'semester': current_semester,
-                                'semester number': semester,
-                                'credits': current_semester_credits,
-                                'schedule': current_semester_classes
-                            }
+                            current_semester_info = update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes)
                             course_schedule.append(current_semester_info)
 
                             # update semester info
@@ -385,36 +385,29 @@ def schedule_core_courses() -> None:
         # if no required course was added
         if (not course_added):
 
-            # add a 3000-level CS course
-            if total_credits_accumulated > 80 and min_3000_course != 0:
-                current_semester_classes.append("CMP SCI 3000+ level elective")
-                min_3000_course = min_3000_course - 1
-
-            # add a general elective
-            else:
+            # if in a pre-determined amount of time to NOT take 3000+ level classes
+            if total_credits_accumulated < credits_for_3000_level:
                 current_semester_classes.append("Gen Ed or Elective")
+            else:
+                if min_3000_course != 0 and current_semester_classes.count("CMP SCI 3000+ level elective") < max_CS_electives_per_semester:
+                    current_semester_classes.append("CMP SCI 3000+ level elective")
+                    min_3000_course -= 1
+                else:
+                    current_semester_classes.append("Gen Ed or Elective")
+
+            # increment credits by 3 (the most common number of credits for a class)
             total_credits_accumulated = total_credits_accumulated + 3
             current_semester_credits = current_semester_credits + 3
 
             # BSCS requirements have been reached
             if total_credits_accumulated >= total_credits_for_degree:
-                current_semester_info = {
-                    'semester': current_semester,
-                    'semester number': semester,
-                    'credits': current_semester_credits,
-                    'schedule': current_semester_classes
-                }
+                current_semester_info = update_semester_info(current_semester,semester, current_semester_credits, current_semester_classes)
                 course_schedule.append(current_semester_info)
                 all_courses_selected = True
 
             # semester requirements have been reached
             elif current_semester_credits >= minimum_credits[current_semester]:
-                current_semester_info = {
-                    'semester': current_semester,
-                    'semester number': semester,
-                    'credits': current_semester_credits,
-                    'schedule': current_semester_classes
-                }
+                current_semester_info = update_semester_info(current_semester, semester, current_semester_credits, current_semester_classes)
                 course_schedule.append(current_semester_info)
 
                 # update semester info
@@ -423,5 +416,7 @@ def schedule_core_courses() -> None:
                 semester += 1
                 current_semester = user_semesters[(semester - 1) % len(user_semesters)]
     print_dictionary(course_schedule)
+    print(f"number of 3000-level left to take: {min_3000_course}")
+    print(f"number of credits earned: {total_credits_accumulated}")
 
 schedule_core_courses()
