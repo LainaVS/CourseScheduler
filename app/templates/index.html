@@ -21,18 +21,34 @@
                 <option value="{{required_course}}">{{ required_course }}</option>
                 {% endfor %}
             </select>
-            <input type="checkbox" id="summer" name="include_summer">
-            <label for="summer">Summer Semester?</label><br>
-            {% else %}   
+            <label for="summer">Summer Semester?</label>
+            <input type="checkbox" id="summer" name="include_summer"><br>
+            {% else %}
             <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
             <input type="hidden" name="current_semester" value="{{ current_semester }}">
             <input type="hidden" name="courses_taken" value="{{ courses_taken }}">
+            <input type="hidden" name="semesters" value="{{ semesters }}">
+            <h2>Total Accumulated Credits: {{ total_credits }}!</h1>
+            {% for semester in course_schedule_display %}
+                <h3>Semester: {{ semester.semester }}</h1>
+                <h3>Credits for current semester: {{ semester.credits }}</h1>
+                <h3>Courses: {{ semester.schedule }}</h1>
+                <p>------------------------------------------------------------------------------------</p>
+            {% endfor %}
             {% endif %}
+            <label for="minimum_semester_credits">Number of Credits for Current Semester:</label>
+            <select name="minimum_semester_credits" id="minimum_credits">
+                {% for credits in minimum_semester_credits %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endfor %}
+            </select>
             <br><br>
             <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
             <input type="hidden" name="total_credits" value="{{ total_credits }}">
             <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
             <input type="hidden" name="semester_number" value="{{ semester_number }}">
+            <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
+            <input type="hidden" name="include_summer" value="{{ include_summer }}">
 
             <input type="submit" value="Create Schedule">
         </form>

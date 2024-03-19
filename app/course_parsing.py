@@ -171,7 +171,7 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
         course_added = True
     return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
 
-def build_semester_list(first_season="Fall", include_fall=True, include_spring=True, include_summer=True) -> list:
+def build_semester_list(first_season="Fall", include_summer=True) -> list:
     possible_semesters = ["Fall", "Spring", "Summer"]
 
     # Reorder the seasons based on the user's preference for the first season
@@ -180,10 +180,8 @@ def build_semester_list(first_season="Fall", include_fall=True, include_spring=T
 
     # Filter out seasons based on user preferences
     selected_semesters = []
-    if include_fall:
-        selected_semesters.append("Fall")
-    if include_spring:
-        selected_semesters.append("Spring")
+    selected_semesters.append("Fall")
+    selected_semesters.append("Spring")
     if include_summer:
         selected_semesters.append("Summer")
 
@@ -212,7 +210,7 @@ def schedule_core_courses() -> None:
     include_fall = True
     include_spring = True
     include_summer = False
-    user_semesters = build_semester_list(current_semester, include_fall, include_spring, include_summer)
+    user_semesters = build_semester_list(current_semester, include_summer)
     min_credits_per_semester = 15
 
     # set scheduling information
