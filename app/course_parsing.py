@@ -1,13 +1,8 @@
 import xmltodict
 import json
 from collections.abc import Mapping
-import xml.etree.ElementTree as ET
 from typing import Union
 import copy
-
-# Parse the XML file
-tree = ET.parse('xml/course_data.xml')
-root = tree.getroot()
 
 def print_dictionary(course_dictionary: dict) -> None:
     """
@@ -128,7 +123,7 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
     # return dictionary with finalized course type dictionary
     return updated_course_dict
 
-def parse_courses(course_type: str, course_tag: str) -> dict:
+def parse_courses() -> dict:
     """
     Parses relevant information from XML and return dictionaries.
 
@@ -141,28 +136,29 @@ def parse_courses(course_type: str, course_tag: str) -> dict:
         - a list(if only one course for that key exists) or
         - a dictionary (if multiple courses for that key exist)
 
-    Parameters
-    ----------
-    course_type:    str
-                    defines the XML tag for the first child of the root, i.e.
-                    CoreCourses, Electives, etc.
-    course_tag      str
-                    defines the XML tag for the first child of the course_type
-
     Returns
     ----------
     dict
                     The dictionary that holds all course information
     """
     # open xml document to begin parsing
-    with open('xml/course_data.xml') as fd:
+    with open('app/xml/course_data.xml') as fd:
         doc = xmltodict.parse(fd.read())
 
     # create a dictionary with course information to further parse
     csbs_req = doc["CSBSReq"]
 
+    core_courses = build_dictionary(csbs_req["CoreCourses"]["course"])
+    math_courses = build_dictionary(csbs_req["MathandStatistics"]["course"])
+    other_courses = build_dictionary(csbs_req["OtherCourses"]["course"])
+    elective_courses = build_dictionary(csbs_req["Electives"]["course"])
+
+    # add math and other courses to core courses so that all BSCS requirements are included
+    core_courses.update(math_courses)
+    core_courses.update(other_courses)
+
     # return finalized dictionary of the course type
-    return build_dictionary(csbs_req[course_type][course_tag])
+    return core_courses, elective_courses
 
 def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
     # Add course, credits to current semester and list of courses taken, credits earned
@@ -202,13 +198,7 @@ def schedule_core_courses() -> None:
     Create the multi-semester course schedule for core courses.
     """
     # create dictionaries for each course type
-    core_courses = parse_courses("CoreCourses", "course")
-    math_courses = parse_courses("MathandStatistics", "course")
-    other_courses = parse_courses("OtherCourses", "course")
-
-    # add math and other courses to core courses so that all BSCS requirements are included
-    core_courses.update(math_courses)
-    core_courses.update(other_courses)
+    core_courses, elective_courses = parse_courses()
 
     # sort required courses by course number
     required_courses_list = sorted(list(core_courses.items()), key=lambda d: d[1]["course_number"])
@@ -237,8 +227,6 @@ def schedule_core_courses() -> None:
     total_credits_accumulated = 0
 
     min_3000_course = 5
-
-    print(required_courses_list[9])
 
     # continue adding courses until all requirements have been met
     while (not all_courses_selected):
@@ -375,6 +363,6 @@ def schedule_core_courses() -> None:
                 current_semester_classes = []
                 semester += 1
                 current_semester = user_semesters[(semester + 1) % len(user_semesters)]
-    print_dictionary(course_schedule)
+    # print_dictionary(course_schedule)
 
 schedule_core_courses()
