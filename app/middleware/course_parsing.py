@@ -247,11 +247,8 @@ def generate_semester(request) -> None:
 
             # add course to schedule if it has not already been added
             if (course not in courses_taken):
-
                 # if the course has no pre-requisites, add current course to schedule
                 if len(course_info["prerequisite"]) == 0:
-                    if course == "CMP SCI 4760":
-                        print('here')
                     if (course != "ENGLISH 3130"):
                         course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
                         = add_course(
