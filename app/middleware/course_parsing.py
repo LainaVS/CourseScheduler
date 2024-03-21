@@ -2,7 +2,6 @@ import xmltodict
 import json
 from collections.abc import Mapping
 from typing import Union
-import copy
 
 def print_dictionary(course_dictionary: dict) -> None:
     """
@@ -205,20 +204,28 @@ def generate_semester(request) -> None:
     waived_courses = None
     courses_taken = []
 
-    if ("waived_courses" in request.form.keys()):
-        waived_courses = request.form["waived_courses"]
-    if ("courses_taken" in request.form.keys()):
-        courses_taken = json.loads(request.form["courses_taken"])
-
     include_summer = False
 
-    if len(courses_taken) == 0:
+    if semester == 0:
         user_semesters = build_semester_list(current_semester, include_summer)
         if "include_summer" in request.form.keys():
-            include_summer = True
+            include_summer = True if request.form["include_summer"] == "True" else False
+        if ("courses_taken" in request.form.keys()):
+            courses_taken = request.form.getlist("courses_taken")
+        ## Do we need separate selects for waived/taken courses or should we combine them to one? If they say taken, do we need to add the credits to the total accumulated credits?
+        if ("waived_courses" in request.form.keys()):
+            ## Add waived courses to courses_taken list, so they can't be add when building a semester
+            courses_taken.extend(request.form.getlist("waived_courses"))
+            # Removes duplicates in case a class was added from both waived and taken select options
+            courses_taken = list(dict.fromkeys(courses_taken))
     else:
         user_semesters = request.form["semesters"]
-        include_summer = request.form["include_summer"]
+        include_summer = True if request.form["include_summer"] == "True" else False
+        if ("courses_taken" in request.form.keys()):
+            # courses_taken is returned as a string (that looks like an array), so we have to convert it to a list
+            courses_taken = request.form["courses_taken"][1:-1] # this removes the '[]' from the string
+            courses_taken = courses_taken.replace("'", "") # this removes the string characters around each course
+            courses_taken = courses_taken.split(", ") # this creates a list delimited by the ', ' that the courses are separated by
 
     min_credits_per_semester = int(request.form["minimum_semester_credits"])
     min_3000_course = int(request.form["min_3000_course"])
@@ -243,6 +250,8 @@ def generate_semester(request) -> None:
 
                 # if the course has no pre-requisites, add current course to schedule
                 if len(course_info["prerequisite"]) == 0:
+                    if course == "CMP SCI 4760":
+                        print('here')
                     if (course != "ENGLISH 3130"):
                         course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
                         = add_course(
@@ -258,6 +267,7 @@ def generate_semester(request) -> None:
                     prereqs = course_info["prerequisite"]
 
                     # iterate through pre-requisites for the current course
+                    required_courses_taken = False
                     for prereqs in course_info["prerequisite"]:
                         # if there is only one pre-requisite (a string)
                         if isinstance(prereqs, str):
@@ -271,11 +281,9 @@ def generate_semester(request) -> None:
                                     break
                             # add the current course because pre-requisite has already been taken
                             elif (prereqs in courses_taken) and ((prereqs not in current_semester_classes) or (prereqs == concurrent)):
-                                course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
-                                = add_course(
-                                current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
-                                )
-                                break
+                                required_courses_taken = True
+                            else:
+                                required_courses_taken = False
 
                         # if there is a list of pre-requisites
                         else:
@@ -302,7 +310,12 @@ def generate_semester(request) -> None:
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
                                         current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
                                     )
+                                    required_courses_taken = False
                                     break
+                    if required_courses_taken:
+                        course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
+                            current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                        )
 
                 if course_added:
                     if total_credits_accumulated >= 120:
@@ -371,8 +384,7 @@ def generate_semester(request) -> None:
         else:
             current_semester = "Fall"
     else:
-        current_semester = "Fall"
-    
+        current_semester = "Fall"   
 
     return {
         "required_courses_dict_list": json.dumps(required_courses_dict_list),
@@ -380,7 +392,7 @@ def generate_semester(request) -> None:
         "total_credits": total_credits_accumulated,
         "course_schedule": json.dumps(course_schedule),
         "course_schedule_display": course_schedule,
-        "courses_taken": json.dumps(courses_taken),
+        "courses_taken": courses_taken,
         "semester_number": semester,
         "waived_courses": waived_courses,
         "current_semester": current_semester,
