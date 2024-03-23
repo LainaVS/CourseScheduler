@@ -18,48 +18,71 @@
     <body>
         <form id="form" action="/schedule" method="post">
             {% if initial_load %}
+            <!-- Select current semester-->
             <label for="current_semester">Choose a Starting Semester:</label>
             <select name="current_semester" id="starting_semester">
                 {% for semester in semesters %}
                 <option value="{{semester}}">{{ semester }}</option>
                 {% endfor %}
             </select>
+            <br><br>
+
+            <!-- Select summer semester boolean -->
+            <label for="summer">Summer Semester?</label>
+            <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
+            <br><br>
+
+            <!-- Select waived courses-->
             <label for="waived_courses">Select waived courses:</label>
             <select name="waived_courses" id="waived" multiple>
                 {% for required_course in required_courses %}
                 <option value="{{required_course}}">{{ required_course }}</option>
                 {% endfor %}
             </select>
+            <br><br>
+
+            <!-- Select courses taken -->
             <label for="courses_taken">Select taken courses:</label>
             <select name="courses_taken" id="taken" multiple>
                 {% for required_course in required_courses %}
                 <option value="{{required_course}}">{{ required_course }}</option>
                 {% endfor %}
             </select>
+            <br><br>
+
+            <!-- Select number of credits already earned -->
             <label for="total_credits">Select how many credits you currently have:</label>
             <select name="total_credits" id="starting_credits">
                 {% for credits in starting_credits %}
                 <option value="{{credits}}">{{ credits }}</option>
                 {% endfor %}
             </select>
-            <label for="summer">Summer Semester?</label>
-            <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
             <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
+            <br><br>
+
             {% else %}
+            <!-- Display schedule -->
             <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
             <input type="hidden" name="current_semester" value="{{ current_semester }}">
             <input type="hidden" name="courses_taken" value="{{ courses_taken }}">
             <input type="hidden" name="semesters" value="{{ semesters }}">
             <input type="hidden" name="total_credits" value="{{ total_credits }}">
             <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
-            <h2>Total Accumulated Credits: {{ total_credits }}!</h1>
+            <h2>Total Accumulated Credits: {{ total_credits }}!</h2>
             {% for semester in course_schedule_display %}
-                <h3>Semester: {{ semester.semester }}</h1>
-                <h3>Credits for current semester: {{ semester.credits }}</h1>
-                <h3>Courses: {{ semester.schedule }}</h1>
-                <p>------------------------------------------------------------------------------------</p>
+                <h3>Semester: {{ semester.semester }}</h3>
+                <h3>Credits for current semester: {{ semester.credits }}</h3>
+                <h3>Courses:</h3>
+                <ul>
+                    {% for course in semester.schedule %}
+                        <li>{{ course }}</li>
+                    {% endfor %}
+                </ul>
+                <hr>
             {% endfor %}
             {% endif %}
+
+            <!-- Ask user for number of credits next semester-->
             <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
             <select name="minimum_semester_credits" id="minimum_credits">
                 {% for credits in minimum_semester_credits %}
