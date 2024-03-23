@@ -194,7 +194,6 @@ def generate_semester(request) -> None:
     """
     Create the multi-semester course schedule for core courses.
     """
-    required_courses_dict_list = json.loads(request.form['required_courses_dict_list'])
     total_credits_accumulated = int(request.form["total_credits"])
     course_schedule = json.loads(request.form["course_schedule"])
 
@@ -218,7 +217,17 @@ def generate_semester(request) -> None:
             courses_taken.extend(request.form.getlist("waived_courses"))
             # Removes duplicates in case a class was added from both waived and taken select options
             courses_taken = list(dict.fromkeys(courses_taken))
+
+        required_courses_dict = json.loads(request.form['required_courses_dict'])
+        for course in courses_taken:
+            try:
+                del required_courses_dict[course]
+            except:
+                print(f"Course: {course} was not found in the required_courses_dict")
+                    
+        required_courses_dict_list = sorted(list(required_courses_dict.items()), key=lambda d: d[1]["course_number"])
     else:
+        required_courses_dict_list = json.loads(request.form['required_courses_dict_list'])
         user_semesters = request.form["semesters"]
         include_summer = True if request.form["include_summer"] == "True" else False
         if ("courses_taken" in request.form.keys()):

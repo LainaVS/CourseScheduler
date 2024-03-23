@@ -11,12 +11,11 @@ def index():
 
     # sort required courses by course number
     required_courses_list = sorted(list(core_courses.keys()))
-    required_courses_dict_list = sorted(list(core_courses.items()), key=lambda d: d[1]["course_number"])
 
     return render_template('index.html',
                            initial_load=True,
                            required_courses=required_courses_list,
-                           required_courses_dict_list=json.dumps(required_courses_dict_list),
+                           required_courses_dict=json.dumps(core_courses),
                            semesters=semesters,
                            total_credits=0,
                            course_schedule=json.dumps([]),
@@ -24,7 +23,8 @@ def index():
                            include_summer=False,
                            semester_number=0,
                            minimum_semester_credits=list(map(lambda x: x, range(3, 22))), # create list for minimum credits dropdown
-                           min_3000_course=5
+                           min_3000_course=5,
+                           starting_credits=list(map(lambda x: x, range(0, 201))), # create list for minimum credits dropdown
     )
 
 @app.route('/schedule', methods=["POST"])
