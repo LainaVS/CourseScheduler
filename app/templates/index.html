@@ -1,64 +1,92 @@
 <!doctype html>
 <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script type="text/javascript">
     function handleClick(checkbox){
         var starting_semester_dropdown = document.getElementById("starting_semester");
         if (!checkbox.checked) {
-            starting_semester_dropdown.remove(2); // remove summer option 
+            starting_semester_dropdown.remove(2); // remove summer option
         } else {
             var option = document.createElement("option");
             option.text = "Summer";
-            starting_semester_dropdown.add(option); 
+            starting_semester_dropdown.add(option);
         }
-        
+
     }
  </script>
 <html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
     <body>
         <form id="form" action="/schedule" method="post">
             {% if initial_load %}
-            <!-- Select current semester-->
-            <label for="current_semester">Choose a Starting Semester:</label>
-            <select name="current_semester" id="starting_semester">
-                {% for semester in semesters %}
-                <option value="{{semester}}">{{ semester }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
+            <div class = "cover-page-background">
+                <div class = "logo-container">
 
-            <!-- Select summer semester boolean -->
-            <label for="summer">Summer Semester?</label>
-            <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
-            <br><br>
+                </div>
+                <div class = "form-container">
+                    <img src = "https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
+                    <br>
+                    <!-- Select current semester-->
+                    <label for="current_semester">Starting Semester</label>
+                    <select name="current_semester" id="starting_semester">
+                        {% for semester in semesters %}
+                        <option value="{{semester}}">{{ semester }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
 
-            <!-- Select waived courses-->
-            <label for="waived_courses">Select waived courses:</label>
-            <select name="waived_courses" id="waived" multiple>
-                {% for required_course in required_courses %}
-                <option value="{{required_course}}">{{ required_course }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
+                    <!-- Select summer semester boolean -->
+                    <label for="summer">Summer Semester</label>
+                    <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
+                    <br><br>
 
-            <!-- Select courses taken -->
-            <label for="courses_taken">Select taken courses:</label>
-            <select name="courses_taken" id="taken" multiple>
-                {% for required_course in required_courses %}
-                <option value="{{required_course}}">{{ required_course }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
+                    <!-- Select waived courses-->
+                    <label for="waived_courses">Select Waived Courses</label>
+                    <select name="waived_courses" id="waived" multiple>
+                        {% for required_course in required_courses %}
+                        <option value="{{required_course}}">{{ required_course }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
 
-            <!-- Select number of credits already earned -->
-            <label for="total_credits">Select how many credits you currently have:</label>
-            <select name="total_credits" id="starting_credits">
-                {% for credits in starting_credits %}
-                <option value="{{credits}}">{{ credits }}</option>
-                {% endfor %}
-            </select>
-            <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
-            <br><br>
+                    <!-- Select courses taken -->
+                    <label for="courses_taken">Select Earned Credits</label>
+                    <select name="courses_taken" id="taken" multiple>
+                        {% for required_course in required_courses %}
+                        <option value="{{required_course}}">{{ required_course }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+
+                    <!-- Select number of credits already earned -->
+                    <label for="total_credits">Current Credits Earned</label>
+                    <select name="total_credits" id="starting_credits">
+                        {% for credits in starting_credits %}
+                        <option value="{{credits}}">{{ credits }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
+                    <br><br>
+
+                    <!-- Ask user for number of credits for first semester-->
+                    <label for="initial_minimum_semester_credits">Minimum Credits for First Semester</label>
+                    <select name="minimum_semester_credits" id="initial_minimum_credits">
+                        {% for credits in minimum_semester_credits %}
+                        <option value="{{credits}}">{{ credits }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+                    <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
+                    <input type="hidden" name="semester_number" value="{{ semester_number }}">
+                    <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
+                    <input type="hidden" name="include_summer" value="{{ include_summer }}">
+                    <input type="submit" value="Start Schedule">
+                </div>
+            </div>
 
             {% else %}
             <!-- Display schedule -->
@@ -68,7 +96,8 @@
             <input type="hidden" name="semesters" value="{{ semesters }}">
             <input type="hidden" name="total_credits" value="{{ total_credits }}">
             <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
-            <h2>Total Accumulated Credits: {{ total_credits }}!</h2>
+            <h2>Total Accumulated Credits: {{ total_credits }}</h2>
+            <hr>
             {% for semester in course_schedule_display %}
                 <h3>Semester: {{ semester.semester }}</h3>
                 <h3>Credits for current semester: {{ semester.credits }}</h3>
@@ -80,8 +109,6 @@
                 </ul>
                 <hr>
             {% endfor %}
-            {% endif %}
-
             <!-- Ask user for number of credits next semester-->
             <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
             <select name="minimum_semester_credits" id="minimum_credits">
@@ -94,8 +121,9 @@
             <input type="hidden" name="semester_number" value="{{ semester_number }}">
             <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
             <input type="hidden" name="include_summer" value="{{ include_summer }}">
+            <input type="submit" value="Continue Schedule">
+            {% endif %}
 
-            <input type="submit" value="Create Schedule">
         </form>
     </body>
 </html>
