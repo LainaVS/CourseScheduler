@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Notes:
+	There are 3 sets of classes that are included in this file:
+		All Computer Science courses < 5000
+		Math courses - only those required for the BS in CS (no other Math courses are included)
+		English course - only one required for the BS in CS (no other English courses are included)
+
+	Rotation terms were provided by the Undergraduate Course Rotation Document
+		https://www.umsl.edu/cmpsci/undergraduate-studies/3yearcourse.html
+		From comparing the Rotations on this document to myView, some of the rotations
+		do not seem to be updated.
+
+	Rotation terms for Math/English courses were provided by the Course Dependencies Flyer
+		on the UMSL CS website
+		https://www.umsl.edu/cmpsci/undergraduate-studies/BS-cs.html
+
+-->
+<Rotations xsi:noNamespaceSchemaLocation="http://comp.umsl.edu/~xml_data/Rotation.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<rotation_year>
+		<year>2024</year>
+		<!-- Computer Science Courses < 5000 -->
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>1000</course_number>
+			<course_name>Computer Science Experiences</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>E</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>1250</course_number>
+			<course_name>Introduction to Computing</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>2250</course_number>
+			<course_name>Programming and Data Structures</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>2261</course_number>
+			<course_name>Object-Oriented Programming</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>2700</course_number>
+			<course_name>Computer Organization and Architecture</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>2750</course_number>
+			<course_name>Linux Environment and Programming</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3010</course_number>
+			<course_name>Web Programming</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3130</course_number>
+			<course_name>Design and Analysis of Algorithms</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O, H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3410</course_number>
+			<course_name>Video Game Design and Development</course_name>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3411</course_number>
+			<course_name>Introduction to Data Visualization</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3702</course_number>
+			<course_name>Introduction to Cyber Threats and Defense</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3780</course_number>
+			<course_name>Software Security</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>3990</course_number>
+			<course_name>Undergraduate Internship</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>A</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>A</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>A</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4010</course_number>
+			<course_name>Advanced Web Development with Java</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4011</course_number>
+			<course_name>Web Development with Advanced JavaScript</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4012</course_number>
+			<course_name>Introduction to Enterprise Microservice Development</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4151</course_number>
+			<course_name>Introduction to Statistical Methods for Data Science</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4020</course_number>
+			<course_name>Introduction to Android Apps: Android Fundamentals</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4200</course_number>
+			<course_name>Python for Scientific Computing and Data Science</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4220</course_number>
+			<course_name>Introduction to iOS Programming and Apps</course_name>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4222</course_number>
+			<course_name>iOS Apps</course_name>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4250</course_number>
+			<course_name>Programming Languages</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4280</course_number>
+			<course_name>Program Translation Project</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4300</course_number>
+			<course_name>Introduction to Artificial Intelligence</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4320</course_number>
+			<course_name>Introduction to Evolutionary Computation</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4340</course_number>
+			<course_name>Introduction to Machine Learning</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4342</course_number>
+			<course_name>Introduction to Data Mining</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4370</course_number>
+			<course_name>Introduction to Biological Data Science</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>E</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4390</course_number>
+			<course_name>Introduction to Deep Learning</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4410</course_number>
+			<course_name>Introduction to Computer Graphics</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O, H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4420</course_number>
+			<course_name>Introduction to Digital Image Processing and Computer Vision</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>E</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4500</course_number>
+			<course_name>Introduction to the Software Profession</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4610</course_number>
+			<course_name>Database Management Systems</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>E</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4700</course_number>
+			<course_name>Computer Forensics</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4730</course_number>
+			<course_name>Computer Networks and Communications</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4732</course_number>
+			<course_name>Introduction to Cryptography for Computer Security</course_name>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4750</course_number>
+			<course_name>Introduction to Cloud Computing</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4760</course_number>
+			<course_name>Operating Systems</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4782</course_number>
+			<course_name>Information Security</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4792</course_number>
+			<course_name>Introduction to Mobile Computing, Networking, and Security</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>H</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4794</course_number>
+			<course_name>Introduction to Security of IoT Systems</course_name>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4880</course_number>
+			<course_name>Individual Studies in Computer Science</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>A</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>A</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>A</time_code>
+			</rotation_term>
+		</course>
+
+		<!-- Mathematics Courses (Required for BSCS) -->
+		<course>
+			<subject>MATH</subject>
+			<course_number>1320</course_number>
+			<course_name>Applied Statistics I</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>MATH</subject>
+			<course_number>1800</course_number>
+			<course_name>Analytic Geometry and Calculus I</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>MATH</subject>
+			<course_number>1900</course_number>
+			<course_name>Analytic Geometry and Calculus II</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>MATH</subject>
+			<course_number>2450</course_number>
+			<course_name>Elementary Linear Algebra</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+		<course>
+			<subject>MATH</subject>
+			<course_number>3000</course_number>
+			<course_name>Discrete Structures</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+
+		<!-- English Course (Required for BSCS)-->
+		<course>
+			<subject>ENGLISH</subject>
+			<course_number>3130</course_number>
+			<course_name>Technical Writing</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E, O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Summer</term>
+				<time_code>O</time_code>
+			</rotation_term>
+		</course>
+
+	</rotation_year>
+</Rotations>

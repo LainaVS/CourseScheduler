@@ -1,0 +1,78 @@
+<!doctype html>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    function handleClick(checkbox){
+        var starting_semester_dropdown = document.getElementById("starting_semester");
+        if (!checkbox.checked) {
+            starting_semester_dropdown.remove(2); // remove summer option 
+        } else {
+            var option = document.createElement("option");
+            option.text = "Summer";
+            starting_semester_dropdown.add(option); 
+        }
+        
+    }
+ </script>
+<html>
+    <body>
+        <form id="form" action="/schedule" method="post">
+            {% if initial_load %}
+            <label for="current_semester">Choose a Starting Semester:</label>
+            <select name="current_semester" id="starting_semester">
+                {% for semester in semesters %}
+                <option value="{{semester}}">{{ semester }}</option>
+                {% endfor %}
+            </select>
+            <label for="waived_courses">Select waived courses:</label>
+            <select name="waived_courses" id="waived" multiple>
+                {% for required_course in required_courses %}
+                <option value="{{required_course}}">{{ required_course }}</option>
+                {% endfor %}
+            </select>
+            <label for="courses_taken">Select taken courses:</label>
+            <select name="courses_taken" id="taken" multiple>
+                {% for required_course in required_courses %}
+                <option value="{{required_course}}">{{ required_course }}</option>
+                {% endfor %}
+            </select>
+            <label for="total_credits">Select how many credits you currently have:</label>
+            <select name="total_credits" id="starting_credits">
+                {% for credits in starting_credits %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endfor %}
+            </select>
+            <label for="summer">Summer Semester?</label>
+            <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
+            <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
+            {% else %}
+            <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
+            <input type="hidden" name="current_semester" value="{{ current_semester }}">
+            <input type="hidden" name="courses_taken" value="{{ courses_taken }}">
+            <input type="hidden" name="semesters" value="{{ semesters }}">
+            <input type="hidden" name="total_credits" value="{{ total_credits }}">
+            <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
+            <h2>Total Accumulated Credits: {{ total_credits }}!</h1>
+            {% for semester in course_schedule_display %}
+                <h3>Semester: {{ semester.semester }}</h1>
+                <h3>Credits for current semester: {{ semester.credits }}</h1>
+                <h3>Courses: {{ semester.schedule }}</h1>
+                <p>------------------------------------------------------------------------------------</p>
+            {% endfor %}
+            {% endif %}
+            <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
+            <select name="minimum_semester_credits" id="minimum_credits">
+                {% for credits in minimum_semester_credits %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
+            <input type="hidden" name="semester_number" value="{{ semester_number }}">
+            <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
+            <input type="hidden" name="include_summer" value="{{ include_summer }}">
+
+            <input type="submit" value="Create Schedule">
+        </form>
+    </body>
+</html>
