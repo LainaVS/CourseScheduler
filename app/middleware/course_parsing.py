@@ -206,9 +206,9 @@ def generate_semester(request) -> None:
     include_summer = False
 
     if semester == 0:
-        user_semesters = build_semester_list(current_semester, include_summer)
         if "include_summer" in request.form.keys():
-            include_summer = True if request.form["include_summer"] == "True" else False
+            print(request.form["include_summer"])
+            include_summer = True if request.form["include_summer"] == "on" else False ## Not sure why it's returning 'on' if checkbox is checked
         if ("courses_taken" in request.form.keys()):
             courses_taken = request.form.getlist("courses_taken")
         ## Do we need separate selects for waived/taken courses or should we combine them to one? If they say taken, do we need to add the credits to the total accumulated credits?
@@ -217,6 +217,8 @@ def generate_semester(request) -> None:
             courses_taken.extend(request.form.getlist("waived_courses"))
             # Removes duplicates in case a class was added from both waived and taken select options
             courses_taken = list(dict.fromkeys(courses_taken))
+
+        user_semesters = build_semester_list(current_semester, include_summer)
 
         required_courses_dict = json.loads(request.form['required_courses_dict'])
         for course in courses_taken:

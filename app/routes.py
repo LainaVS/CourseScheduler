@@ -5,7 +5,7 @@ from app.middleware.course_parsing import parse_courses, generate_semester
 @app.route('/')
 @app.route('/index')
 def index():
-    semesters = ["Fall", "Spring", "Summer"]
+    semesters = ["Fall", "Spring"]
     # create dictionaries for each course type
     core_courses, elective_courses = parse_courses()
 

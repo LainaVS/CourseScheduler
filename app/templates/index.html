@@ -1,10 +1,25 @@
 <!doctype html>
+<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    function handleClick(checkbox){
+        var starting_semester_dropdown = document.getElementById("starting_semester");
+        if (!checkbox.checked) {
+            starting_semester_dropdown.remove(2); // remove summer option 
+        } else {
+            var option = document.createElement("option");
+            option.text = "Summer";
+            starting_semester_dropdown.add(option); 
+        }
+        
+    }
+ </script>
 <html>
     <body>
         <form id="form" action="/schedule" method="post">
             {% if initial_load %}
             <label for="current_semester">Choose a Starting Semester:</label>
-            <select name="current_semester" id="semesters">
+            <select name="current_semester" id="starting_semester">
                 {% for semester in semesters %}
                 <option value="{{semester}}">{{ semester }}</option>
                 {% endfor %}
@@ -28,7 +43,7 @@
                 {% endfor %}
             </select>
             <label for="summer">Summer Semester?</label>
-            <input type="checkbox" id="summer" name="include_summer"><br>
+            <input type="checkbox" id="summer" name="include_summer" onClick="handleClick(this)"><br>
             <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
             {% else %}
             <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
