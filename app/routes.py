@@ -22,7 +22,7 @@ def index():
                            elective_course=json.dumps(elective_courses),
                            include_summer=False,
                            semester_number=0,
-                           minimum_semester_credits=list(map(lambda x: x, range(1, 22))), # create list for minimum credits dropdown
+                           minimum_semester_credits=list(map(lambda x: x, range(3, 22))), # create list for minimum credits dropdown
                            min_3000_course=5,
                            starting_credits=list(map(lambda x: x, range(0, 201))), # create list for minimum credits dropdown
     )
@@ -30,6 +30,7 @@ def index():
 @app.route('/schedule', methods=["POST"])
 def schedule_generator():
     render_info = generate_semester(request)
+
     return render_template('index.html',
                            required_courses_dict_list=render_info["required_courses_dict_list"],
                            semesters=render_info["semesters"],

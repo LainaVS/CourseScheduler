@@ -2,7 +2,7 @@ body{
     margin: 0;
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) and (min-height: 768px){
     body {
         height: 100vh;
     }
@@ -46,10 +46,54 @@ body{
     }
 
     /* schedule page styles */
-    .scheduler{
-        background-color: whitesmoke;
+    /* ticker */
+    .scheduler .next-semester{
+        padding: 40px;
+        top: 0;
+        position: fixed;
+        width: 100vw;
+        max-height: 300px;
     }
+
     .next-semester{
-        background-color: floralwhite;
+        background-color: #fff4d5;
+    }
+
+    .next-semester label{
+        display: inline-block;
+        color: #a80b2d;
+        width: 250px;
+        font-weight: 600;
+    }
+
+    .next-semester select {
+        display: inline-block;
+        width: 50px;
+        vertical-align: top;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 300;
+    }
+
+    /* semester schedules */
+    .semester-schedules{
+        padding: 20px;
+        margin: 280px 20px 20px 20px;
+    }
+    .semester-schedules p{
+        margin: 0;
+    }
+    .scheduler {
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: 300;
+    }
+    .scheduler .semester-schedules label{
+        display: inline-block;
+        color: #a80b2d;
+        width: 250px;
+        font-weight: 600;
+    }
+    .scheduler .semester-schedules li{
+        list-style: none;
+        margin-left: 210px;
     }
 }

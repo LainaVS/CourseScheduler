@@ -98,28 +98,10 @@
                 <input type="hidden" name="semesters" value="{{ semesters }}">
                 <input type="hidden" name="total_credits" value="{{ total_credits }}">
                 <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
-
-                <!-- Individual semester information, repeating until credits are reached -->
-                {% for semester in course_schedule_display %}
-                    <h3>Semester: {{ semester.semester }}</h3>
-                    <h3>Credits for current semester: {{ semester.credits }}</h3>
-                    <h3>Courses:</h3>
-                    <ul>
-                        {% for course in semester.schedule %}
-                            <li>{{ course }}</li>
-                        {% endfor %}
-                    </ul>
-                <!-- Store value of next semester
-                {% if semester.semester == "Spring" %}
-                    {% set next_semester = semester %}
-                    <h3>YES!</h3>
-                {% endif %}-->
-                {% endfor %}
-
                 <!-- Ask user for number of credits next semester-->
                 <div class = "next-semester">
-                    <p>Total Accumulated Credits: {{ total_credits }}</p>
-                    <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
+                    <p><label>Total Accumulated Credits</label>{{ total_credits }}</p>
+                    <label for="minimum_semester_credits">Minimum Credits for Next Semester</label>
                     <select name="minimum_semester_credits" id="minimum_credits">
                         {% for credits in minimum_semester_credits %}
                         <option value="{{credits}}">{{ credits }}</option>
@@ -133,10 +115,28 @@
                     <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
                     <input type="hidden" name="include_summer" value="{{ include_summer }}">
                     <input type="submit" value="Continue Schedule">
+                    <br><br>
+                    <small>This course scheduling tool is not an official schedule.<br>
+                        Users should consult with academic advisors for guidance
+                        on course selection and scheduling.</small>
                 </div>
+
+                <!-- Individual semester information, repeating until credits are reached -->
+                <div class = "semester-schedules">
+                    {% for semester in course_schedule_display %}
+                        <p><label>Semester</label>{{ semester.semester }}</p>
+                        <p><label>Credits</label>{{ semester.credits }}</p>
+                        <p><label>Courses</label></p>
+                        <ul>
+                            {% for course in semester.schedule %}
+                            <li>{{ course }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+
             </div>
             {% endif %}
-
         </form>
     </body>
 </html>
