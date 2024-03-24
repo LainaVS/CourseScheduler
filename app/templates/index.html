@@ -1,6 +1,11 @@
-<!doctype html>
-<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
+<html>
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript">
     function handleClick(checkbox){
         var starting_semester_dropdown = document.getElementById("starting_semester");
         if (!checkbox.checked) {
@@ -13,23 +18,18 @@
 
     }
  </script>
-<html>
-    <head>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <form id="form" action="/schedule" method="post">
+            <!-- Set up the schedule -->
             {% if initial_load %}
             <div class = "cover-page-background">
-                <div class = "logo-container">
 
-                </div>
+                <!-- Menu -->
                 <div class = "form-container">
                     <img src = "https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
-                    <br>
+                    <br><br>
+
                     <!-- Select current semester-->
                     <label for="current_semester">Starting Semester</label>
                     <select name="current_semester" id="starting_semester">
@@ -80,6 +80,7 @@
                         {% endfor %}
                     </select>
                     <br><br>
+
                     <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
                     <input type="hidden" name="semester_number" value="{{ semester_number }}">
                     <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
@@ -90,38 +91,50 @@
 
             {% else %}
             <!-- Display schedule -->
-            <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
-            <input type="hidden" name="current_semester" value="{{ current_semester }}">
-            <input type="hidden" name="courses_taken" value="{{ courses_taken }}">
-            <input type="hidden" name="semesters" value="{{ semesters }}">
-            <input type="hidden" name="total_credits" value="{{ total_credits }}">
-            <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
-            <h2>Total Accumulated Credits: {{ total_credits }}</h2>
-            <hr>
-            {% for semester in course_schedule_display %}
-                <h3>Semester: {{ semester.semester }}</h3>
-                <h3>Credits for current semester: {{ semester.credits }}</h3>
-                <h3>Courses:</h3>
-                <ul>
-                    {% for course in semester.schedule %}
-                        <li>{{ course }}</li>
-                    {% endfor %}
-                </ul>
-                <hr>
-            {% endfor %}
-            <!-- Ask user for number of credits next semester-->
-            <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
-            <select name="minimum_semester_credits" id="minimum_credits">
-                {% for credits in minimum_semester_credits %}
-                <option value="{{credits}}">{{ credits }}</option>
+            <div class = "scheduler">
+                <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
+                <input type="hidden" name="current_semester" value="{{ current_semester }}">
+                <input type="hidden" name="courses_taken" value="{{ courses_taken }}">
+                <input type="hidden" name="semesters" value="{{ semesters }}">
+                <input type="hidden" name="total_credits" value="{{ total_credits }}">
+                <input type="hidden" name="required_courses_dict_list" value="{{ required_courses_dict_list }}">
+
+                <!-- Individual semester information, repeating until credits are reached -->
+                {% for semester in course_schedule_display %}
+                    <h3>Semester: {{ semester.semester }}</h3>
+                    <h3>Credits for current semester: {{ semester.credits }}</h3>
+                    <h3>Courses:</h3>
+                    <ul>
+                        {% for course in semester.schedule %}
+                            <li>{{ course }}</li>
+                        {% endfor %}
+                    </ul>
+                <!-- Store value of next semester
+                {% if semester.semester == "Spring" %}
+                    {% set next_semester = semester %}
+                    <h3>YES!</h3>
+                {% endif %}-->
                 {% endfor %}
-            </select>
-            <br><br>
-            <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
-            <input type="hidden" name="semester_number" value="{{ semester_number }}">
-            <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
-            <input type="hidden" name="include_summer" value="{{ include_summer }}">
-            <input type="submit" value="Continue Schedule">
+
+                <!-- Ask user for number of credits next semester-->
+                <div class = "next-semester">
+                    <p>Total Accumulated Credits: {{ total_credits }}</p>
+                    <label for="minimum_semester_credits">Number of Credits for Next Semester:</label>
+                    <select name="minimum_semester_credits" id="minimum_credits">
+                        {% for credits in minimum_semester_credits %}
+                        <option value="{{credits}}">{{ credits }}</option>
+                        {% endfor %}
+                    </select>
+                    <br><br>
+
+                    <!-- hidden values -->
+                    <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
+                    <input type="hidden" name="semester_number" value="{{ semester_number }}">
+                    <input type="hidden" name="min_3000_course" value="{{ min_3000_course }}">
+                    <input type="hidden" name="include_summer" value="{{ include_summer }}">
+                    <input type="submit" value="Continue Schedule">
+                </div>
+            </div>
             {% endif %}
 
         </form>
