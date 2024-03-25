@@ -3,6 +3,7 @@ import json
 from collections.abc import Mapping
 from typing import Union
 
+
 def print_dictionary(course_dictionary: dict) -> None:
     """
     prints a dictionary in readable format.
@@ -16,6 +17,7 @@ def print_dictionary(course_dictionary: dict) -> None:
     None
     """
     print(json.dumps(course_dictionary, indent=4))
+
 
 def build_prerequisites(course: dict) -> list:
     """
@@ -64,7 +66,8 @@ def build_prerequisites(course: dict) -> list:
 
     # return a list of pre-requisites
     return prereqs_list
-    
+
+
 def build_dictionary(courses: Union[dict, list]) -> dict:
     """
     Builds a dictionary with the information for each course included in a course type.
@@ -104,8 +107,8 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
         key = course["subject"] + " " + course["course_number"]
 
         # add rest of information to dictionary
-        course_dict = { 
-            key: course 
+        course_dict = {
+            key: course
         }
 
         # add list of semesters offered to dictionary
@@ -121,6 +124,7 @@ def build_dictionary(courses: Union[dict, list]) -> dict:
 
     # return dictionary with finalized course type dictionary
     return updated_course_dict
+
 
 def parse_courses() -> dict:
     """
@@ -159,7 +163,9 @@ def parse_courses() -> dict:
     # return finalized dictionary of the course type
     return core_courses, elective_courses
 
-def add_course(current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits):
+
+def add_course(current_semester, course_info, current_semester_classes, course, courses_taken,
+               total_credits_accumulated, current_semester_credits):
     # Add course, credits to current semester and list of courses taken, credits earned
     course_added = False
     if current_semester in course_info['semesters_offered']:
@@ -169,6 +175,7 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
         current_semester_credits = current_semester_credits + int(course_info['credit'])
         course_added = True
     return course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits
+
 
 def build_semester_list(first_season="Fall", include_summer=True) -> list:
     possible_semesters = ["Fall", "Spring", "Summer"]
@@ -190,25 +197,21 @@ def build_semester_list(first_season="Fall", include_summer=True) -> list:
         return ValueError("Fall or Spring must be selected")
     return [season for season in possible_seasons if season in selected_semesters]
 
+
 def generate_semester(request) -> None:
-    """
-    Create the multi-semester course schedule for core courses.
-    """
+    # get information from user
     total_credits_accumulated = int(request.form["total_credits"])
     course_schedule = json.loads(request.form["course_schedule"])
-
     current_semester = request.form["current_semester"]
     semester = int(request.form["semester_number"])
-
     waived_courses = None
     courses_taken = []
-
     include_summer = False
-
     if semester == 0:
         if "include_summer" in request.form.keys():
             print(request.form["include_summer"])
-            include_summer = True if request.form["include_summer"] == "on" else False ## Not sure why it's returning 'on' if checkbox is checked
+            include_summer = True if request.form[
+                                         "include_summer"] == "on" else False  ## Not sure why it's returning 'on' if checkbox is checked
         if ("courses_taken" in request.form.keys()):
             courses_taken = request.form.getlist("courses_taken")
         ## Do we need separate selects for waived/taken courses or should we combine them to one? If they say taken, do we need to add the credits to the total accumulated credits?
@@ -226,7 +229,7 @@ def generate_semester(request) -> None:
                 del required_courses_dict[course]
             except:
                 print(f"Course: {course} was not found in the required_courses_dict")
-                    
+
         required_courses_dict_list = sorted(list(required_courses_dict.items()), key=lambda d: d[1]["course_number"])
     else:
         required_courses_dict_list = json.loads(request.form['required_courses_dict_list'])
@@ -234,15 +237,21 @@ def generate_semester(request) -> None:
         include_summer = True if request.form["include_summer"] == "True" else False
         if ("courses_taken" in request.form.keys()):
             # courses_taken is returned as a string (that looks like an array), so we have to convert it to a list
-            courses_taken = request.form["courses_taken"][1:-1] # this removes the '[]' from the string
-            courses_taken = courses_taken.replace("'", "") # this removes the string characters around each course
-            courses_taken = courses_taken.split(", ") # this creates a list delimited by the ', ' that the courses are separated by
+            courses_taken = request.form["courses_taken"][1:-1]  # this removes the '[]' from the string
+            courses_taken = courses_taken.replace("'", "")  # this removes the string characters around each course
+            courses_taken = courses_taken.split(
+                ", ")  # this creates a list delimited by the ', ' that the courses are separated by
 
     min_credits_per_semester = int(request.form["minimum_semester_credits"])
     min_3000_course = int(request.form["min_3000_course"])
 
     current_semester_credits = 0
     current_semester_classes = []
+    max_CS_credit_percent = 0.50  # sets the total % of courses per semester that will be core/required classes
+    total_credits_for_degree = 120
+    max_CS_electives_per_semester = 1
+    credits_for_3000_level = 60  # 3000+ level credits will not be taken for 2 years
+
 
     is_semester_complete = False
 
@@ -250,24 +259,27 @@ def generate_semester(request) -> None:
         course_added = False
         # iterate through list of required courses
         for index, x in enumerate(required_courses_dict_list):
-            course: str = x[0]                      # holds course subject + number
-            course_info: dict = x[1]                # holds all other information about course
+            course: str = x[0]  # holds course subject + number
+            course_info: dict = x[1]  # holds all other information about course
             concurrent = None
             if "concurrent" in course_info.keys():
                 concurrent = course_info["concurrent"]
 
-            # add course to schedule if it has not already been added
-            if (course not in courses_taken):
+            # add course to schedule if it has not already been added and current semester doesn't have too many CS credits
+            if (course not in courses_taken and current_semester_credits < (min_credits_per_semester * max_CS_credit_percent)):
+
                 # if the course has no pre-requisites, add current course to schedule
                 if len(course_info["prerequisite"]) == 0:
                     if (course != "ENGLISH 3130"):
                         course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
-                        = add_course(
-                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
+                            = add_course(
+                            current_semester, course_info, current_semester_classes, course, courses_taken,
+                            total_credits_accumulated, current_semester_credits)
                     if (course == "ENGLISH 3130") and (total_credits_accumulated >= 56) and (prereqs in courses_taken):
                         course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
-                        = add_course(
-                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits)
+                            = add_course(
+                            current_semester, course_info, current_semester_classes, course, courses_taken,
+                            total_credits_accumulated, current_semester_credits)
                 # if the course has at least one pre-requisite
                 else:
                     # look up list of pre-requisites for current course
@@ -283,12 +295,14 @@ def generate_semester(request) -> None:
                             if (course == "ENGLISH 3130"):
                                 if (total_credits_accumulated >= 56) and (prereqs in courses_taken):
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits \
-                                    = add_course(
-                                    current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                        = add_course(
+                                        current_semester, course_info, current_semester_classes, course, courses_taken,
+                                        total_credits_accumulated, current_semester_credits
                                     )
                                     break
                             # add the current course because pre-requisite has already been taken
-                            elif (prereqs in courses_taken) and ((prereqs not in current_semester_classes) or (prereqs == concurrent)):
+                            elif (prereqs in courses_taken) and (
+                                    (prereqs not in current_semester_classes) or (prereqs == concurrent)):
                                 required_courses_taken = True
                             else:
                                 required_courses_taken = False
@@ -298,9 +312,11 @@ def generate_semester(request) -> None:
                             # if there is only one pre-requisite
                             if (len(prereqs) == 1):
                                 # add the current course because pre-requisite has already been taken
-                                if (prereqs[0] in courses_taken) and ((prereqs[0] not in current_semester_classes) or (prereqs[0] == concurrent)):
+                                if (prereqs[0] in courses_taken) and (
+                                        (prereqs[0] not in current_semester_classes) or (prereqs[0] == concurrent)):
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
-                                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                        current_semester, course_info, current_semester_classes, course, courses_taken,
+                                        total_credits_accumulated, current_semester_credits
                                     )
                                     break
 
@@ -309,20 +325,23 @@ def generate_semester(request) -> None:
                                 required_courses_taken = False
                                 # iterate through each pre-requisite
                                 for prereq in prereqs:
-                                    if (prereq in courses_taken) and ((prereq not in current_semester_classes) or (prereq == concurrent)):
+                                    if (prereq in courses_taken) and (
+                                            (prereq not in current_semester_classes) or (prereq == concurrent)):
                                         required_courses_taken = True
                                     else:
                                         required_courses_taken = False
                                 # add the current course because pre-requisite has already been taken
                                 if required_courses_taken:
                                     course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
-                                        current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                                        current_semester, course_info, current_semester_classes, course, courses_taken,
+                                        total_credits_accumulated, current_semester_credits
                                     )
                                     required_courses_taken = False
                                     break
                     if required_courses_taken:
                         course_added, current_semester_classes, courses_taken, total_credits_accumulated, current_semester_credits = add_course(
-                            current_semester, course_info, current_semester_classes, course, courses_taken, total_credits_accumulated, current_semester_credits
+                            current_semester, course_info, current_semester_classes, course, courses_taken,
+                            total_credits_accumulated, current_semester_credits
                         )
 
                 if course_added:
@@ -352,11 +371,17 @@ def generate_semester(request) -> None:
                     required_courses_dict_list.pop(index)
                     break
         if (not course_added):
-            if total_credits_accumulated > 80 and min_3000_course != 0:
-                current_semester_classes.append("CMP SCI 3000+ level elective")
-                min_3000_course = min_3000_course - 1
-            else:
+            # if in a pre-determined amount of time to NOT take 3000+ level classes
+            if total_credits_accumulated < credits_for_3000_level:
                 current_semester_classes.append("Gen Ed or Elective")
+            else:
+                if min_3000_course != 0 and (
+                        current_semester_classes.count("CMP SCI 3000+") <= max_CS_electives_per_semester):
+                    current_semester_classes.append("CMP SCI 3000+ level elective")
+                    min_3000_course -= 1
+                else:
+                    current_semester_classes.append("Gen Ed or Elective")
+
             total_credits_accumulated = total_credits_accumulated + 3
             current_semester_credits = current_semester_credits + 3
 
@@ -392,7 +417,7 @@ def generate_semester(request) -> None:
         else:
             current_semester = "Fall"
     else:
-        current_semester = "Fall"   
+        current_semester = "Fall"
 
     return {
         "required_courses_dict_list": json.dumps(required_courses_dict_list),
@@ -408,5 +433,3 @@ def generate_semester(request) -> None:
         "min_3000_course": min_3000_course,
         "include_summer": include_summer
     }
-
-# schedule_core_courses()
