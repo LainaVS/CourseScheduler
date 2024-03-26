@@ -169,7 +169,10 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
     # Add course, credits to current semester and list of courses taken, credits earned
     course_added = False
     if current_semester in course_info['semesters_offered']:
-        current_semester_classes.append(course)
+        current_semester_classes.append({
+            'course': course,
+            'name': course_info['course_name']
+        })
         courses_taken.append(course)
         total_credits_accumulated = total_credits_accumulated + int(course_info['credit'])
         current_semester_credits = current_semester_credits + int(course_info['credit'])
@@ -209,7 +212,6 @@ def generate_semester(request) -> None:
     include_summer = False
     if semester == 0:
         if "include_summer" in request.form.keys():
-            print(request.form["include_summer"])
             include_summer = True if request.form[
                                          "include_summer"] == "on" else False  ## Not sure why it's returning 'on' if checkbox is checked
         if ("courses_taken" in request.form.keys()):
@@ -373,14 +375,23 @@ def generate_semester(request) -> None:
         if (not course_added):
             # if in a pre-determined amount of time to NOT take 3000+ level classes
             if total_credits_accumulated < credits_for_3000_level:
-                current_semester_classes.append("Gen Ed or Elective")
+                current_semester_classes.append({
+                    'course': "Gen Ed or Elective",
+                    'name': 'Gen Ed or Elective'
+                })
             else:
                 if min_3000_course != 0 and (
                         current_semester_classes.count("CMP SCI 3000+") <= max_CS_electives_per_semester):
-                    current_semester_classes.append("CMP SCI 3000+ level elective")
+                    current_semester_classes.append({
+                        'course': "CMP SCI 3000+ level elective",
+                        'name': 'CMP SCI 3000+ level elective'
+                    })
                     min_3000_course -= 1
                 else:
-                    current_semester_classes.append("Gen Ed or Elective")
+                    current_semester_classes.append({
+                        'course': "Gen Ed or Elective",
+                        'name': 'Gen Ed or Elective'
+                })
 
             total_credits_accumulated = total_credits_accumulated + 3
             current_semester_credits = current_semester_credits + 3
@@ -431,5 +442,6 @@ def generate_semester(request) -> None:
         "current_semester": current_semester,
         "minimum_semester_credits": list(map(lambda x: x, range(3, 22))),
         "min_3000_course": min_3000_course,
-        "include_summer": include_summer
+        "include_summer": include_summer,
+        "saved_minimum_credits_selection": min_credits_per_semester
     }
