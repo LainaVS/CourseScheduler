@@ -76,7 +76,11 @@
                     <label for="initial_minimum_semester_credits">Minimum Credits for First Semester</label>
                     <select name="minimum_semester_credits" id="initial_minimum_credits">
                         {% for credits in minimum_semester_credits %}
-                        <option value="{{credits}}">{{ credits }}</option>
+                            {% if credits == 15 %}
+                            <option selected value="{{credits}}">{{ credits }}</option>
+                            {% else %}
+                            <option value="{{credits}}">{{ credits }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <br><br>
@@ -104,7 +108,11 @@
                     <label for="minimum_semester_credits">Minimum Credits for Next Semester</label>
                     <select name="minimum_semester_credits" id="minimum_credits">
                         {% for credits in minimum_semester_credits %}
-                        <option value="{{credits}}">{{ credits }}</option>
+                            {% if credits == saved_minimum_credits_selection %}
+                            <option selected value="{{credits}}">{{ credits }}</option>
+                            {% else %}
+                            <option value="{{credits}}">{{ credits }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <br><br>
@@ -129,7 +137,7 @@
                         <p><label>Courses</label></p>
                         <ul>
                             {% for course in semester.schedule %}
-                            <li>{{ course }}</li>
+                            <li title="{{ course.name }}">{{ course.course }}</li>
                             {% endfor %}
                         </ul>
                     {% endfor %}

@@ -43,5 +43,6 @@ def schedule_generator():
                            current_semester=render_info["current_semester"],
                            minimum_semester_credits=render_info["minimum_semester_credits"],
                            min_3000_course=render_info["min_3000_course"],
-                           include_summer=render_info["include_summer"]
+                           include_summer=render_info["include_summer"],
+                           saved_minimum_credits_selection=render_info["saved_minimum_credits_selection"]
     )
