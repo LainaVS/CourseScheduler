@@ -10,12 +10,23 @@ def index():
     # create dictionaries for each course type
     core_courses, elective_courses = parse_courses()
 
+
+    required_courses_list = []
+    for course in core_courses.items():
+        course_info = {
+            "course": course[0],
+            "credits": course[1]["credit"],
+            "course_number": course[1]["course_number"]
+        }
+        required_courses_list.append(course_info)
+
     # sort required courses by course number
-    required_courses_list = sorted(list(core_courses.keys()))
+    # required_courses_list = sorted(required_courses_list, key=lambda d: d["course_number"])
 
     return render_template('index.html',
                            initial_load=True,
                            required_courses=required_courses_list,
+                           json_required_courses=json.dumps(required_courses_list),
                            required_courses_dict=json.dumps(core_courses),
                            semesters=semesters,
                            total_credits=0,
