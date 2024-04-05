@@ -161,7 +161,7 @@
                     <br><br>
 
                     <!-- Select courses taken -->
-                    <label for="courses_taken">Select Earned Credits</label>
+                    <label for="courses_taken">Select Taken Courses</label>
                     <select name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)">
                         {% for required_course in required_courses %}
                         <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{ required_course.course }}</option>
