@@ -277,6 +277,8 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
         if (certificate_choice != ""):
             ## get the certificate id from the input form and parse course data for that certificate
             certificate_core, certificate_electives, cert_electives_still_needed = parse_certificate(certificate_choice)
+
+            # decrease min_3000 electives, based on how many certificate specific electives are required.
             min_3000_course_still_needed -= cert_electives_still_needed
             print(type(cert_electives_still_needed))
             certificate_option = True
@@ -289,7 +291,20 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
 
         # if a certificate was selected add the required certificate courses to required courses
         if certificate_core:
+            # count classes in base degree before adding certificate requirements
+            num_courses_in_base_csdeg = len(required_courses_dict)
+
+            # update base degree to include certificate requirements
+            # certificate course dictionary keys are identical to keys in required_courses_dict so if a certificate requirement is already a base degree requirement, required_courses_dict (size) will not change.
             required_courses_dict.update(certificate_core)
+
+            # count how many new courses were actually added to base degree, each new course will replace a 3000+ elective
+            num_3000_replaced_by_cert_core = (len(required_courses_dict) - num_courses_in_base_csdeg)
+            print(f'{num_3000_replaced_by_cert_core=}')
+
+            # decrease min_3000 electives again, based on how many certificate core classes double as electives.
+            min_3000_course_still_needed -= num_3000_replaced_by_cert_core
+
             
         for course in courses_taken:
             try:
