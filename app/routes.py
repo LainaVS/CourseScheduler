@@ -43,14 +43,17 @@ def index():
                            minimum_semester_credits=list(map(lambda x: x, range(3, 22))), # create list for minimum credits dropdown
                            min_3000_course=5,
                            starting_credits=list(map(lambda x: x, range(0, 201))), # create list for minimum credits dropdown
-                           core_credit_count = 0,
+                           core_credit_count=0,
+                           free_elective_credits_still_needed=22,
+                           gen_ed_credits_still_needed=27
     )
 
 @app.route('/schedule', methods=["POST"])
 def schedule_generator():
+    print("Request Form Data: ", request.form)
+
     render_info = generate_semester(request)
-    #print("Back to routes.py")
-    #pprint.pprint(render_info["course_schedule_display"])
+    print("render_info")
     return render_template('index.html',
                            required_courses_dict_list=render_info["required_courses_dict_list"],
                            semesters=render_info["semesters"],
@@ -68,6 +71,8 @@ def schedule_generator():
                            num_3000_replaced_by_cert_core=render_info["num_3000_replaced_by_cert_core"],
                            cert_electives_still_needed=render_info["cert_electives_still_needed"],
                            saved_minimum_credits_selection=render_info["saved_minimum_credits_selection"],
-                           elective_courses=render_info["elective_courses"]
+                           elective_courses=render_info["elective_courses"],
+                           free_elective_credits_still_needed=render_info["free_elective_credits_still_needed"],
+                           gen_ed_credits_still_needed=render_info["gen_ed_credits_still_needed"]
 
     )

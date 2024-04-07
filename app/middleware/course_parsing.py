@@ -295,16 +295,17 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
     min_3000_course_still_needed = int(request.form["min_3000_course"]) # default is 5
     certificate_choice = request.form["certificate_choice"]
     num_3000_replaced_by_cert_core = int(request.form["num_3000_replaced_by_cert_core"])  # default is 0
+    free_elective_credits_still_needed = int(request.form["free_elective_credits_still_needed"])
+    gen_ed_credits_still_needed = int(request.form["gen_ed_credits_still_needed"])
+    print("Successfully grabbed variables!")
 
-    # # # # # # # # # # # # # # # # # # # # # # # #
-    # These are new variables, double-check them #
-    # # # # # # # # # # # # # # # # # # # # # # # #
+    # set up default variables
     TOTAL_CREDITS_FOR_GRADUATION = 120
     TOTAL_CREDITS_FOR_BSCS = 71
     DEFAULT_CREDIT_HOURS = 3
     DEFAULT_GEN_ED_CREDITS = 27
-    free_elective_credits_still_needed = TOTAL_CREDITS_FOR_GRADUATION - TOTAL_CREDITS_FOR_BSCS - DEFAULT_GEN_ED_CREDITS
-    gen_ed_credits_still_needed = DEFAULT_GEN_ED_CREDITS
+
+    # ERROR::: These should be added to the request above to maintain semester-by-semester functionality
 
     # set up scheduler variables, overwritten below
     include_summer = False
@@ -333,6 +334,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
             # demoves duplicates in case a class was added from both waived and taken select options
             courses_taken = list(dict.fromkeys(courses_taken))
 
+        # if user elects to complete a certificate
         if (certificate_choice != ""):
             ## get the certificate id from the input form and parse course data for that certificate
             certificate_core, certificate_electives, cert_electives_still_needed = parse_certificate(certificate_choice)
@@ -376,10 +378,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
         required_courses_tuple = create_static_required_courses(required_courses_dict_list)
 
         # print information for certificates and proposed course schedule, update tuple
-        print_course_list_information(certificate_core, cert_electives_still_needed,
-                                          certificate_electives,
-                                          min_3000_course_still_needed,
-                                          required_courses_tuple)
+        print_course_list_information(certificate_core, cert_electives_still_needed, certificate_electives,min_3000_course_still_needed, required_courses_tuple)
 
     # if NOT the first semester
     else:
@@ -733,6 +732,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
                     else:
                         current_semester = "Fall"
 
+    print("Now about to return!")
     return {
         "required_courses_dict_list": json.dumps(required_courses_dict_list),
         "semesters": user_semesters,
@@ -751,4 +751,6 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
         "cert_electives_still_needed": cert_electives_still_needed,
         "saved_minimum_credits_selection": min_credits_per_semester,
         "elective_courses": json.dumps(elective_courses),
+        "free_elective_credits_still_needed": int(free_elective_credits_still_needed),
+        "gen_ed_credits_still_needed": int(gen_ed_credits_still_needed)
     }
