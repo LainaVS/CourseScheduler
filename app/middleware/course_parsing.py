@@ -251,7 +251,6 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
     certificate_choice = request.form["certificate_choice"]
     num_3000_replaced_by_cert_core = int(request.form["num_3000_replaced_by_cert_core"])  # default is 0
 
-
     # set up scheduler
     courses_taken = []
     waived_courses = None
@@ -280,7 +279,6 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
 
             # decrease min_3000 electives, based on how many certificate specific electives are required.
             min_3000_course_still_needed -= cert_electives_still_needed
-            print(type(cert_electives_still_needed))
             certificate_option = True
 
         # determine the semesters that user will be enrolled in
@@ -300,7 +298,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
 
             # count how many new courses were actually added to base degree, each new course will replace a 3000+ elective
             num_3000_replaced_by_cert_core = (len(required_courses_dict) - num_courses_in_base_csdeg)
-            print(f'{num_3000_replaced_by_cert_core=}')
+            print(f'Number of 3000 replaced by certificate core: {num_3000_replaced_by_cert_core=}')
 
             # decrease min_3000 electives again, based on how many certificate core classes double as electives.
             min_3000_course_still_needed -= num_3000_replaced_by_cert_core
@@ -312,6 +310,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
             except:
                 print(f"Course: {course} was not found in the required_courses_dict")
         required_courses_dict_list = sorted(list(required_courses_dict.items()), key=lambda d: d[1]["course_number"])
+        required_courses_tuple = []
 
         # print information for certificates and proposed course schedule
         print("Certificate Core: ")
@@ -320,15 +319,17 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
         print(f"Certificate Electives (Pick {cert_electives_still_needed}): ")
         for item in certificate_electives.keys():
             print(f"\t{item}")
-        print(f"Min 3000+ Levels: {min_3000_course_still_needed}")
+        print(f"Min 3000+ Level Electives Still Needed (Above Certificates): {min_3000_course_still_needed}")
         print("Required Course List: ")
         for item in required_courses_dict_list:
+            required_courses_tuple.append(item[0])
             if item[0] in certificate_core.keys():
                 print(f"\t{item[0]} ***(Core of Certificate)")
             elif item[0] in certificate_electives.keys():
                     print(f"\t{item[0]} ***(Elective of Certificate)")
             else:
                 print(f"\t{item[0]}")
+        required_courses_tuple = tuple(required_courses_tuple)
 
     # if NOT the first semester
     else:
@@ -347,7 +348,7 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
     print(f"Minimum credits for this semester: {min_credits_per_semester}")
 
     # adjust credit amounts for scheduling parameters
-    max_core_credits_per_semester = min_credits_per_semester / 2  # sets the total # of credits of core/required classes
+    max_core_credits_per_semester = (min_credits_per_semester / 2)  # sets the total # of credits of core/required classes
     credits_for_3000_level = 60  # 3000+ level credits will not be taken before this many credits earned
     max_CS_elective_credits_per_semester = 6
     max_CS_math_total_credits = min_credits_per_semester - 3
@@ -494,12 +495,16 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
                                 current_semester = "Fall"
                         else:
                             current_semester = "Fall"
-
+                        print("Next Semester: ")
 
                         # if only generating a semester stop here
                         if not generate_complete_schedule:
                             is_course_generation_complete = True
+
                         # if generating the whole schedule stop after hitting the 120 credit minimum
+                        #############################################################################
+                        ###### MIGHT WANT TO CHANGE THIS: NEEDS MORE REQUIREMENTS THAN JUST 120 #####
+                        #############################################################################
                         elif generate_complete_schedule and total_credits_accumulated >= 120:
                             is_course_generation_complete = True
 
@@ -610,27 +615,49 @@ def generate_semester(request) -> dict[Union[str, Any], Union[Union[str, list, i
                 # if only generating a semester stop here
                 if not generate_complete_schedule:
                     is_course_generation_complete = True
+
                 # if generating the whole schedule stop after hitting the 120 credit minimum
                 elif generate_complete_schedule and total_credits_accumulated >= 120:
+                    # assume that schedule generation is finished
                     is_course_generation_complete = True
 
-                # update semester info
-                current_semester_credits = 0
-                current_semester_classes = []
-                semester += 1
-                current_semester_cs_math_credits_per_semester = 0
-                current_CS_elective_credits_per_semester = 0
-                if current_semester == "Fall":
-                    current_semester = "Spring"
-                elif current_semester == "Spring":
-                    if include_summer:
-                        current_semester = "Summer"
+                    # check that all required courses has been taken
+                    print("CHECKING COURSE REQUIREMENTS")
+                    for course in required_courses_tuple:
+                        if course not in courses_taken:
+                            print(f"\t{course} (NOT TAKEN)")
+                            is_course_generation_complete = False
+                        else:
+                            print(f"\t{course}")
+
+                    # check all required electives have been taken
+                    print(f"CMP SCI 3000+ courses needed: {min_3000_course_still_needed}")
+                    if min_3000_course_still_needed != 0:
+                        is_course_generation_complete = False
+
+                    print(f"Certicate courses needed: {min_3000_course_still_needed}")
+                    if cert_electives_still_needed != 0:
+                        is_course_generation_complete = False
+
+                    print(f"Is course generation complete?: {is_course_generation_complete}")
+
+                # if the scheduling is still not complete, update semester information
+                if not is_course_generation_complete:
+                    current_semester_credits = 0
+                    current_semester_classes = []
+                    semester += 1
+                    current_semester_cs_math_credits_per_semester = 0
+                    current_CS_elective_credits_per_semester = 0
+                    print("Advancing to next semester...")
+                    if current_semester == "Fall":
+                        current_semester = "Spring"
+                    elif current_semester == "Spring":
+                        if include_summer:
+                            current_semester = "Summer"
+                        else:
+                            current_semester = "Fall"
                     else:
                         current_semester = "Fall"
-                else:
-                    current_semester = "Fall"
-                print(f"\t\t\tmin 3000-level needed: {min_3000_course_still_needed}")
-                print(f"\t\t\telectives needed: {cert_electives_still_needed}")
 
     return {
         "required_courses_dict_list": json.dumps(required_courses_dict_list),
