@@ -748,6 +748,26 @@
         <CertCore>
             <course>
                 <subject>CMP SCI</subject>
+                <course_number>3702</course_number>
+                <course_name>Introduction to Cyber Threats and Defense</course_name>
+                <credit>3</credit>
+                <rotation_term>
+                    <term>Spring</term>
+                    <time_code>O</time_code>
+                </rotation_term>
+                <rotation_term>
+                    <term>Fall</term>
+                    <time_code>O</time_code>
+                </rotation_term>
+                <course_description>This course introduces the importance of cybersecurity and covers its various components. Topics may include different types of malware, phishing, password attacks, spoofing, efficient encryption algorithms, firewalls, intrusion prevention/detection systems, and honeypots. </course_description>
+                <prerequisite>
+                    <or_choice>
+                        <and_required>CMP SCI 2250</and_required>
+                    </or_choice>
+                </prerequisite>
+            </course>
+            <course>
+                <subject>CMP SCI</subject>
                 <course_number>4020</course_number>
                 <course_name>Introduction to Android Apps: Android Fundamentals</course_name>
                 <credit>3</credit>
@@ -912,7 +932,7 @@
             </course>
         </CertElectives>
         <NoOfElectives>
-            <num>2</num>
+            <num>1</num>
         </NoOfElectives>
     </MOBILECERTReq>
     <WEBCERTReq>
