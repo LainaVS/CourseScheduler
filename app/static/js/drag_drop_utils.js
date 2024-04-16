@@ -41,7 +41,8 @@ function prereqVerification(course_info, course_num, semester_num, li_to_move) {
     for (let i = 0; i <= semester_num; ++i) {
         course_schedule[i].schedule.forEach((x) => {
             // check if the course is an elective
-            const elective = course_num.toUpperCase() === "CMP SCI 3000+" || course_num.toUpperCase() === "FREE" || course_num.toUpperCase() === "GEN ED"
+            const elective = course_name === '[User Selects]';
+            
             if (!elective && i != semester_num) {
                 courses_taken_before_new_semester.push(x.course);
             }
@@ -135,7 +136,8 @@ function drop(ev, course_element) {
     }
 
     // check if the course is an elective
-    const elective = course_num.toUpperCase() === "CMP SCI 3000+" || course_num.toUpperCase() === "FREE" || course_num.toUpperCase() === "GEN ED"
+    const elective = course_name === '[User Selects]';
+
     if (!elective && should_move_course) {
         var items = selected_drop_ul.getElementsByTagName("li");
         let course_info = null;
