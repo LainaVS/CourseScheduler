@@ -28,6 +28,7 @@
                         <and_required>MATH 3000</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2250, MATH 1320, and MATH 3000. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -48,6 +49,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>The list of topics may include search, planning, knowledge-based reasoning, probabilistic inference, machine learning, natural language processing, and practical applications. Credit cannot be granted for both CMP SCI 4300 and CMP SCI 5300.</prerequisite_description>
                 <paired>CMP SCI 5300</paired>
             </course>	
         </CertCore>
@@ -69,6 +71,7 @@
                         <and_required>MATH 1320</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 1250, MATH 1900, and an introductory statistics course (ANTHRO 3220/SOC 3220, BIOL 4122, CRIMIN 2220, ECON 3100, MATH 1320, POL SCI 3000, or PSYCH 2201). </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -87,6 +90,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 2750 and CMP SCI 3130. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -112,6 +116,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5340</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 4342, or CMP SCI 2261 and CMP SCI 3130, or consent of instructor.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -137,6 +142,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5342</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3130, or CMP SCI 4200, or consent of the instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -153,6 +159,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -169,6 +176,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -189,6 +197,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5420</paired>
+                <prerequisite_description>Prerequisites: MATH 1900, MATH 2450, CMP SCI 2750, and CMP SCI 3130. </prerequisite_description>
             </course>
         </CertElectives>
         <NoOfElectives>
@@ -216,6 +225,7 @@
                         <and_required>CMP SCI 2250</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2250.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -240,6 +250,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 and MATH 1320, or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -262,6 +273,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5782</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 and, CMP SCI 3702 or INFSYS 3848, or consent of instructor. </prerequisite_description>
             </course>
         </CertCore>
         <CertElectives>
@@ -283,6 +295,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -300,6 +313,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5020</paired>
+                <prerequisite_description>Prerequisite: CMP SCI 2261. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -317,6 +331,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5222</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 4220 or consent of the instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -334,6 +349,7 @@
                         <and_required>MATH 1800</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: MATH 1100 or MATH 1800 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -351,6 +367,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5750</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 2750.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -372,6 +389,7 @@
                         <and_required>INFSYS 3848</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 and, CMP SCI 3702 OR INFSYS 3848, or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -388,6 +406,7 @@
                         <and_required>CMP SCI 4730</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 4730 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -398,7 +417,8 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>In this course, students will learn the fundamentals of data programming with R and Python using structured (tabular data such as spreadsheets) and unstructured data (text data such as social media) for application in Business and Cyber Analytics, Machine Learning, and Artificial Intelligence. Credit cannot be granted for both INFSYS 3830 and INFSYS 6830.</course_description>
+                <prerequisite_description>Prerequisites: A minimum campus GPA of 2.0 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -409,7 +429,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course introduces students to topics in Artificial Intelligence (AI) and its applications in Business and Cybersecurity. The course discusses the history of AI and delves into Machine Learning (ML) and its general methodology of development of data models. The course provides a sampling of successful applications of AI and ML in different areas of Business such as portfolio management, algorithmic trading, fraud analytics, and credit scoring. Credit cannot be granted for both INFSYS 3862 and INFSYS 6862.
+                </course_description>
+                <prerequisite_description>Prerequisites: INFSYS 3830 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -420,7 +442,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course provides an overview of the building blocks of contemporary cryptographic solutions to address information security needs in organizations. The focus will be on understanding cryptographic primitives and applying them to assure confidentiality, integrity, authentication, and non-repudiation among other information security goals. Using best practices, students will work on projects aimed at evaluating, selecting, and implementing an appropriate mix of cryptographic solutions given particular application domains. Application areas in traditional as well as cloud-based information technology environments will be considered. Credit cannot be granted for both INFSYS 3864 and INFSYS 6864.
+                </course_description>
+                <prerequisite_description>Prerequisites: INFSYS 3806 and INFSYS 3848, or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -431,7 +455,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course covers the fundamentals of cloud security in public cloud computing environments with a focus on business applications. Topics include identity and access management, secure configuration of cloud services, and various security focused cloud services. Data collection and analysis of cloud-based data logging services to aid in security auditing and compliance is covered. Emerging topics, such as use of artificial intelligence-based services and tools in cloud security are also discussed. Student may not receive credit for both INFSYS 3866 and INFSYS 6866.
+                </course_description>
+                <prerequisite_description>Prerequisites: INFSYS 3843 or INFSYS 3848 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -446,7 +472,9 @@
                     <term>Spring</term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course discusses the theories and techniques for blending unstructured and structured data including big data and social media streams with relational databases, data warehouses, spreadsheets, and other sources of data. It provides hands-on experience in integrating data from diverse sources, screening and cleaning it, and producing descriptive and visual summaries in tables, graphs, maps, and text for business intelligence. Students will be introduced to tools that integrate data from different sources and provide input to dashboards for rich visualization and advanced analytics. Students may not receive credit for both INFSYS 3860 and INFSYS 6860.
+                </course_description>
+                <prerequisite_description>Prerequisites: INFSYS 2800 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>INFSYS</subject>
@@ -461,7 +489,9 @@
                     <term>Spring</term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course provides students the tools and concepts necessary to plan for, prevent, and when needed successfully respond to disruptions in business operations. Topics covered include security policies, frameworks, information and materials management, risk management, and regulatory compliance. Credit cannot be granted for both INFSYS 3878 and INFSYS 6878.
+                </course_description>
+                <prerequisite_description>Prerequisites: INFSYS 3848 or consent of Instructor. </prerequisite_description>
             </course>
         </CertElectives>
         <NoOfElectives>
@@ -489,6 +519,7 @@
                 </rotation_term>
                 <course_description>This course covers programming using the Python language and related libraries. The course explores problem solving using Python's support of procedural, object-oriented, and functional approaches to programming. Topics may include NumPy arrays, visualization, Pandas DataFrames, and selected functions from statistical and scientific packages.
                 </course_description>
+                <prerequisite_description>Prerequisites: CMP SCI 1250 and (MATH 1100 or MATH 1800) and (ANTHRO 3220/SOC 3220 or BIOL 4122 or CRIMIN 2220 or ECON 3100 or MATH 1320 or POL SCI 3000 or PSYCH 2201). </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -514,6 +545,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5340</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 4342, or CMP SCI 2261 and CMP SCI 3130, or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -539,6 +571,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5342</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3130, or CMP SCI 4200, or consent of the instructor. </prerequisite_description>
             </course>
         </CertCore>
         <CertElectives>
@@ -557,6 +590,7 @@
                         <and_required>CMP SCI 1250</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 1250. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -567,7 +601,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course covers the application of artificial intelligence and other modern techniques to help construct, navigate, and experience the Web. Topics may include retrieval models, classification, mining, association, topology, and indexing algorithms such as PageRank and HITS. Credit cannot be earned for both CMP SCI 4030 and CMP SCI 5030.
+                </course_description>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and CMP SCI 3130. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -586,6 +622,7 @@
                         <and_required>MATH 1320</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 1250, MATH 1900, and an introductory statistics course (ANTHRO 3220/SOC 3220, BIOL 4122, CRIMIN 2220, ECON 3100, MATH 1320, POL SCI 3000, or PSYCH 2201). </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -607,6 +644,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5300</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 3130. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -625,6 +663,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 2750 and CMP SCI 3130.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -641,6 +680,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -657,6 +697,7 @@
                         <and_required>CMP SCI 3130</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor.</prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -667,7 +708,9 @@
                     <term>Fall</term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course covers data analysis methods with R. It introduces the basic goals and techniques of the data science process, methods of characterizing and visualizing data and building predictive and inferential models. R will be introduced at the beginning of the class and then used throughout the rest of the class.
+                </course_description>
+                <prerequisite_description>Prerequisites: (MATH 1100 or MATH 1800) and (ANTHRO 3220 /SOC 3220 or BIOL 4122 or CRIMIN 2220 or ECON 3100 or MATH 1320 or POL SCI 3000 or PSYCH 2201).</prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -678,12 +721,14 @@
                     <term>Spring</term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course introduces several advanced classical and modern techniques for modeling and analysis of high-dimensional datasets with low-dimensional structures. The topics covered in this course include principal component analysis, factor analysis, clustering-based methods, and sparse and low-rank recovery theory and algorithms. Credit cannot be earned for both MATH 4090 and MATH 5090.
+                </course_description>
                 <prerequisite>
                     <or_choice>
                         <and_required></and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: MATH 1320, MATH 2000 and MATH 2450. </prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -694,12 +739,18 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course
+                introduces Bayesian methods in data analysis and the use of the R language and BUGS. The first half of
+                the course covers inferential theorems and computation methods on fundamental Bayesian statistics, such
+                as estimation, hypothesis testing, MCMC methods, model selection and hierarchical modeling. The
+                second half of the course concentrates on particular models used in practice, such as Bayesian generalized
+                linear models, Bayesian two-factor ANOVA, Bayesian logistic and probit models. </course_description>
                 <prerequisite>
                     <or_choice>
                         <and_required></and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: MATH 1320, MATH 2000 or MATH 1100; or consent of the instructor</prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -710,12 +761,14 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course will introduce fundamental algorithms in Monte Carlo methods: random variable generation, Monte Carlo integration, Monte Carlo optimization, Markov chain Monte Carlo, Metropolis-Hastings algorithm, Gibbs sampler, Langevin algorithms and Hamilton Monte Carlo, perfect, iterated and sequential importance sampling. Other topics covered may include particle systems, hidden Markov models, parallel and cloud computing. Credit cannot be earned for both MATH 4225 and MATH 5225.
+                </course_description>
                 <prerequisite>
                     <or_choice>
                         <and_required></and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: MATH 1320, MATH 2000 and MATH 2450. </prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -726,7 +779,9 @@
                     <term>Spring</term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course will introduce basic statistical principles and methods for modeling, inference, prediction and classification. The topics will be chosen from linear regression, basis expansion methods, kernel smoothing methods, model regularization, model selection and assessment, and other nonparametric methods. Credit cannot be earned for both MATH 4250 and MATH 5250.
+                </course_description>
+                <prerequisite_description>Prerequisites: MATH 1320, MATH 2000 and MATH 2450.</prerequisite_description>
             </course>
             <course>
                 <subject>MATH</subject>
@@ -737,7 +792,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>Basic theory and applications of stochastic processes. Markov chains, recurrent and transient states, stationary distributions, ergodic theorem, renewal processes, discrete martigales and stationary processes.
+                </course_description>
+                <prerequisite_description>Prerequisites: MATH 4200.</prerequisite_description>
             </course>
         </CertElectives>
         <NoOfElectives>
@@ -765,6 +822,7 @@
                         <and_required>CMP SCI 2250</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2250. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -782,6 +840,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5020</paired>
+                <prerequisite_description>Prerequisite: CMP SCI 2261.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -804,6 +863,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2261 or INFSYS 3806 or graduate standing.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -825,6 +885,7 @@
                         <and_required>INFSYS 3848</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 and, CMP SCI 3702 OR INFSYS 3848, or consent of instructor. </prerequisite_description>
             </course>
         </CertCore>
         <CertElectives>
@@ -855,6 +916,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and either CMP SCI 2261 or INFSYS 3806; or graduate standing.</prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -872,6 +934,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5222</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 4220 or consent of the instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -896,6 +959,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and MATH 3000; or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -913,6 +977,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5750</paired>
+                <prerequisite_description>Prerequisites: CMP SCI 2750. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -929,6 +994,7 @@
                         <and_required>CMP SCI 4730</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 4730 or consent of instructor. </prerequisite_description>
             </course>
         </CertElectives>
         <NoOfElectives>
@@ -960,6 +1026,7 @@
                         <and_required>CMP SCI 2250</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2250 (can be taken concurrently) or students with familiarity with basic data structures may enroll with consent of instructor. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -988,6 +1055,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and either CMP SCI 2261 or INFSYS 3806; or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1004,6 +1072,7 @@
                         <and_required>CMP SCI 3010</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3010. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1021,6 +1090,7 @@
                         <and_required>CMP SCI 3010</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3010. </prerequisite_description>
             </course>	
         </CertCore>
         <CertElectives>
@@ -1040,6 +1110,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5020</paired>
+                <prerequisite_description>Prerequisite: CMP SCI 2261. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1050,7 +1121,9 @@
                     <term></term>
                     <time_code></time_code>
                 </rotation_term>
-                <course_description></course_description>
+                <course_description>This course covers the application of artificial intelligence and other modern techniques to help construct, navigate, and experience the Web. Topics may include retrieval models, classification, mining, association, topology, and indexing algorithms such as PageRank and HITS. Credit cannot be earned for both CMP SCI 4030 and CMP SCI 5030.
+                </course_description>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and CMP SCI 3130. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1075,6 +1148,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 3010 and MATH 3000; or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1099,6 +1173,7 @@
                         <and_required>Graduate Standing</and_required>
                     </or_choice>
                 </prerequisite>
+                <prerequisite_description>Prerequisites: CMP SCI 2750 and MATH 1320, or graduate standing. </prerequisite_description>
             </course>
             <course>
                 <subject>CMP SCI</subject>
@@ -1116,17 +1191,7 @@
                     </or_choice>
                 </prerequisite>
                 <paired>CMP SCI 5750</paired>
-            </course>
-            <course>
-                <subject>INFSYS</subject>
-                <course_number>3846</course_number>
-                <course_name>E-Commerce</course_name>
-                <credit>3</credit>
-                <rotation_term>
-                    <term></term>
-                    <time_code></time_code>
-                </rotation_term>
-                <course_description></course_description>
+                <prerequisite_description>Prerequisites: CMP SCI 2750. </prerequisite_description>
             </course>
         </CertElectives>
         <NoOfElectives>
