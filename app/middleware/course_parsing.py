@@ -217,7 +217,7 @@ def add_course(current_semester, course_info, current_semester_classes, course, 
             'description': course_info['course_description'],
             'credits': course_info['credit'],
             'category': course_category,
-            'prerequisite_description': course_info['prerequisite_description']
+            'prerequisite_description': course_info['prerequisite_description'] if 'prerequisite_description' in course_info.keys() else ''
         })
         courses_taken.append(course)
         total_credits_accumulated = total_credits_accumulated + int(course_info['credit'])
