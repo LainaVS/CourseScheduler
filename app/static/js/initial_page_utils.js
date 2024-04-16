@@ -1,13 +1,38 @@
+function mobile_cert_check(cert_value) {
+    const single_semester_submit = document.getElementById('single_semester_submit');
+    const complete_schedule_submit = document.getElementById('complete_schedule_submit');
+    if (cert_value === 'MOBILECERTReq') {
+        if (!document.getElementById("summer").checked) {
+            single_semester_submit.disabled = true;
+            complete_schedule_submit.disabled = true;
+            alert("The Mobile Apps and Computing Certificate requires a course only offered in Summer, so Summer must be selected.")
+        } else if (single_semester_submit.disabled && complete_schedule_submit.disabled) {
+            single_semester_submit.disabled = false;
+            complete_schedule_submit.disabled = false;
+        }
+    } else if (single_semester_submit.disabled && complete_schedule_submit.disabled) {
+        single_semester_submit.disabled = false;
+        complete_schedule_submit.disabled = false;
+    }
+}
+
 // Add or remove 'Summer' option depending on Summer checkbox
 function handleSummerCheckboxClick(checkbox){
     var starting_semester_dropdown = document.getElementById("starting_semester");
+
     if (!checkbox.checked) {
         starting_semester_dropdown.remove(2); // remove summer option
+        
     } else {
         var option = document.createElement("option");
         option.text = "Summer";
         starting_semester_dropdown.add(option);
     }
+    const certificate_select = document.getElementById('certificate');
+    const index_of_cert_value = certificate_select.value.indexOf(',') + 1; // Index will be after comma
+    const cert_value = certificate_select.value.substring(index_of_cert_value);
+
+    mobile_cert_check(cert_value);
 }
 
 // Remove all options of a passed in select element
@@ -112,4 +137,11 @@ function updateWaivedTakenDropdown(sel, is_taken_courses) {
             dropdown_to_update.options.add(newOption, null);
         }
     }
+}
+
+function handleCertSelect(selectedElement) {
+    index_of_cert_value = selectedElement.value.indexOf(',') + 1; // Index will be after comma
+    cert_value = selectedElement.value.substring(index_of_cert_value)
+
+    mobile_cert_check(cert_value);
 }

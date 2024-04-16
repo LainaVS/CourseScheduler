@@ -21,7 +21,7 @@
 
             <!-- Select certificate option -->
             <label for="certificate">Certificate Option</label>
-            <select id="certificate" name="certificate_choice">
+            <select id="certificate" name="certificate_choice" onchange="handleCertSelect(this)">
                 {% for certificate, certificate_value in certificates %}
                 <option value="{{certificate}},{{certificate_value}}">{{ certificate }}</option>
                 {% endfor %}
@@ -97,8 +97,8 @@
             <input type="hidden" name="first_semester" value="{{ first_semester }}">
             <input type="hidden" name="minimum_summer_credits" value="{{ minimum_summer_credits }}">
             <input type="hidden" name="semester_years" value="{{ semester_years }}">
-            <input type="submit" name="single_semester" value="Start Schedule (by Semester)">
-            <input type="submit" name="generate_complete_schedule" value="Generate Full Schedule">
+            <input type="submit" id="single_semester_submit" name="single_semester" value="Start Schedule (by Semester)">
+            <input type="submit" id="complete_schedule_submit" name="generate_complete_schedule" value="Generate Full Schedule">
         </div>
     </div>
 </html>
