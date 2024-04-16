@@ -40,7 +40,9 @@ function prereqVerification(course_info, course_num, semester_num, li_to_move) {
 
     for (let i = 0; i <= semester_num; ++i) {
         course_schedule[i].schedule.forEach((x) => {
-            if (!x.course.toLowerCase().includes("elective") && i != semester_num) {
+            // check if the course is an elective
+            const elective = course_num.toUpperCase() === "CMP SCI 3000+" || course_num.toUpperCase() === "FREE" || course_num.toUpperCase() === "GEN ED"
+            if (!elective && i != semester_num) {
                 courses_taken_before_new_semester.push(x.course);
             }
             if (i == semester_num) {
@@ -113,6 +115,7 @@ function drop(ev, course_element) {
     var course_desc = ev.dataTransfer.getData("course_desc");
     var course_num = ev.dataTransfer.getData("course_num");
     var course_name = ev.dataTransfer.getData("course_name");
+
     var course_credits = parseInt(ev.dataTransfer.getData("course_credits"));
 
     var li_to_move = document.getElementById("li_to_move");
@@ -131,7 +134,9 @@ function drop(ev, course_element) {
         should_move_course = false;
     }
 
-    if (!course_num.toLowerCase().includes("elective") && should_move_course) {
+    // check if the course is an elective
+    const elective = course_num.toUpperCase() === "CMP SCI 3000+" || course_num.toUpperCase() === "FREE" || course_num.toUpperCase() === "GEN ED"
+    if (!elective && should_move_course) {
         var items = selected_drop_ul.getElementsByTagName("li");
         let course_info = null;
 
