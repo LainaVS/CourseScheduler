@@ -62,6 +62,7 @@
                 </xs:complexType>
             </xs:element>
             <xs:element name="course_description" type="xs:string"/>
+            <xs:element name="prerequisite_description" type="xs:string"/>
             <xs:element name="prerequisite" minOccurs="0" form="qualified">
                 <xs:complexType>
                     <xs:sequence>
