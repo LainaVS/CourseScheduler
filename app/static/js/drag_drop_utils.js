@@ -22,7 +22,7 @@ function dropFailedAlert (msg, li_element) {
     li_element.removeAttribute("id");
 }
 
-function prereqVerification(course_info, course_num, semester_num, li_to_move) {
+function prereqVerification(course_info, course_num, semester_num, li_to_move, course_name) {
     let alert_message = "";
     let should_move_course = true;
     let required_courses_taken = false;
@@ -165,7 +165,7 @@ function drop(ev, course_element) {
         }
 
         if ((course_info["prerequisite"].length != 0) && should_move_course) {
-            should_move_course = prereqVerification(course_info, course_num, semester_num, li_to_move)
+            should_move_course = prereqVerification(course_info, course_num, semester_num, li_to_move, course_name)
         }
     }
 
