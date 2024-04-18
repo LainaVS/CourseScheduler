@@ -1,4 +1,13 @@
 <html>
+    <!--do these actually need to be passed? they are updated without passing
+    <input type="hidden" name="free_elective_credits_accumulated" value="{{ free_elective_credits_accumulated }}">
+    <input type="hidden" name="TOTAL_CREDITS_FOR_GEN_EDS" value="{{ TOTAL_CREDITS_FOR_GEN_EDS }}">
+    <input type="hidden" name="accumulated_gen_eds" value="{{ accumulated_gen_eds }}">
+    <input type="hidden" name="TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES" value="{{ TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES }}">
+    <input type="hidden" name="accumulated_certificates" value="{{ accumulated_certificates }}">
+    <input type="hidden" name="ADJUSTED_TOTAL_FOR_3000" value="{{ ADJUSTED_TOTAL_FOR_3000 }}">
+    <input type="hidden" name="accumulated_3000" value="{{ accumulated_3000 }}">
+    -->
     <input type="hidden" name="waived_courses" value="{{ waived_courses }}">
     <input type="hidden" name="current_semester" value="{{ current_semester }}">
     <input type="hidden" id="courses_taken" name="courses_taken" value="{{ courses_taken }}">
@@ -46,21 +55,26 @@
                     </div>
                     <div class="counts">
                         <p><label>Total Accumulated Electives</label>
-                            <sub-label>General Education</sub-label><small>6 / 27</small>
+                            <sub-label>General Education</sub-label>
+                            <small>{{ accumulated_gen_eds }} / {{ TOTAL_CREDITS_FOR_GEN_EDS }}</small>
                             <br>
                             <label></label>
-                            <sub-label>CS 3000+ Electives</sub-label><small>0 / 15</small>
+                            <sub-label>CS 3000+ Electives</sub-label>
+                            <small>{{ accumulated_3000 }} / {{ ADJUSTED_TOTAL_FOR_3000 }}</small>
                             <br>
                             <label></label>
-                            <sub-label>Artificial Intelligence Certificate</sub-label><small>0 / 15</small>
+                            <sub-label>{{ certificates }} Certificate</sub-label>
+                            <small>{{ accumulated_certificates }} / {{ TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES }}</small>
                             <br>
                             <label></label>
-                            <sub-label>Free Electives</sub-label><small>   12</small>
+                            <sub-label>Free Electives</sub-label><small>   {{ free_elective_credits_accumulated }}</small>
                             <br>
                         </p>
                         <label>Required Courses Remaining</label><br>
                         <div class="course-container">
+                            <!--Add a loop so only remaining classes show-->
                             <degree>CMP SCI 4500</degree>
+                            <!--Add a loop so only remaining certificate classes show-->
                             <certificate>CMP SCI 4500</certificate>
                         </div>
                     </div>

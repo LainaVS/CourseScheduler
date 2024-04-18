@@ -202,6 +202,12 @@ def parse_certificate(certificate_name) -> dict:
     elective_courses = build_dictionary(certificate_data[certificate_name]["CertElectives"]["course"])
     electives_needed = int(certificate_data[certificate_name]["NoOfElectives"]["num"])
 
+    # add a flag to indicate course was added from the certificate XML
+    for course in core_courses:
+        core_courses.get(course).update({'certificate': True})
+    for course in elective_courses:
+        elective_courses.get(course).update({'certificate': True})
+
     # return finalized dictionary of the course type
     return core_courses, elective_courses, electives_needed
 
@@ -1041,19 +1047,35 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
     accumulated_gen_eds = (TOTAL_CREDITS_FOR_GEN_EDS - gen_ed_credits_still_needed)
     accumulated_certificates = (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES - (cert_elective_courses_still_needed* DEFAULT_CREDIT_HOURS))
     accumulated_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - ((min_3000_course_still_needed + cert_elective_courses_still_needed + num_3000_replaced_by_cert_core)*DEFAULT_CREDIT_HOURS))
-    modified_total_for_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES+ (num_3000_replaced_by_cert_core*DEFAULT_CREDIT_HOURS)))
-    modified_accumulated_3000 = (modified_total_for_3000 -(min_3000_course_still_needed*DEFAULT_CREDIT_HOURS))
+    ADJUSTED_TOTAL_FOR_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES+ (num_3000_replaced_by_cert_core*DEFAULT_CREDIT_HOURS)))
+    adjusted_accumulated_3000 = (ADJUSTED_TOTAL_FOR_3000 -(min_3000_course_still_needed*DEFAULT_CREDIT_HOURS))
+    ## print statements were just for troubleshooting, can be removed when counters are all working
     print(f"{min_3000_course_still_needed=} {cert_elective_courses_still_needed=} {num_3000_replaced_by_cert_core=}")
     print(f'TOTAL_CREDITS_FOR_GEN_EDS:               {accumulated_gen_eds:>2} / {TOTAL_CREDITS_FOR_GEN_EDS}')
     print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES:        {accumulated_3000:>2} / {TOTAL_CREDITS_FOR_BSCS_ELECTIVES}')
-    print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES after certificate added: {modified_accumulated_3000} / {modified_total_for_3000}')
+    print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES after certificate added: {adjusted_accumulated_3000} / {ADJUSTED_TOTAL_FOR_3000}')
     print(f'TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES: {accumulated_certificates:>2} / {TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES}')
     print(f'Total Free Electives Accumulated:        {free_elective_credits_accumulated:<5}')
+
+    # get course information for generating on HTML
+    certificate_courses_remaining = []
+    bscs_courses_remaining = []
     for course, info in required_courses_dict_list:
-        print(f'{course}', end=", ")
-    print("\n")
+        if 'certificate' in info.keys():
+            certificate_courses_remaining.append(course)
+        else:
+            bscs_courses_remaining.append(course)
+            
+    print(f'{certificate_courses_remaining=}\n{bscs_courses_remaining=}')
     #print(f'{required_courses_dict_list=}')
     return {
+        "free_elective_credits_accumulated": free_elective_credits_accumulated,
+        "TOTAL_CREDITS_FOR_GEN_EDS": TOTAL_CREDITS_FOR_GEN_EDS,
+        "accumulated_gen_eds": accumulated_gen_eds,
+        "TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES": TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES,
+        "accumulated_certificates": accumulated_certificates,
+        "ADJUSTED_TOTAL_FOR_3000": ADJUSTED_TOTAL_FOR_3000,
+        "accumulated_3000": adjusted_accumulated_3000,
         "required_courses_dict_list": json.dumps(required_courses_dict_list),
         "required_courses_dict_list_unchanged": json.dumps(required_courses_dict_list_unchanged),
         "semesters": user_semesters,
@@ -1070,7 +1092,6 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
         "certificate_choice": json.dumps(certificate_choice),
         "num_3000_replaced_by_cert_core": num_3000_replaced_by_cert_core,
         "cert_elective_courses_still_needed": cert_elective_courses_still_needed,
-        "TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES": TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES,
         "saved_minimum_credits_selection": min_credits_per_semester,
         "elective_courses": json.dumps(elective_courses),
         "gen_ed_credits_still_needed": gen_ed_credits_still_needed,
