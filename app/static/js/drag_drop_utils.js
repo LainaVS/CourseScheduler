@@ -67,13 +67,16 @@ function prereqVerification(course_info, course_num, semester_num, li_to_move, c
             } else {
                 required_courses_taken = false;
 
-                prereq.forEach((prereq_course) => {
+                prereq.some((prereq_course) => {
                     if (courses_taken_before_new_semester.includes(prereq_course) ||
                         (new_semester_current_courses.includes(prereq_course) && (prereq_course === concurrent))) {
                             required_courses_taken = true;
                     } else {
                         alert_message = `${course_num} prerequisite (${prereq_course}) has to be completed prior to the selected semester!`;
                         required_courses_taken = false;
+                    }
+                    if (!required_courses_taken) {
+                        return true;
                     }
                 })
                 if (required_courses_taken) {
