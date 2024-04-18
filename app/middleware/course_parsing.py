@@ -711,7 +711,6 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
 
                             # if there is >1 pre-requisite
                             else:
-                                print(required_courses_taken)
                                 # iterate through each pre-requisite
                                 for prereq in prereqs:
                                     if (prereq in courses_taken) and (
