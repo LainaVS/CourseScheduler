@@ -19,14 +19,19 @@ function mobile_cert_check(cert_value) {
 // Add or remove 'Summer' option depending on Summer checkbox
 function handleSummerCheckboxClick(checkbox){
     var starting_semester_dropdown = document.getElementById("starting_semester");
+    const summer_credits_label = document.getElementById("summer_credits_label");
+    const summer_credits_select = document.getElementById("summer_credits_select");
 
     if (!checkbox.checked) {
         starting_semester_dropdown.remove(2); // remove summer option
-        
+        summer_credits_label.style.visibility = "hidden";
+        summer_credits_select.style.visibility = "hidden";
     } else {
         var option = document.createElement("option");
         option.text = "Summer";
         starting_semester_dropdown.add(option);
+        summer_credits_label.style.visibility = "visible";
+        summer_credits_select.style.visibility = "visible";
     }
     const certificate_select = document.getElementById('certificate');
     const index_of_cert_value = certificate_select.value.indexOf(',') + 1; // Index will be after comma

@@ -71,8 +71,8 @@
             <br><br>
 
          <!-- Ask user for number of credits for summer-->
-            <label for="initial_minimum_summer_credits">Minimum Credits for Summer</label>
-            <select name="minimum_summer_credits" id="initial_minimum_summer_credits">
+            <label style="visibility: hidden;" id="summer_credits_label" for="minimum_summer_credits">Minimum Credits for Summer</label>
+            <select style="visibility: hidden;" id="summer_credits_select" name="minimum_summer_credits">
                 {% for credits in minimum_summer_credits %}
                 {% if credits == 0 %}
                 <option selected value="{{credits}}">{{ credits }}</option>
