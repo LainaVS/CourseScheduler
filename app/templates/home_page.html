@@ -3,9 +3,11 @@
         <!-- Menu -->
         <div class="form-container" id = "form-container-2">
             <img src="https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
-            <h1>Degree Planner</h1>
-            <h2>Bachelor's of Science in Computer Science</h2>
             <br>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="user_name">
+            <br><br>
             <!-- Select certificate option -->
             <label for="certificate">Certificate Option</label>
             <select id="certificate" name="certificate_choice" onchange="handleCertSelect(this)">
@@ -112,7 +114,6 @@
                 {% endfor %}
             </select>
             <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
-            <br><br>
 
             <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
             <input type="hidden" name="semester_number" value="{{ semester_number }}">

@@ -51,13 +51,17 @@ function handleEarnedCreditCheckboxClick(checkbox) {
     const credits_earned_select = document.getElementById("starting_credits");
     const gen_credits_label = document.getElementById("gen_credits_label");
     const free_credits_label = document.getElementById("free_credits_label");
+    const total_label = document.getElementById("total_label");
+    const total_id = document.getElementById("total_id");
 
     const second_form = document.getElementById('form-container-2');
     const main = document.getElementById('main-form');
     const pop_up = document.getElementById('test-id');
 
     if (!checkbox.checked) {
-        setVisibilityWithTransition([waived_credits_label, waived_credits_select, taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select, gen_credits_label, free_credits_label], "hidden");
+        setVisibilityWithTransition([waived_credits_label, waived_credits_select,
+            taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select,
+            gen_credits_label, free_credits_label], "hidden");
         setVisibilityWithTransition([gen_credits_id, free_credits_id], "hidden");
 
         /*remove CSS styling*/
@@ -65,7 +69,9 @@ function handleEarnedCreditCheckboxClick(checkbox) {
         second_form.classList.remove('main-form');
         second_form.classList.add('shrink');
     } else {
-        setVisibilityWithTransition([waived_credits_label, waived_credits_select, taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select, gen_credits_label, free_credits_label], "visible");
+        setVisibilityWithTransition([waived_credits_label, waived_credits_select,
+            taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select,
+            gen_credits_label, free_credits_label], "visible");
         setVisibilityWithTransition([gen_credits_id, free_credits_id], "visible");
 
         /*add CSS styling*/
