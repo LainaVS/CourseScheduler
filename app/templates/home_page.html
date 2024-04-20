@@ -3,22 +3,10 @@
         <!-- Menu -->
         <div class="form-container">
             <img src="https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
-            <br><br>
-
-            <!-- Select current semester-->
-            <label for="current_semester">Starting Semester</label>
-            <select name="current_semester" id="starting_semester">
-                {% for semester in semesters %}
-                <option value="{{semester}}">{{ semester }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select summer semester boolean -->
-            <label for="summer">Summer Semester</label>
-            <input type="checkbox" id="summer" name="include_summer" onClick="handleSummerCheckboxClick(this)"><br>
-            <br><br>
-
+            <br>
+            <h1>Degree Planner</h1>
+            <h2>Bachelor's of Science in Computer Science</h2>
+            <br>
             <!-- Select certificate option -->
             <label for="certificate">Certificate Option</label>
             <select id="certificate" name="certificate_choice" onchange="handleCertSelect(this)">
@@ -28,33 +16,13 @@
             </select>
             <br><br>
 
-            <!-- Select waived courses-->
-            <label for="waived_courses">Select Waived Courses</label>
-            <select name="waived_courses" id="waived_courses" multiple onchange="updateWaivedTakenDropdown(this)">
-                {% for required_course in required_courses %}
-                <option value="{{required_course.course}}">{{ required_course.course }}</option>
+            <!-- Select current semester-->
+            <label for="current_semester">Starting Semester</label>
+            <select name="current_semester" id="starting_semester">
+                {% for semester in semesters %}
+                <option value="{{semester}}">{{ semester }}</option>
                 {% endfor %}
             </select>
-            <br><br>
-
-            <!-- Select courses taken -->
-            <label for="courses_taken">Select Completed Courses</label>
-            <select name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)">
-                {% for required_course in required_courses %}
-                <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
-                    required_course.course }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select number of credits already earned -->
-            <label for="total_credits">Current Credits Earned</label>
-            <select name="total_credits" id="starting_credits">
-                {% for credits in starting_credits %}
-                <option value="{{credits}}">{{ credits }}</option>
-                {% endfor %}
-            </select>
-            <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
             <br><br>
 
             <!-- Ask user for number of credits for first semester-->
@@ -68,6 +36,51 @@
                 {% endif %}
                 {% endfor %}
             </select>
+            <br><br>
+
+            <!-- Select summer semester boolean -->
+            <label for="summer">Summer Semester</label>
+            <input type="checkbox" id="summer" name="include_summer" onClick="handleSummerCheckboxClick(this)"><br>
+            <br>
+
+            <!-- Select earned credit boolean -->
+            <label for="earned_credit">Earned Credit</label>
+            <input type="checkbox" id="has_credits" name="include_credits" onclick="handleEarnedCreditCheckboxClick(this)"><br>
+            <br><br>
+
+            <div class = "buttons">
+                <input type="submit" id="single_semester_submit" name="single_semester" value="Start Schedule (by Semester)">
+                <input type="submit" id="complete_schedule_submit" name="generate_complete_schedule" value="Generate Full Schedule">
+            </div>
+            <br>
+
+            <!-- Select waived courses-->
+            <label style="visibility: hidden;" id ="waived_courses_label" for="waived_courses" >Select Waived Courses</label>
+            <select style="visibility: hidden;" name="waived_courses_name" id="waived_courses_id" multiple onchange="updateWaivedTakenDropdown(this)">
+                {% for required_course in required_courses %}
+                <option value="{{required_course.course}}">{{ required_course.course }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select courses taken -->
+            <label style="visibility: hidden;" id = "taken_courses_label" for="courses_taken">Select Completed Courses</label>
+            <select style="visibility: hidden;" name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)">
+                {% for required_course in required_courses %}
+                <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
+                    required_course.course }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select number of credits already earned -->
+            <label style="visibility: hidden;" id = "total_credits_label" for="total_credits">Current Credits Earned</label>
+            <select style="visibility: hidden;" name="total_credits" id="starting_credits">
+                {% for credits in starting_credits %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
             <br><br>
 
          <!-- Ask user for number of credits for summer-->
@@ -97,8 +110,6 @@
             <input type="hidden" name="first_semester" value="{{ first_semester }}">
             <input type="hidden" name="minimum_summer_credits" value="{{ minimum_summer_credits }}">
             <input type="hidden" name="semester_years" value="{{ semester_years }}">
-            <input type="submit" id="single_semester_submit" name="single_semester" value="Start Schedule (by Semester)">
-            <input type="submit" id="complete_schedule_submit" name="generate_complete_schedule" value="Generate Full Schedule">
         </div>
     </div>
 </html>

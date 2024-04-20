@@ -31,8 +31,24 @@ body {
     display: block;
     margin: auto;
   }
-  .form-container input[type="submit"][value="Start Schedule"] {
-    margin-left: 150px;
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+  .form-container input[type = submit]{
+    border: 1px solid black;
+    padding: 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    width: 45%;
+  }
+  .form-container input[type = submit]:hover{
+    transition: 0.5s;
+    color: lightgray;
+    background-color: #a80b2d;
   }
   .form-container label {
     display: inline-block;

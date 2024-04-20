@@ -40,6 +40,33 @@ function handleSummerCheckboxClick(checkbox){
     mobile_cert_check(cert_value);
 }
 
+// add or remove credit options depending on Earned Credit checkbox
+function handleEarnedCreditCheckboxClick(checkbox){
+    console.log("Function called")
+    const waived_credits_label = document.getElementById("waived_courses_label");
+    const waived_credits_select = document.getElementById("waived_courses_id");
+    const taken_credits_label = document.getElementById("taken_courses_label");
+    const taken_credits_select = document.getElementById("taken_courses");
+    const credits_earned_label = document.getElementById("total_credits_label");
+    const credits_earned_select = document.getElementById("starting_credits");
+
+    if (!checkbox.checked) {
+        waived_credits_label.style.visibility = "hidden";
+        waived_credits_select.style.visibility = "hidden";
+        taken_credits_label.style.visibility = "hidden";
+        taken_credits_select.style.visibility = "hidden";
+        credits_earned_label.style.visibility = "hidden";
+        credits_earned_select.style.visibility = "hidden";
+    } else {
+        waived_credits_label.style.visibility = "visible";
+        waived_credits_select.style.visibility = "visible";
+        taken_credits_label.style.visibility = "visible";
+        taken_credits_select.style.visibility = "visible";
+        credits_earned_label.style.visibility = "visible";
+        credits_earned_select.style.visibility = "visible";
+    }
+}
+
 // Remove all options of a passed in select element
 function removeOptions(selectElement) {
     var i, L = selectElement.options.length - 1;
