@@ -2,6 +2,12 @@ body {
   margin: 0;
 }
 
+h1, h2{
+  text-align: center;
+  color: #a80b2d;
+  font-weight: 400;
+}
+
 @media screen and (min-width: 0px) {
   body {
     height: 100vh;
@@ -20,11 +26,17 @@ body {
     background-position: center;
     box-shadow: inset 0 0 10em 6em #000;
   }
+  .main-form{
+    justify-content: left;
+    background-color: red;
+  }
   .form-container {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
     padding: 30px;
     font-family: "Roboto Condensed", sans-serif;
+    height: 600px;
+    transition: height 1s;
   }
   .form-container img {
     width: 300px;
@@ -50,11 +62,11 @@ body {
     color: lightgray;
     background-color: #a80b2d;
   }
-  .form-container label {
+  .form-container label{
     display: inline-block;
     width: 250px;
   }
-  .form-container select {
+  .form-container select{
     display: inline-block;
     width: 150px;
     vertical-align: top;
@@ -250,3 +262,44 @@ body {
     margin-left: 0;
   }
 }
+
+.move {
+  justify-content: flex-start;
+}
+
+.form-container-2{
+  animation: growAnimation 1.0s linear; /* Adjust duration and timing function as needed */
+  height: 1000px;
+}
+
+@keyframes growAnimation {
+  0% {
+    height: 600px;
+  }
+  100% {
+    height: 1000px;
+  }
+}
+
+/* Remove animation once completed and set size directly */
+.form-container-2.done {
+  animation: none;
+  height: 1000px;
+}
+
+.form-container-2.shrink {
+  height: 600px;
+}
+
+
+.test{
+  color: white;
+  font-size: 40px;
+}
+
+.test-id{
+  color: white;
+  background-color: red;
+  font-size: 40px;
+}
+

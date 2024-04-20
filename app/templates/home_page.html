@@ -1,9 +1,8 @@
 <html>
-    <div class="cover-page-background">
+    <div class="cover-page-background" id ='main-form'>
         <!-- Menu -->
-        <div class="form-container">
+        <div class="form-container" id = "form-container-2">
             <img src="https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
-            <br>
             <h1>Degree Planner</h1>
             <h2>Bachelor's of Science in Computer Science</h2>
             <br>
@@ -46,8 +45,22 @@
             <!-- Select earned credit boolean -->
             <label for="earned_credit">Earned Credit</label>
             <input type="checkbox" id="has_credits" name="include_credits" onclick="handleEarnedCreditCheckboxClick(this)"><br>
+            <br>
+
+            <!-- Ask user for number of credits for summer-->
+            <label style="visibility: hidden;" id="summer_credits_label" for="minimum_summer_credits">Minimum Credits for Summer</label>
+            <select style="visibility: hidden;" id="summer_credits_select" name="minimum_summer_credits">
+                {% for credits in minimum_summer_credits %}
+                {% if credits == 0 %}
+                <option selected value="{{credits}}">{{ credits }}</option>
+                {% else %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endif %}
+                {% endfor %}
+            </select>
             <br><br>
 
+            <!-- submit buttons-->
             <div class = "buttons">
                 <input type="submit" id="single_semester_submit" name="single_semester" value="Start Schedule (by Semester)">
                 <input type="submit" id="complete_schedule_submit" name="generate_complete_schedule" value="Generate Full Schedule">
@@ -73,6 +86,24 @@
             </select>
             <br><br>
 
+            <!-- Select gen ed courses taken-->
+            <label style="visibility: hidden;" id ="gen_credits_label" for="waived_courses" >General Education Credits Earned</label>
+            <select style="visibility: hidden;" name="gen_credits_name" id="gen_credits_id">
+                {% for i in range(0, 61) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select free electives taken -->
+            <label style="visibility: hidden;" id = "free_credits_label" for="courses_taken">Free Elective Credits Earned</label>
+            <select style="visibility: hidden;" name="free_credits_name" id="free_credits_id">
+                {% for i in range(0, 61) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
             <!-- Select number of credits already earned -->
             <label style="visibility: hidden;" id = "total_credits_label" for="total_credits">Current Credits Earned</label>
             <select style="visibility: hidden;" name="total_credits" id="starting_credits">
@@ -81,19 +112,6 @@
                 {% endfor %}
             </select>
             <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
-            <br><br>
-
-         <!-- Ask user for number of credits for summer-->
-            <label style="visibility: hidden;" id="summer_credits_label" for="minimum_summer_credits">Minimum Credits for Summer</label>
-            <select style="visibility: hidden;" id="summer_credits_select" name="minimum_summer_credits">
-                {% for credits in minimum_summer_credits %}
-                {% if credits == 0 %}
-                <option selected value="{{credits}}">{{ credits }}</option>
-                {% else %}
-                <option value="{{credits}}">{{ credits }}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
             <br><br>
 
             <input type="hidden" name="course_schedule" value="{{ course_schedule }}">

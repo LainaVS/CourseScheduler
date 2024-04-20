@@ -41,31 +41,53 @@ function handleSummerCheckboxClick(checkbox){
 }
 
 // add or remove credit options depending on Earned Credit checkbox
-function handleEarnedCreditCheckboxClick(checkbox){
-    console.log("Function called")
+function handleEarnedCreditCheckboxClick(checkbox) {
+    console.log("Function called");
     const waived_credits_label = document.getElementById("waived_courses_label");
     const waived_credits_select = document.getElementById("waived_courses_id");
     const taken_credits_label = document.getElementById("taken_courses_label");
     const taken_credits_select = document.getElementById("taken_courses");
     const credits_earned_label = document.getElementById("total_credits_label");
     const credits_earned_select = document.getElementById("starting_credits");
+    const gen_credits_label = document.getElementById("gen_credits_label");
+    const free_credits_label = document.getElementById("free_credits_label");
+
+    const second_form = document.getElementById('form-container-2');
+    const main = document.getElementById('main-form');
+    const pop_up = document.getElementById('test-id');
 
     if (!checkbox.checked) {
-        waived_credits_label.style.visibility = "hidden";
-        waived_credits_select.style.visibility = "hidden";
-        taken_credits_label.style.visibility = "hidden";
-        taken_credits_select.style.visibility = "hidden";
-        credits_earned_label.style.visibility = "hidden";
-        credits_earned_select.style.visibility = "hidden";
+        setVisibilityWithTransition([waived_credits_label, waived_credits_select, taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select, gen_credits_label, free_credits_label], "hidden");
+        setVisibilityWithTransition([gen_credits_id, free_credits_id], "hidden");
+
+        /*remove CSS styling*/
+        second_form.classList.remove('form-container-2');
+        second_form.classList.remove('main-form');
+        second_form.classList.add('shrink');
     } else {
-        waived_credits_label.style.visibility = "visible";
-        waived_credits_select.style.visibility = "visible";
-        taken_credits_label.style.visibility = "visible";
-        taken_credits_select.style.visibility = "visible";
-        credits_earned_label.style.visibility = "visible";
-        credits_earned_select.style.visibility = "visible";
+        setVisibilityWithTransition([waived_credits_label, waived_credits_select, taken_credits_label, taken_credits_select, credits_earned_label, credits_earned_select, gen_credits_label, free_credits_label], "visible");
+        setVisibilityWithTransition([gen_credits_id, free_credits_id], "visible");
+
+        /*add CSS styling*/
+        second_form.classList.add('form-container-2');
+        second_form.classList.add('main-form');
+        second_form.classList.remove('shrink');
     }
 }
+
+function setVisibilityWithTransition(elements, visibility) {
+    elements.forEach(element => {
+        if (visibility === "visible") {
+            element.style.opacity = 1;
+        } else {
+            element.style.opacity = 0;
+        }
+        setTimeout(() => {
+            element.style.visibility = visibility;
+        }, 1000); // Adjust the duration of the transition here (in milliseconds)
+    });
+}
+
 
 // Remove all options of a passed in select element
 function removeOptions(selectElement) {
