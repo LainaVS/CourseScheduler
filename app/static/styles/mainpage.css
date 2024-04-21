@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-html{
+html .cover-page-background{
   margin:0;
   padding:0;
   max-height:100vh;
@@ -289,7 +289,7 @@ body {
     }
   .tooltip .tooltiptext {
       visibility: hidden;
-      width: 120px;
+      width: 400px;
       background-color: black;
       color: #fff;
       text-align: center;
@@ -297,15 +297,20 @@ body {
       padding: 5px;
       position: absolute;
       z-index: 1;
-      bottom: 125%;
-      left: 50%;
-      margin-left: -60px;
       opacity: 0;
       transition: opacity 0.3s;
+  }
+  .tooltiptext a{
+    color: #a80b2d;
+    text-decoration: none;
+  }
+  .tooltiptext a:hover{
+    text-decoration: underline;
   }
   .tooltip:hover .tooltiptext {
       visibility: visible;
       opacity: 1;
+
   }
 
 

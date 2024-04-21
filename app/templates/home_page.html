@@ -12,7 +12,20 @@
             <input type="text" id="name" name="user_name">
             <br><br>
             <!-- Select certificate option -->
-            <label for="certificate">Certificate Option</label>
+            <label for="certificate">
+                Certificate Option
+                <span class="tooltip">
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        Enhance your expertise with our undergraduate certificate programs tailored to complement your degree.
+                        These focused curricula offer specialized training in areas, providing valuable skills to bolster
+                        your resume and advance your career.<br><br>
+                        <a href ="https://www.umsl.edu/cmpsci/certificates/undergraduate-certificates.html" target="_blank">
+                            Learn More
+                        </a>
+                    </span>
+                </span>
+            </label>
             <select id="certificate" name="certificate_choice" onchange="handleCertSelect(this)">
                 {% for certificate, certificate_value in certificates %}
                 <option value="{{certificate}},{{certificate_value}}">{{ certificate }}</option>
@@ -48,7 +61,18 @@
             <br>
 
             <!-- Select earned credit boolean -->
-            <label for="earned_credit">Earned Credit</label>
+            <label for="earned_credit">
+                Earned Credit
+                <span class="tooltip">
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        If you've already earned credits—be it through waived, transferred, or already completed courses at UMSL—check this
+                        box to bring you to a form for more information. We understand the value of your prior learning experiences
+                        and strive to ensure they count towards your degree, saving you time and effort as
+                        you progress through our computer science program.
+                    </span>
+                </span>
+            </label>
             <input type="checkbox" id="has_credits" name="include_credits" onclick="handleEarnedCreditCheckboxClick(this)"><br>
             <br>
 
@@ -90,12 +114,21 @@
         </div>
         <div class = "second-form" id = "form-container-2">
             <h1>Course History</h1><br>
-            <h2>Computer Science Required Courses</h2>
             <!-- Select waived courses-->
             <label style="visibility: hidden;" id ="waived_courses_label" for="waived_courses" >
                 <span class="tooltip">
-                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
-                    <span class="tooltiptext">Tooltip text here</span>
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        A waived course is one in which a student is exempt from completing due to previous academic
+                        achievements or demonstrated proficiency. If a course waived, the student cannot claim
+                        credit for that course, and it does not count towards minimum credit requirements.<br><br>
+
+                        Unsure if a course is waived?<br>
+                        Students should contact the
+                        <a href ="https://www.umsl.edu/~academicadvising/index.html" target="_blank">
+                            Academic Advising Office
+                        </a>
+                    </span>
                 </span>
                 Select Waived Courses
             </label>
@@ -103,7 +136,7 @@
             onfocus='this.size=10;' onblur='this.size=1;'
             onchange='this.size=1;'>
                 {% for required_course in required_courses %}
-                <option value="{{required_course.course}}">{{ required_course.course }}</option>
+                    <option value="{{required_course.course}}">{{ required_course.course }}</option>
                 {% endfor %}
             </select>
             <br><br>
@@ -111,16 +144,26 @@
             <!-- Select courses taken -->
             <label style="visibility: hidden;" id = "taken_courses_label" for="courses_taken">
                 <span class="tooltip">
-                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
-                    <span class="tooltiptext">Tooltip text here</span>
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        Students are required to earn 34 CMP SCI credits in a 12-course sequence, 19 credits in a 5-course
+                        sequence, 6 ENGL credits in a 2-course sequence, and 1 university education course.
+                        <a href = "https://www.umsl.edu/cmpsci/undergraduate-studies/BSCS.html" target="_blank">Learn more here.</a>
+                        Select any courses from the dropdown
+                        that you have earned, either previously at UMSL or transferred in from another institution.<br><br>
+
+                        Unsure if your credits transfer?<br> Students should visit the
+                        <a href = "https://www.umsl.edu/admissions/transfer/transfer-credit-evaluation.html" target="_blank">
+                            Transfer Equivalency</a> portal.
+                    </span>
                 </span>
-                Select Completed Courses
+                Completed Courses
             </label>
             <select style="visibility: hidden;" name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)"
             onfocus='this.size=10;' onblur='this.size=1;'
             onchange='this.size=1;'>
                 {% for required_course in required_courses %}
-                <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
+                    <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
                     required_course.course }}</option>
                 {% endfor %}
             </select>
@@ -129,8 +172,18 @@
             <!-- Select gen ed courses taken-->
             <label style="visibility: hidden;" id ="gen_credits_label" for="waived_courses" >
                 <span class="tooltip">
-                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
-                    <span class="tooltiptext">Tooltip text here</span>
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        Students are required to earn 27 credits in a
+                        <a href = "https://bulletin.umsl.edu/generaleducationrequirements/" target="_blank">
+                                9-course sequence</a> of core classes. Select the total number of credits from the dropdown
+                        that you have earned in General Education Requirements,
+                        either previously at UMSL or transferred in from another institution.<br><br>
+
+                        Unsure if your credits transfer?<br> Students should visit the
+                        <a href = "https://www.umsl.edu/admissions/transfer/transfer-credit-evaluation.html" target="_blank">
+                            Transfer Equivalency</a> portal.
+                    </span>
                 </span>
                 General Education Credits Earned
             </label>
@@ -144,8 +197,16 @@
             <!-- Select free electives taken -->
             <label style="visibility: hidden;" id = "free_credits_label" for="courses_taken">
                 <span class="tooltip">
-                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
-                    <span class="tooltiptext">Tooltip text here</span>
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">
+                        Students are required to earn 120 credits in order to graduate.
+                        Select the total number of credits earned, either previously at UMSL or transferred in from another
+                        institution, that do not belong in any other category.<br><br>
+
+                        Unsure if your credits transfer?<br> Students should visit the
+                        <a href = "https://www.umsl.edu/admissions/transfer/transfer-credit-evaluation.html" target="_blank">
+                            Transfer Equivalency</a> portal.
+                    </span>
                 </span>
                 Free Elective Credits Earned
             </label>
@@ -159,8 +220,10 @@
             <!-- Select number of credits already earned -->
             <label style="visibility: hidden;" id = "total_credits_label" for="total_credits">
                 <span class="tooltip">
-                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
-                    <span class="tooltiptext">Tooltip text here</span>
+                    <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">This is the total amount of credits earned
+                    from Computer Science, Mathematics, General Education courses, Free Electives,
+                    and other BSCS core. These credits will go to the 120-credit graduation requirements.</span>
                 </span>
                 Current Credits Earned
             </label>
