@@ -1,7 +1,10 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
     <div class="cover-page-background" id ='main-form'>
         <!-- Menu -->
-        <div class="form-container" id = "form-container-2">
+        <div class="form-container">
             <img src="https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">
             <br>
 
@@ -68,51 +71,6 @@
                 <input type="submit" id="complete_schedule_submit" name="generate_complete_schedule" value="Generate Full Schedule">
             </div>
             <br>
-
-            <!-- Select waived courses-->
-            <label style="visibility: hidden;" id ="waived_courses_label" for="waived_courses" >Select Waived Courses</label>
-            <select style="visibility: hidden;" name="waived_courses_name" id="waived_courses_id" multiple onchange="updateWaivedTakenDropdown(this)">
-                {% for required_course in required_courses %}
-                <option value="{{required_course.course}}">{{ required_course.course }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select courses taken -->
-            <label style="visibility: hidden;" id = "taken_courses_label" for="courses_taken">Select Completed Courses</label>
-            <select style="visibility: hidden;" name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)">
-                {% for required_course in required_courses %}
-                <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
-                    required_course.course }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select gen ed courses taken-->
-            <label style="visibility: hidden;" id ="gen_credits_label" for="waived_courses" >General Education Credits Earned</label>
-            <select style="visibility: hidden;" name="gen_credits_name" id="gen_credits_id">
-                {% for i in range(0, 61) %}
-                <option value="{{ i }}">{{ i }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select free electives taken -->
-            <label style="visibility: hidden;" id = "free_credits_label" for="courses_taken">Free Elective Credits Earned</label>
-            <select style="visibility: hidden;" name="free_credits_name" id="free_credits_id">
-                {% for i in range(0, 61) %}
-                <option value="{{ i }}">{{ i }}</option>
-                {% endfor %}
-            </select>
-            <br><br>
-
-            <!-- Select number of credits already earned -->
-            <label style="visibility: hidden;" id = "total_credits_label" for="total_credits">Current Credits Earned</label>
-            <select style="visibility: hidden;" name="total_credits" id="starting_credits">
-                {% for credits in starting_credits %}
-                <option value="{{credits}}">{{ credits }}</option>
-                {% endfor %}
-            </select>
             <input type="hidden" name="required_courses_dict" value="{{ required_courses_dict }}">
 
             <input type="hidden" name="course_schedule" value="{{ course_schedule }}">
@@ -130,5 +88,87 @@
             <input type="hidden" name="minimum_summer_credits" value="{{ minimum_summer_credits }}">
             <input type="hidden" name="semester_years" value="{{ semester_years }}">
         </div>
+        <div class = "second-form" id = "form-container-2">
+            <h1>Course History</h1><br>
+            <h2>Computer Science Required Courses</h2>
+            <!-- Select waived courses-->
+            <label style="visibility: hidden;" id ="waived_courses_label" for="waived_courses" >
+                <span class="tooltip">
+                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">Tooltip text here</span>
+                </span>
+                Select Waived Courses
+            </label>
+            <select style="visibility: hidden;" name="waived_courses_name" id="waived_courses_id" multiple onchange="updateWaivedTakenDropdown(this)"
+            onfocus='this.size=10;' onblur='this.size=1;'
+            onchange='this.size=1;'>
+                {% for required_course in required_courses %}
+                <option value="{{required_course.course}}">{{ required_course.course }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select courses taken -->
+            <label style="visibility: hidden;" id = "taken_courses_label" for="courses_taken">
+                <span class="tooltip">
+                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">Tooltip text here</span>
+                </span>
+                Select Completed Courses
+            </label>
+            <select style="visibility: hidden;" name="courses_taken" id="taken_courses" multiple onChange="handleTakenCourseSelect(this)"
+            onfocus='this.size=10;' onblur='this.size=1;'
+            onchange='this.size=1;'>
+                {% for required_course in required_courses %}
+                <option value="{{required_course.course}}" credits="{{required_course.credits}}">{{
+                    required_course.course }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select gen ed courses taken-->
+            <label style="visibility: hidden;" id ="gen_credits_label" for="waived_courses" >
+                <span class="tooltip">
+                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">Tooltip text here</span>
+                </span>
+                General Education Credits Earned
+            </label>
+            <select style="visibility: hidden;" name="gen_credits_name" id="gen_credits_id">
+                {% for i in range(0, 61) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select free electives taken -->
+            <label style="visibility: hidden;" id = "free_credits_label" for="courses_taken">
+                <span class="tooltip">
+                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">Tooltip text here</span>
+                </span>
+                Free Elective Credits Earned
+            </label>
+            <select style="visibility: hidden;" name="free_credits_name" id="free_credits_id">
+                {% for i in range(0, 61) %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+
+            <!-- Select number of credits already earned -->
+            <label style="visibility: hidden;" id = "total_credits_label" for="total_credits">
+                <span class="tooltip">
+                    <i style="font-size:24px" class="fa" class="fas fa-question-circle">&#xf059;</i>
+                    <span class="tooltiptext">Tooltip text here</span>
+                </span>
+                Current Credits Earned
+            </label>
+            <select style="visibility: hidden;" name="total_credits" id="starting_credits">
+                {% for credits in starting_credits %}
+                <option value="{{credits}}">{{ credits }}</option>
+                {% endfor %}
+            </select>
+
     </div>
 </html>
