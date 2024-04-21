@@ -477,8 +477,13 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
 
     # credit hour trackers
     total_credits_accumulated = int(request.form["total_credits"])
-    free_elective_credits_accumulated = 0
+    free_elective_credits_accumulated = int(request.form["fe_taken"])
     gen_ed_credits_still_needed = int(request.form["gen_ed_credits_still_needed"])
+    gen_ed_credits_taken = int(request.form["ge_taken"])
+    gen_ed_credits_still_needed -= gen_ed_credits_taken
+    print(f"GEN ED TAKEN: {gen_ed_credits_taken}")
+    print(f"GEN ED NEEDED: {gen_ed_credits_still_needed}")
+    print(f"FREE TAKEN: {free_elective_credits_accumulated}")
     cert_elective_courses_still_needed = int(request.form["cert_elective_courses_still_needed"])  # default is 0
     min_3000_course_still_needed = int(request.form["min_3000_course"]) # default is 5
 
@@ -1095,6 +1100,8 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
         "first_semester": first_semester,
         "semester_years": json.dumps(semester_years),
         "course_prereqs_for": json.dumps(course_prereqs_for),
-        "user_name": user_name
+        "user_name": user_name,
+        "ge_taken": gen_ed_credits_taken,
+        "fe_taken": free_elective_credits_accumulated
 
     }

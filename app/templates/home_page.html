@@ -194,7 +194,7 @@
             <br><br>
 
             <!-- Select free electives taken -->
-            <label for="free_taken">
+            <label for="fe_taken">
                 <span class="tooltip">
                     <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
                     <span class="tooltiptext">
@@ -212,7 +212,7 @@
                 </span>
                 Free Elective Credits Earned
             </label>
-            <select name="free_taken" id="free_taken_id">
+            <select name="fe_taken" id="free_taken_id">
                 {% for i in range(0, 61) %}
                 <option value="{{ i }}">{{ i }}</option>
                 {% endfor %}
