@@ -100,6 +100,7 @@ function handleTakenCourseSelect(sel) {
     updateWaivedTakenDropdown(sel, true)
 }
 
+
 // Update waived/taken courses select element to remove/add options based on selected waived/taken courses
 function updateWaivedTakenDropdown(sel, is_taken_courses) {
     var dropdown_to_update;
