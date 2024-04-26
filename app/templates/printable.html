@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/styles/printable.css">
+</head>
+<body>
+    <div class = "printable-page">
+        <!-- Iterate through each semester's courses-->
+        <div class = "grid-container">
+            {% for semester in course_schedule_display %}
+                <!-- One semester -->
+                <div class = "grid-item">
+                    <h1> {{ semester.semester }} {{ semester.year }}</h1>
+                    <br>
+                    <!-- Iterate through courses-->
+                    {% for course in semester.schedule %}
+                        <span id = "course"> {{ course.course }} </span>
+                        <span id = "name"> {{ course.name }} </span>
+                        <span id = "credits"> {{ course.credits }} </span>
+                        <span id = "category"> {{ course.category }}</span>
+                        <br>
+                    {% endfor %}
+                        <span id = "course"> {{ " " }} </span>
+                        <span id = "name"> {{ " " }} </span>
+                        <span id = "credits"> {{ semester.credits }} </span>
+                        <span id = "category"> {{ " " }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
