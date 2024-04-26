@@ -7,6 +7,29 @@
 </head>
 <body>
     <div class = "printable-page">
+
+        <span id = "label"><p>Total Credits</p></span>
+        <span id = "answer"><p> {{ total_credits }} </p></span><br>
+
+        <span id = "label"><p>General Education Credits: </p></span>
+        <span id = "answer"><p> {{ 27 - gen_ed_credits_still_needed }} </p></span><br>
+
+        <span id = "label"><p>Free Elective Credits: </p></span>
+        <span id = "answer"><p> {{ fe_taken }} </p></span><br>
+
+        <span id = "label"><p>Min 3000+ Courses Needed: </p></span>
+        <span id = "answer"><p> {{ min_3000_course }} </p></span><br>
+
+        <span id = "label"><p>Certificate Elective Courses Needed: </p></span>
+        <span id = "answer"><p> {{ cert_elective_courses_still_needed }} </p></span><br>
+        <!--
+            AI: 3130 and 4300 are required, 3 electives
+            Cyber: 3702, 4730, 4782 are required, 2 electives
+            Data: 4200, 4340, 4342 are required, 2 electives
+            Web: 3010, 4010, 4011, 4012 are required, 1 elective
+            Mobile: 4020, 4220, 4792 are required, 2 electives
+        -->
+
         <!-- Iterate through each semester's courses-->
         <div class = "grid-container">
             {% for semester in course_schedule_display %}

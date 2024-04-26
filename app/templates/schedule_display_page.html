@@ -52,7 +52,21 @@
                         {% endfor %}
                     </select><br>
                     <label>Bachelor of Science in Computer Science </label><br>
-                    <label id = "printer"><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br>
+                    <label id = "printer">
+                        <a href="{{ url_for('printable',
+                            course_schedule_display = course_schedule,
+                            total_credits = total_credits,
+                            certificate_choice = certificate_choice,
+                            gen_ed_credits_still_needed = gen_ed_credits_still_needed,
+                            user_name = user_name,
+                            fe_taken = fe_taken,
+                            min_3000_course = min_3000_course,
+                            num_3000_replaced_by_cert_core = num_3000_replaced_by_cert_core,
+                            cert_elective_courses_still_needed = cert_elective_courses_still_needed,
+                            TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES) }}">
+                                See Printer-Friendly Version
+                        </a>
+                    </label><br>
                     <div class = "credit-category">
                         {% if certificates_display[0] != "None" %}
                             <label>{{ certificates_display[0]}} Certificate</label>
@@ -225,7 +239,21 @@
     {% else %}
         <div class="full-schedule-scheduler">
             <div class="semester-schedules">
-                <label><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
+                    <label>
+                        <a href="{{ url_for('printable',
+                        course_schedule_display = course_schedule,
+                        total_credits = total_credits,
+                        certificate_choice = certificate_choice,
+                        gen_ed_credits_still_needed = gen_ed_credits_still_needed,
+                        user_name = user_name,
+                        fe_taken = fe_taken,
+                        min_3000_course = min_3000_course,
+                        num_3000_replaced_by_cert_core = num_3000_replaced_by_cert_core,
+                        cert_elective_courses_still_needed = cert_elective_courses_still_needed,
+                        TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES) }}">
+                            See Printer-Friendly Version
+                        </a>
+                    </label><br><br>
                 <div class="grid-container">
                     {% for semester in course_schedule_display %}
                     <div class="grid-item" semesterNum="{{ semester.semester_number}}" ondrop="drop(event, this)"

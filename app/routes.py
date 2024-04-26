@@ -101,6 +101,15 @@ def schedule_generator():
 @app.route('/printable')
 def printable():
     course_schedule_display_json = request.args.get('course_schedule_display', None)
+    total_credits = request.args.get('total_credits', None)
+    certificate_choice = request.args.get('certificate_choice', None)
+    gen_ed_credits_still_needed = request.args.get('gen_ed_credits_still_needed', None)
+    user_name = request.args.get('user_name', None)
+    fe_taken = request.args.get('fe_taken', None)
+    min_3000_course = request.args.get('min_3000_course', None)
+    num_3000_replaced_by_cert_core = request.args.get('num_3000_replaced_by_cert_core', None)
+    cert_elective_courses_still_needed = request.args.get('cert_elective_courses_still_needed', None)
+    TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = request.args.get('TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES', None)
     if course_schedule_display_json:
         course_schedule_display = json.loads(course_schedule_display_json)
         print("Course Schedule Display:")
@@ -109,4 +118,14 @@ def printable():
         course_schedule_display = None
 
     return render_template('printable.html',
-                           course_schedule_display=course_schedule_display)
+                           course_schedule_display=course_schedule_display,
+                            total_credits = total_credits,
+                            certificate_choice = certificate_choice,
+                            gen_ed_credits_still_needed = int(gen_ed_credits_still_needed),
+                            user_name = user_name,
+                            fe_taken = fe_taken,
+                            min_3000_course = min_3000_course,
+                            num_3000_replaced_by_cert_core = num_3000_replaced_by_cert_core,
+                            cert_elective_courses_still_needed = cert_elective_courses_still_needed,
+                            TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES
+    )
