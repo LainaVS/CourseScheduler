@@ -190,8 +190,6 @@ body {
       text-decoration: underline;
   }
 
-
-
   .class-grid li{
     color: white;
     background-color: red;
@@ -421,6 +419,17 @@ body {
   .buttons{
     display: flex;
     justify-content: center;
+  }
+
+  .semester-schedules label a:link, a:visited, a:active, a:focus, a:hover{
+      color: #a80b2d;
+      text-decoration: none;
+      display: inline-block;
+      width: 500px;
+  }
+
+  .semester-schedules label a:hover{
+      text-decoration: underline;
   }
 }
 

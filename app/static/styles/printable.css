@@ -1,0 +1,44 @@
+h1{
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 13px;
+}
+#course, #name, #credits, #category, #space{
+  width: 150px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman";
+  font-size: 13px;
+}
+#space{
+  width: 50px;
+}
+#name{
+  width: 250px;
+}
+#credits{
+  width: 25px;
+  text-align: right;
+}
+#category{
+  margin-left: 25px;
+  width: 150px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.grid-item {
+  padding: 10px;
+}
+
+@media print{
+  div {
+    break-inside: avoid;
+  }
+}
+

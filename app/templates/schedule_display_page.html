@@ -51,7 +51,7 @@
                         {% endfor %}
                     </select><br>
                     <label>Bachelor of Science in Computer Science</label><br>
-                    <label><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
+                    <label id = "printer"><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
                     <div class = "credit-category">
                         {% if certificates_display[0] != "None" %}
                             <label>{{ certificates_display[0]}} Certificate</label>
@@ -214,6 +214,7 @@
     {% else %}
         <div class="full-schedule-scheduler">
             <div class="semester-schedules">
+                <label><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
                 <div class="grid-container">
                     {% for semester in course_schedule_display %}
                     <div class="grid-item" semesterNum="{{ semester.semester_number}}" ondrop="drop(event, this)"
