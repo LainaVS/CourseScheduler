@@ -52,7 +52,7 @@
                         {% endfor %}
                     </select><br>
                     <label>Bachelor of Science in Computer Science </label><br>
-                    <label id = "printer"><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
+                    <label id = "printer"><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br>
                     <div class = "credit-category">
                         {% if certificates_display[0] != "None" %}
                             <label>{{ certificates_display[0]}} Certificate</label>
@@ -73,7 +73,7 @@
                             <span class="tooltip">
                                 <i style="font-size:16px" class="fa" class="fas fa-question-circle">&#xf059;</i>
                                     <span class="tooltiptext">
-                                    All courses that are not covered by BSCS Credits and General Education credits.
+                                    All courses that are not covered by BSCS Credits or General Education credits.
                                 </span>
                             </span>
                         </label>
@@ -91,9 +91,16 @@
                                     &#xf059;
                                 </i>
                                     <span class="tooltiptext">
-                                    Credits earned from Computer Science core classes, Computer Science 3000+ level electives,
-                                    required Mathematics courses, and required English courses. This also includes any required
-                                    courses if a student elects for a certificate.
+                                    Credits earned from the following:
+                                        <ul>
+                                            <li>Computer Science core classes</li>
+                                            <li>Computer Science 3000+ level electives</li>
+                                            <li>Required Mathematics courses</li>
+                                            <li>Required English courses</li>
+                                            {% if certificates_display[0] != "None" %}
+                                                <li>Required {{ certificates_display[0] }} Certificate courses</li>
+                                            {% endif %}
+                                        </ul>
                                     </span>
                             </span>
                         </label>
