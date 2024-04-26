@@ -97,3 +97,16 @@ def schedule_generator():
                            required_courses_tuple_display = render_info["required_courses_tuple_display"],
                            list_of_required_courses_taken_display = render_info["list_of_required_courses_taken_display"]
     )
+
+@app.route('/printable')
+def printable():
+    course_schedule_display_json = request.args.get('course_schedule_display', None)
+    if course_schedule_display_json:
+        course_schedule_display = json.loads(course_schedule_display_json)
+        print("Course Schedule Display:")
+        print(course_schedule_display)
+    else:
+        course_schedule_display = None
+
+    return render_template('printable.html',
+                           course_schedule_display=course_schedule_display)

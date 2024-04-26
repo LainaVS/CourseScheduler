@@ -50,8 +50,8 @@
                         {% endif %}
                         {% endfor %}
                     </select><br>
-                    <label>Bachelor of Science</label><br>
-                    <label>Computer Science</label><br>
+                    <label>Bachelor of Science in Computer Science</label><br>
+                    <label><a href="{{ url_for('printable', course_schedule_display = course_schedule ) }}"> See Printer-Friendly Version </a></label><br><br>
                     <div class = "credit-category">
                         {% if certificates_display[0] != "None" %}
                             <label>{{ certificates_display[0]}} Certificate</label>
@@ -61,6 +61,7 @@
                         <input type="submit" id = "single_semester_submit" name = "single_semester" value="Continue Schedule">
                     </div>
                     <br>
+
                 </div>
                 <div class = "center-counter">
                     <img src="https://www.umsl.edu/branding/logos/images/vertical-triton-red-blk.png">

@@ -96,6 +96,8 @@ body {
     line-height: 3px;
   }
 
+  .counter-bar .continue-schedule{
+  }
   .counter-bar input[type = submit]{
     border: 1px solid black;
     padding: 10px;
@@ -176,11 +178,16 @@ body {
     display: inline-block;
     color: #a80b2d;
     font-weight: 600;
+    width: 300px;
   }
 
-  .counter-bar label{
-    display: inline-block;
-    width: 300px;
+  .counter-bar label a:link, a:visited, a:active, a:focus, a:hover{
+      color: #a80b2d;
+      text-decoration: none;
+  }
+
+  .counter-bar label a:hover{
+      text-decoration: underline;
   }
 
 
