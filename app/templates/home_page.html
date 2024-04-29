@@ -218,14 +218,6 @@
                     </span>
                     Waived Core Courses
                 </label>
-                <select name="waived_courses" id="waived_courses" multiple onchange="updateWaivedTakenDropdown(this)"
-                onfocus='this.size=10;' onblur='this.size=10;'
-                onchange='this.size=10;'>
-                    {% for required_course in required_courses %}
-                    <option value="{{required_course.course}}">{{ required_course.course }}</option>
-                    {% endfor %}
-                </select>
-                <br><br>
 
                 <!-- Select courses taken -->
                 <label for="courses_taken">

@@ -63,8 +63,6 @@ def build_prerequisites(course: dict) -> list:
                     prereqs_list.append(prereq)
                 elif (prereq.startswith('CMP SCI') or prereq.startswith('MATH')):
                     prereqs_list.append([prereq])
-                elif ("ALEKS" in prereq):
-                    prereqs_list.append(["ALEKS"])
 
     # flatten lists of >1 length to keep consistency
     if len(prereqs_list) == 1 and isinstance(prereqs_list[0], list):

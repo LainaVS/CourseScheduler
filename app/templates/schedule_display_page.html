@@ -177,11 +177,6 @@
                                     </span>
                                 </span>
                         </label>
-                            {% if is_graduated == True %}
-                                <span class="credit-count-success">Met</span>
-                            {% else %}
-                                <span class="credit-count" id = "fail">Unmet</span>
-                            {% endif %}
                     </div>
 
                         <!-- Required Courses Progress -->
@@ -198,16 +193,7 @@
                                          (Includes {{ certificates_display[0] }} Certificate Core Courses)
                                     {% endif %}
                                 </h3>
-                                <!-- List the courses, both taken and not taken-->
-                                <ul class="class-grid">
-                                    {% for course in required_courses_tuple_display %}
-                                        {%  if course in list_of_required_courses_taken %}
-                                            <li id = "course-taken">{{ course }}</li>
-                                        {% else %}
-                                            <li id = "course-not-taken">{{ course }}</li>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
+                               
                                 <br><br>
 
                                 <div class = "close">
@@ -251,10 +237,7 @@
                                             <div class="course-name-and-num">
                                                 <i id="{{ course.course }}-quest-icon" class="fa fa-question-circle" title="{{ course.validation_msg }}" style="color: red"></i>
                                                 <p class="course-number">{{ course.course }}</p>
-                                                <p class="course-name">{{ course.name }}</p>
-                                                <p class="course-credits">({{ course.credits }})</p>
-                                                <p class="course-category">{{ course.category }}</p>
-                                            </div>
+            
                                         </li>
                                     {% endif %}
                                 {% endfor %}

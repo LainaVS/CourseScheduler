@@ -139,7 +139,7 @@ function prereqVerification(course_info, course_num, semester_num, li_to_move, c
                         credits_to_remove = course_information.credits;
                     }
                 });
-                credits_total_for_new_semester = credits_total_for_new_semester + semester.credits - credits_to_remove;
+                credits_total_for_new_semester = credits_total_for_new_semester + semesterdafasdfsadfsadfsadfsadfsadfsadfcredits - credits_to_remove;
                 if (semester_of_prereq_course) {
                     return true;
                 }
