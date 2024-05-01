@@ -169,12 +169,22 @@ def parse_courses() -> dict:
     other_courses = build_dictionary(csbs_req["OtherCourses"]["course"])
     elective_courses = build_dictionary(csbs_req["Electives"]["course"])
 
+    # add flags to each course in base requirements
+    # important for schedule labeling on map display
+    for course, course_info in core_courses.items():
+        course_info['CSBS requirement'] = True
+    for course, course_info in math_courses.items():
+        course_info['CSBS requirement'] = True
+    for course, course_info in other_courses.items():
+        course_info['CSBS requirement'] = True
+
     # add math and other courses to core courses so that all BSCS requirements are included
     core_courses.update(math_courses)
     core_courses.update(other_courses)
 
     # return finalized dictionary of the course type
     return core_courses, elective_courses
+
 
 def parse_certificate(certificate_name) -> dict:
     """
@@ -208,6 +218,13 @@ def parse_certificate(certificate_name) -> dict:
     core_courses = build_dictionary(certificate_data[certificate_name]["CertCore"]["course"])
     elective_courses = build_dictionary(certificate_data[certificate_name]["CertElectives"]["course"])
     electives_needed = int(certificate_data[certificate_name]["NoOfElectives"]["num"])
+
+    # add flags to indicate these courses originated from the certificate dictionaries
+    # important for schedule labeling and credit tracker on map display
+    for course, course_info in core_courses.items():
+        course_info['certificate'] = True
+    for course, course_info in elective_courses.items():
+        course_info['certificate'] = True
 
     # return finalized dictionary of the course type
     return core_courses, elective_courses, electives_needed
@@ -350,6 +367,7 @@ def graduation_check(total_credits_accumulated, required_courses_tuple, courses_
     # check if ultimately finished
     return is_course_generation_complete
 
+
 def update_semester(current_semester, include_summer) -> str:
     if current_semester == "Fall":
         return "Spring"
@@ -463,6 +481,10 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
     cert_elective_courses_still_needed = int(request.form["cert_elective_courses_still_needed"])  # default is 0
     min_3000_course_still_needed = int(request.form["min_3000_course"]) # default is 5
     total_credits_accumulated = int(request.form["total_credits"]) if semester != 0 else int(request.form["total_credits"]) + ge_taken + free_elective_credits_accumulated
+    accumulated_3000_by_cert_core = 0 if semester == 0 else int(request.form["accumulated_3000_by_cert_core"])
+    #total_electives_accumulated = 0 # TODO: ROUTES.PY this tracks the total CS Electives and the total Cert Electives
+    # I made a separate variable to avoid creating any logical bugs since the other variables are part of schedule generation.
+    
 
     # print out student information
     print(f"{'Student:':<40}{user_name}")
@@ -470,12 +492,16 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
     print(f"{'Free Elective Credits Earned:':<40}{free_elective_credits_accumulated}")
     print(f"{'Total Credits Incoming:':<40}{total_credits_accumulated}")
 
-    # set up default variables (also used for counter on scheduling page)
+    # set up default variables
     TOTAL_CREDITS_FOR_GRADUATION = 120
     TOTAL_CREDITS_FOR_BSCS = 71
+    TOTAL_CREDITS_FOR_CERTIFICATE = 0
     TOTAL_CREDITS_FOR_BSCS_ELECTIVES = 15
     TOTAL_CREDITS_FOR_GEN_EDS = 27
-    TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = 0 # set in first semester and maintained by request.form in subsequent semesters
+    ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE = 0 if semester == 0 else int(request.form["ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE"])
+    TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = 0 if semester == 0 else int(request.form["TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES"])
+
+
     DEFAULT_CREDIT_HOURS = 3
     course_categories = {
         'R': 'BSCS',
@@ -505,7 +531,6 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
     certificate_choice_name = ""
 
     course_prereqs_for = None
-
 
     # if the first semester, overwrite schedular variables from above
     if semester == 0:
@@ -539,7 +564,6 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
             # Update counters according to certificate addition
             min_3000_course_still_needed -= cert_elective_courses_still_needed
             TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = cert_elective_courses_still_needed * DEFAULT_CREDIT_HOURS
-            #certificate_option = True
 
         # determine the semesters that user will be enrolled in
         user_semesters = build_semester_list(current_semester, include_summer)
@@ -554,8 +578,20 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
         # if a certificate was selected, add the required certificate courses to required courses and update counters
         if certificate_core:
             num_courses_in_base_csdeg = len(required_courses_dict)
+
+            # update course details directly with loop to ensure keys in required_courses_dict are not erased
+            for course, course_info in certificate_core.items():
+                if course in required_courses_dict:
+                    required_courses_dict[course].update(course_info)
+                else:
+                    required_courses_dict[course] = course_info
+
+                print(f'{required_courses_dict=}')
+
             required_courses_dict.update(certificate_core)
             num_3000_replaced_by_cert_core = len(required_courses_dict) - num_courses_in_base_csdeg
+            TOTAL_CREDITS_FOR_CERTIFICATE = 15
+            ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE = (num_3000_replaced_by_cert_core * DEFAULT_CREDIT_HOURS) + TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES
             print(f"{'3000+ Electives Used in Certificate':<40}{num_3000_replaced_by_cert_core}")
 
             # update counters according to certificate selection
@@ -617,8 +653,7 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
         certificate_choice = json.loads(request.form["certificate_choice"])
         certificate_choice_name = certificate_choice[0]
         certificate_choice_xml_tag = certificate_choice[1]
-        TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES = int(request.form["TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES"])
-
+        TOTAL_CREDITS_FOR_CERTIFICATE = 0 if certificate_choice_name == "None" else 15
         if ("courses_taken" in request.form.keys()):
             courses_taken = json.loads(request.form["courses_taken"])
 
@@ -676,6 +711,9 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
                         = add_course(
                         current_semester, course_info, current_semester_classes, course, courses_taken,
                         total_credits_accumulated, current_semester_credits, course_categories['R'])
+                    if 'certificate' in course_info and 'CSBS requirement' not in course_info:
+                        accumulated_3000_by_cert_core += DEFAULT_CREDIT_HOURS
+                        
 
                 # if the course has at least one pre-requisite
                 else:
@@ -719,6 +757,8 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
                                         current_semester, course_info, current_semester_classes, course, courses_taken,
                                         total_credits_accumulated, current_semester_credits, course_categories['R']
                                     )
+                                    if 'certificate' in course_info and 'CSBS requirement' not in course_info:
+                                        accumulated_3000_by_cert_core += DEFAULT_CREDIT_HOURS
                                     break
 
                             # if there is >1 pre-requisite
@@ -740,6 +780,9 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
                                         current_semester, course_info, current_semester_classes, course, courses_taken,
                                         total_credits_accumulated, current_semester_credits, course_categories['R']
                                     )
+                                    if 'certificate' in course_info and 'CSBS requirement' not in course_info:
+                                        accumulated_3000_by_cert_core += DEFAULT_CREDIT_HOURS
+
                                     required_courses_taken = False
                                     break
                     if required_courses_taken:
@@ -747,6 +790,8 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
                             current_semester, course_info, current_semester_classes, course, courses_taken,
                             total_credits_accumulated, current_semester_credits, course_categories['R']
                         )
+                        if 'certificate' in course_info and 'CSBS requirement' not in course_info:
+                            accumulated_3000_by_cert_core += DEFAULT_CREDIT_HOURS
 
                 # if the course was added, update semester info
                 if course_added:
@@ -845,7 +890,6 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
                                     'category': 'CS Elective',
                                     'passed_validation': True
                                 })
-
                             # increment current semester credits, decrement courses needed
                             current_semester_cs_math_credits_per_semester += DEFAULT_CREDIT_HOURS
                             current_CS_elective_credits_per_semester += DEFAULT_CREDIT_HOURS
@@ -997,40 +1041,38 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
     
     print()
     print()
-    print(f"{current_semester=}")
-    print(f"{min_credits_per_semester=}")
-    print(f"{temp_min_credits_per_semester=}")
-    print(f"{summer_credit_count=}")
+    #print(f'{required_courses_dict=}')
+    #print(f"{current_semester=}")
+    #print(f"{min_credits_per_semester=}")
+    #print(f"{temp_min_credits_per_semester=}")
+    #print(f"{summer_credit_count=}")
     print()
     print()
 
     print(f'{certificate_choice=}')
     #print(f'{certificate_option=}')
-    print(f'{certificate_choice_xml_tag=}')
+    #print(f'{certificate_choice_xml_tag=}')
 
-    print(f'{min_credits_per_semester=}')
-    print(f'{temp_min_credits_per_semester=}')
+    #print(f'{min_credits_per_semester=}')
+    #print(f'{temp_min_credits_per_semester=}')
 
     # Calculating counter values (credits for ELECTIVES)
-    accumulated_gen_eds = (TOTAL_CREDITS_FOR_GEN_EDS - gen_ed_credits_still_needed)
-    accumulated_certificates = (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES - (cert_elective_courses_still_needed* DEFAULT_CREDIT_HOURS))
-    accumulated_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - ((min_3000_course_still_needed + cert_elective_courses_still_needed + num_3000_replaced_by_cert_core)*DEFAULT_CREDIT_HOURS))
-    modified_total_for_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES+ (num_3000_replaced_by_cert_core*DEFAULT_CREDIT_HOURS)))
-    modified_accumulated_3000 = (modified_total_for_3000 -(min_3000_course_still_needed*DEFAULT_CREDIT_HOURS))
+#    accumulated_certificates = accumulated_3000_by_cert_core
+    
+    accumulated_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - ((min_3000_course_still_needed + cert_elective_courses_still_needed+num_3000_replaced_by_cert_core)*DEFAULT_CREDIT_HOURS))
+    print(f'{TOTAL_CREDITS_FOR_BSCS_ELECTIVES=} - ({(min_3000_course_still_needed*3)=}+{(cert_elective_courses_still_needed*3)=}+{(num_3000_replaced_by_cert_core*3)=}) = {accumulated_3000}')
+    #modified_total_for_3000 = (TOTAL_CREDITS_FOR_BSCS_ELECTIVES - (TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES+ (num_3000_replaced_by_cert_core*DEFAULT_CREDIT_HOURS)))
+    #modified_accumulated_3000 = (modified_total_for_3000 -(min_3000_course_still_needed*DEFAULT_CREDIT_HOURS))
+    
 
-    print(f"{min_3000_course_still_needed=} {cert_elective_courses_still_needed=} {num_3000_replaced_by_cert_core=}")
-    print(f'TOTAL_CREDITS_FOR_GEN_EDS:               {accumulated_gen_eds:>2} / {TOTAL_CREDITS_FOR_GEN_EDS}')
-    print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES:        {accumulated_3000:>2} / {TOTAL_CREDITS_FOR_BSCS_ELECTIVES}')
-    print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES after certificate added: {modified_accumulated_3000} / {modified_total_for_3000}')
-    print(f'TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES: {accumulated_certificates:>2} / {TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES}')
-    print(f'Total Free Electives Accumulated:        {free_elective_credits_accumulated:<5}')
-    for course, info in required_courses_dict_list:
-        print(f'{course}', end=", ")
-    print("\n")
-    # print(f'{required_courses_dict_list=}')
+    print(f"{accumulated_3000_by_cert_core=} + {accumulated_3000=} = {accumulated_3000_by_cert_core + accumulated_3000}\n{TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES=} + {num_3000_replaced_by_cert_core=}")
+    print(f'TOTAL_CREDITS_FOR_BSCS_ELECTIVES:        {accumulated_3000_by_cert_core + accumulated_3000:>2} / {TOTAL_CREDITS_FOR_BSCS_ELECTIVES}')
+    print(f"\n{TOTAL_CREDITS_FOR_BSCS_ELECTIVES=} - {ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE=} = {TOTAL_CREDITS_FOR_BSCS_ELECTIVES - ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE}")
+    print(f'\n{TOTAL_CREDITS_FOR_CERTIFICATE} credit hours are required for the {certificate_choice_name}. {ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE} of these credits will fulfill the student\'s BSCS Elective requirement. {TOTAL_CREDITS_FOR_BSCS_ELECTIVES - ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE} additional credit hours will need to be taken to complete the {TOTAL_CREDITS_FOR_BSCS_ELECTIVES} credit hour requirement for BSCS Electives\n\n\n')
 
 
     # complete graduation check
+    print("Certificate Courses Still Needed", cert_courses_still_needed)
     print("Certificate Electives Still Needed ", cert_elective_courses_still_needed)
     print("Gen Eds Still Needed ", gen_ed_credits_still_needed)
     print("Total Credits Accumulated ", total_credits_accumulated)
@@ -1060,6 +1102,8 @@ def generate_semester(request): # -> dict[Union[str, Any], Union[Union[str, list
         "num_3000_replaced_by_cert_core": num_3000_replaced_by_cert_core,
         "cert_elective_courses_still_needed": cert_elective_courses_still_needed,
         "TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES": TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES,
+        "ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE": ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE,
+        "accumulated_3000_by_cert_core": accumulated_3000_by_cert_core,
         "saved_minimum_credits_selection": min_credits_per_semester,
         "elective_courses": json.dumps(elective_courses),
         "gen_ed_credits_still_needed": gen_ed_credits_still_needed,

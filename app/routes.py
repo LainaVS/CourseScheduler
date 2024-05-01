@@ -102,6 +102,8 @@ def schedule_generator():
                             num_3000_replaced_by_cert_core=render_info["num_3000_replaced_by_cert_core"],
                             cert_elective_courses_still_needed=render_info["cert_elective_courses_still_needed"],
                             TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES=render_info["TOTAL_CREDITS_FOR_CERTIFICATE_ELECTIVES"],
+                            accumulated_3000_by_cert_core=render_info["accumulated_3000_by_cert_core"],
+                            ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE=render_info["ELECTIVES_TO_BE_COMPLETED_WITH_CERTIFICATE"],
                             saved_minimum_credits_selection=render_info["saved_minimum_credits_selection"],
                             elective_courses=render_info["elective_courses"],
                             gen_ed_credits_still_needed=render_info['gen_ed_credits_still_needed'],
