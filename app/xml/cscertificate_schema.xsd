@@ -63,11 +63,11 @@
             </xs:element>
             <xs:element name="course_description" type="xs:string"/>
             <xs:element name="prerequisite_description" type="xs:string"/>
-            <xs:element name="prerequisite" minOccurs="0" form="qualified">
+            <xs:element name="prerequisite" form="qualified">
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="or_choice" type="PrerequisiteGroup" maxOccurs="unbounded" minOccurs="0"/>
-                        <xs:element name="additional_preq" type="xs:string" minOccurs="0"/>
+                        <xs:element name="additional_preq" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -110,14 +110,6 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="NoOfElectives">
-        <xs:sequence>
-            <xs:element name="num" type="xs:integer"/>
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:element name="NoOfElectives" type="NoOfElectives"/>
-
     <xs:complexType name="CertCourses">
         <xs:sequence>
             <xs:element name="CertCore">
@@ -134,7 +126,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="NoOfElectives" type="NoOfElectives"/>
+            <xs:element name="NoOfElectives" type="xs:integer"/>
         </xs:sequence>
     </xs:complexType>
 
