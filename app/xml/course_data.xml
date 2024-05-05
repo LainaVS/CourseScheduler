@@ -43,6 +43,9 @@
 				<time_code>O</time_code>
 			</rotation_term>
 			<course_description>This course is for recently declared undergraduate students majoring in Computer Science or Computing Technology. Topics may include resources that are available on campus and in the department, career opportunities, choosing the right degree, and exploration of concepts, skills and practices that are essential for successful careers. This course should be taken by freshmen and transfers within the first two semesters of declaring the major.</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
             <prerequisite_description>No prerequisites. </prerequisite_description>
 			<required>true</required>
         </course>
@@ -88,6 +91,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>2250</course_number>
 			<course_name>Programming and Data Structures</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -100,7 +104,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>A continuation of CMP SCI 1250. Discusses properties and implementation of abstract data types such as lists, trees, stacks and queues. Introduces procedural and class abstraction, basic program architecture, use of interfaces, modular programming, and file processing.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -114,6 +117,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>2261</course_number>
 			<course_name>Object-Oriented Programming</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -126,7 +130,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Introduces object-oriented concepts, terminology, and notation (UML) using Java. Covers encapsulation, classes, objects, inheritance, and the use of class libraries. Additional topics may include graphical user interfaces, applets, and related tools and technologies.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -143,6 +146,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>2700</course_number>
 			<course_name>Computer Organization and Architecture</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -155,7 +159,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Introduces details of computer systems from architectural and organizational points of view. Covers data representation, basic digital logic circuits, memory types and hierarchies, I/O and storage devices, CPU architectures such as RISC, CISC, parallel, and multi-core.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -172,6 +175,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>2750</course_number>
 			<course_name>Linux Environment and Programming</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -184,7 +188,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Covers systems programming, scripting, libraries, utilities, and development tools. Additional programming topics include piping, binary files, exception handling, command-line arguments and symbolic debugging. This course also explores tools available in the Unix/Linus environments.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -202,6 +205,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>3010</course_number>
 			<course_name>Web Programming</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -214,7 +218,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Provides a survey of current Web technologies including markup languages (such as HTML/XHTML, CSS, XML), client side languages (such as JavaScript), server side languages (such as PERL, PHP), and Web protocols. This course requires client-server computing projects.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -231,6 +234,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>3130</course_number>
 			<course_name>Design and Analysis of Algorithms</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -243,7 +247,6 @@
 				<term>Summer</term>
 				<time_code>O, H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Addresses the design and analysis of fundamental algorithms in computer science. Studies basic sorting algorithms priority queues, order statistics, search trees, and hash tables. Analysis techniques may involve time and space complexity analysis of both iterative and recursive algorithms, analysis of algorithm correctness, and amortized complexity analysis. Additional topics may include data compression, string manipulation, greedy algorithms, dynamic programming, and graph traversal.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -259,6 +262,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>4250</course_number>
 			<course_name>Programming Languages</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
@@ -271,7 +275,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Studies the principles, approaches, and trade-offs in modern programming languages, including a comparative study of syntax, semantics, and pragmatics. Examines major programming paradigms: object-oriented, imperative, functional and logic.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -289,6 +292,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>4280</course_number>
 			<course_name>Program Translation Project</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>E, O</time_code>
@@ -297,7 +301,6 @@
 				<term>Fall</term>
 				<time_code>D, O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Focuses on methods, techniques, and mechanisms used to create the abstraction from high level programming to machine level execution. This course also requires an individual, semester long project.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -318,7 +321,6 @@
 			<course_number>4500</course_number>
 			<course_name>Introduction to the Software Profession</course_name>
 			<credit>3</credit>
-			<course_description>Focuses on software development and on the skills required for success in the software profession. Topics related to software development may include software process, models and views, software architectures, documentation, and testing strategies. Topics related to the profession may include licensing, copyright, trademarks, and professional conduct. Individual and group projects, research, and presentations may be required in this capstone course.</course_description>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O</time_code>
@@ -327,6 +329,7 @@
 				<term>Spring</term>
 				<time_code>O</time_code>
 			</rotation_term>
+            <course_description>Focuses on software development and on the skills required for success in the software profession. Topics related to software development may include software process, models and views, software architectures, documentation, and testing strategies. Topics related to the profession may include licensing, copyright, trademarks, and professional conduct. Individual and group projects, research, and presentations may be required in this capstone course.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -341,6 +344,7 @@
 			<subject>CMP SCI</subject>
 			<course_number>4760</course_number>
 			<course_name>Operating Systems</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -349,7 +353,6 @@
 				<term>Fall</term>
 				<time_code>D, E, O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Covers the structure of a generic operating system, considering in detail the algorithms for interprocess communication, process scheduling, resource management, memory management, file systems, and device management. Presents examples from contemporary operating systems. This course also requires practical projects implemented within a modern operating system or simulator environment.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -369,23 +372,25 @@
 			<subject>CMP SCI</subject>
 			<course_number>3411</course_number>
 			<course_name>Introduction to Data Visualization</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>D, E, H</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course introduces students to the principles of effective data visualization. The course includes an introduction to data cleaning and analysis. Plotting tools such as Tableau, Matplotlib, and D3.js are also introduced. Topics covered may include graphical excellence, log scale, color, heat maps, network visualization, plotting scientific data, interactive plots, and plotting live stream of data. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 1250</and_required>
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 1250. </prerequisite_description>
-			<course_description>This course introduces students to the principles of effective data visualization. The course includes an introduction to data cleaning and analysis. Plotting tools such as Tableau, Matplotlib, and D3.js are also introduced. Topics covered may include graphical excellence, log scale, color, heat maps, network visualization, plotting scientific data, interactive plots, and plotting live stream of data. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>3702</course_number>
 			<course_name>Introduction to Cyber Threats and Defense</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>O</time_code>
@@ -394,24 +399,25 @@
 				<term>Fall</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course introduces the importance of cybersecurity and covers its various components. Topics may include different types of malware, phishing, password attacks, spoofing, efficient encryption algorithms, firewalls, intrusion prevention/detection systems, and honeypots. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2250</and_required>
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2250. </prerequisite_description>
-			<course_description>This course introduces the importance of cybersecurity and covers its various components. Topics may include different types of malware, phishing, password attacks, spoofing, efficient encryption algorithms, firewalls, intrusion prevention/detection systems, and honeypots. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>3780</course_number>
 			<course_name>Software Security</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course introduces the basic software security principles and pitfalls, including topics such as buffer, integer and string problems, runtime errors, SQL and command injection. Additional topics may include data protection, secure file access, password and network security.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -420,12 +426,13 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 2750, and CMP SCI 3010. </prerequisite_description>
-			<course_description>This course introduces the basic software security principles and pitfalls, including topics such as buffer, integer and string problems, runtime errors, SQL and command injection. Additional topics may include data protection, secure file access, password and network security.</course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>3990</course_number>
 			<course_name>Undergraduate Internship</course_name>
+            <credit>1 2 3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>A</time_code>
@@ -438,13 +445,17 @@
 				<term>Summer</term>
 				<time_code>A</time_code>
 			</rotation_term>
-			<credit>1-3</credit>
 			<course_description>This course is a computer science internship that provides a student field experience in an organization related to the profession. To be enrolled, students must be employed in an internship or co-op program and find an instructor to supervise the experience. Internship activities may vary by site, but will often require end-of-semester reporting. Typically 1 credit can be earned for about 100 work hours. </course_description>
+			<prerequisite>
+				<or_choice></or_choice></prerequisite>
+			<prerequisite_description>No prerequisites. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4010</course_number>
 			<course_name>Advanced Web Development with Java</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>O</time_code>
@@ -453,7 +464,6 @@
 				<term>Fall</term>
 				<time_code>D, E</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Covers more advanced Java topics, along with related concepts and technologies for Web development. Topics may include database connectivity, multithreading, security, networking, MVC pattern, testing and source control for Java applications, and server-side topics such as servlets and web servers.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -469,23 +479,25 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 3010 and either CMP SCI 2261 or INFSYS 3806; or graduate standing. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4011</course_number>
 			<course_name>Web Development with Advanced JavaScript</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course provides a comprehensive overview of website development using the modern MEAN (MongoDB, Express.js, Angular, Node.js) stack architecture. Students will create web applications that make use of today's modern JavaScript engine. Other topics may include React, Sass (Syntactically awesome style sheets), and Pug template engine.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 3010</and_required>
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 3010. </prerequisite_description>
-			<course_description>This course provides a comprehensive overview of website development using the modern MEAN (MongoDB, Express.js, Angular, Node.js) stack architecture. Students will create web applications that make use of today's modern JavaScript engine. Other topics may include React, Sass (Syntactically awesome style sheets), and Pug template engine.</course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -496,6 +508,7 @@
 				<term>Spring</term>
 				<time_code>H</time_code>
 			</rotation_term>
+            <course_description>This is a hands-on course providing students with an understanding of microservices and related technologies, with enough scope and depth to make the students ready to participate in real-world microservice application developments. Emphasis is placed on practical and effective knowledge and an in-depth technical learning experience suitable for any developer. The target audience is students who want to be involved in microservice application development. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -503,7 +516,7 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3010. </prerequisite_description>
-			<course_description>This is a hands-on course providing students with an understanding of microservices and related technologies, with enough scope and depth to make the students ready to participate in real-world microservice application developments. Emphasis is placed on practical and effective knowledge and an in-depth technical learning experience suitable for any developer. The target audience is students who want to be involved in microservice application development. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -514,6 +527,7 @@
 				<term>Fall</term>
 				<time_code>H</time_code>
 			</rotation_term>
+            <course_description>This course covers statistical inference with emphasis on applications and computer simulation. Topics may include multivariate distributions, transformations and combinations of random variables, sampling distributions, maximum likelihood, bootstrap, order statistics, hypothesis testing, likelihood ratio tests, Monte Carlo methods, Bayesian inference, and sufficient statistics. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 1250</and_required>
@@ -522,7 +536,7 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 1250, MATH 1900, and an introductory statistics course (ANTHRO 3220/SOC 3220, BIOL 4122, CRIMIN 2220, ECON 3100, MATH 1320, POL SCI 3000, or PSYCH 2201). </prerequisite_description>
-			<course_description>This course covers statistical inference with emphasis on applications and computer simulation. Topics may include multivariate distributions, transformations and combinations of random variables, sampling distributions, maximum likelihood, bootstrap, order statistics, hypothesis testing, likelihood ratio tests, Monte Carlo methods, Bayesian inference, and sufficient statistics. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -533,6 +547,7 @@
 				<term>Spring</term>
 				<time_code>H</time_code>
 			</rotation_term>
+            <course_description>This course covers the fundamental programming principles, software architecture, and user experience considerations underlying handheld software applications and their development environments. The course involves in-depth, hands-on examples that are implemented on the Android Platform, along with discussions of security.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -540,7 +555,7 @@
 			</prerequisite>
             <prerequisite_description>Prerequisite: CMP SCI 2261. </prerequisite_description>
 			<paired>CMP SCI 5020</paired>
-			<course_description>This course covers the fundamental programming principles, software architecture, and user experience considerations underlying handheld software applications and their development environments. The course involves in-depth, hands-on examples that are implemented on the Android Platform, along with discussions of security.</course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -574,16 +589,17 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 1250 and (MATH 1100 or MATH 1800) and (ANTHRO 3220/SOC 3220 or BIOL 4122 or CRIMIN 2220 or ECON 3100 or MATH 1320 or POL SCI 3000 or PSYCH 2201). </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4220</course_number>
 			<course_name>Introduction to iOS Programming and Apps</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Summer</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course covers Objective-C and uses it for building iOS apps. It also introduces Xcode, Interface Builder, basic architectural patterns for MVC such as action, delegation, and outlets. Additional topics may include online services, mapping, persistence with core data, and single and multiple views.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -597,11 +613,13 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261 or INFSYS 3806 or graduate standing. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4300</course_number>
 			<course_name>Introduction to Artificial Intelligence</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
@@ -610,25 +628,26 @@
 				<term>Fall</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course provides an introduction to artificial intelligence. The list of topics may include search, planning, knowledge-based reasoning, probabilistic inference, machine learning, natural language processing, and practical applications. Credit cannot be granted for both CMP SCI 4300 and CMP SCI 5300.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 3130</and_required>
 				</or_choice>
 			</prerequisite>
-			<paired>CMP SCI 5300</paired>
             <prerequisite_description>Prerequisites: CMP SCI 3130. </prerequisite_description>
+			<paired>CMP SCI 5300</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4320</course_number>
 			<course_name>Introduction to Evolutionary Computation</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course introduces the concepts of nature-inspired problem solving with artificial evolution using selection, crossover, mutation and inheritance. It discusses applications of evolutionary algorithms, overviews the existing models and instances, and analyzes specific instances such as genetic algorithms, evolutionary programming, evolution strategies, and genetic programming. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 2261</and_required>
@@ -637,12 +656,13 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 2750 and CMP SCI 3130. </prerequisite_description>
-			<course_description>This course introduces the concepts of nature-inspired problem solving with artificial evolution using selection, crossover, mutation and inheritance. It discusses applications of evolutionary algorithms, overviews the existing models and instances, and analyzes specific instances such as genetic algorithms, evolutionary programming, evolution strategies, and genetic programming. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4340</course_number>
 			<course_name>Introduction to Machine Learning</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
@@ -651,7 +671,6 @@
 				<term>Fall</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Provides an introduction to machine learning in the context of applications such as data mining, natural language processing, and adaptive computer systems. The course reviews several supervised, unsupervised, and reinforcement machine learning techniques such as naive Bayes networks, clustering, and decision trees. Selected concepts in computational learning theory may also be covered. Credit cannot be granted for both CMP SCI 4340 and CMP SCI 5340.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -662,13 +681,15 @@
 					<and_required>CMP SCI 3130</and_required>
 				</or_choice>
 			</prerequisite>
-            <prerequisite_description>Prerequisites: CMP SCI 4342, or CMP SCI 2261 and CMP SCI 3130, or consent of instructor. </prerequisite_description>
+			<prerequisite_description></prerequisite_description>
 			<paired>CMP SCI 5340</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4342</course_number>
 			<course_name>Introduction to Data Mining</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
@@ -677,7 +698,6 @@
 				<term>Fall</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course provides an introduction to data mining principles, algorithms and applications. Topics may include data preprocessing, data transformation, similarity and dissimilarity measures, data representation, classification techniques, association analysis, cluster analysis, regression, dimension reduction, and anomaly detection. Credit not granted for both CMP SCI 4342 and CMP SCI 5342.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -690,16 +710,17 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3130, or CMP SCI 4200, or consent of the instructor. </prerequisite_description>
 			<paired>CMP SCI 5342</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4370</course_number>
 			<course_name>Introduction to Biological Data Science</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>E</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course provides an introduction into several key areas of biological data science, with a focus upon genetic data. Relevant background topics in genetics, current issues, and a variety of available resources will be explored. Upon successful completion of this course, the student will be able to evaluate algorithms for analyzing genetic data, including assessments of sources of errors and analysis of time and space complexity; address shortcomings in existing approaches; and implement efficient and effective software for exposing information hidden in genetic data. </course_description>
 			<prerequisite>
 				<or_choice>
@@ -707,6 +728,7 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -717,23 +739,24 @@
 				<term>Spring</term>
 				<time_code>H</time_code>
 			</rotation_term>
+            <course_description>This course introduces mathematical foundations for deep learning, and follows with practical applications using selected domains such as image classification or protein predictions. It also covers dense neural networks, convolutional neural networks, recurrent neural networks, and other state-of-the-art networks. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 3130</and_required>
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 3130 or consent of instructor. </prerequisite_description>
-			<course_description>This course introduces mathematical foundations for deep learning, and follows with practical applications using selected domains such as image classification or protein predictions. It also covers dense neural networks, convolutional neural networks, recurrent neural networks, and other state-of-the-art networks. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4410</course_number>
 			<course_name>Introduction to Computer Graphics</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O, H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course covers the theoretical foundation and algorithms for computer graphics. Students learn the basics of graphics programming for modeling, rendering, and animation of 2D and 3D objects, using standard graphics API. A brief discussion of special graphics hardware, such as GPU, may be included.  Credit cannot be granted for both CMP SCI 4410 and CMP SCI 5410.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -746,16 +769,17 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2250 and MATH 2450. </prerequisite_description>
 			<paired>CMP SCI 5410</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4420</course_number>
 			<course_name>Introduction to Digital Image Processing and Computer Vision</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>E</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Focuses on image analysis and visual perception. Students learn data structures and algorithms for image processing, region and texture analysis, image filtering, edge detection, contour following, and image enhancement in both spatial and frequency domain. Other topics may include color processing, coding for storage, retrieval, transmission, and image restoration. Credit cannot be granted for both CMP SCI 4420 and CMP SCI 5420.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -767,6 +791,7 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: MATH 1900, MATH 2450, CMP SCI 2750, and CMP SCI 3130. </prerequisite_description>
 			<paired>CMP SCI 5420</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
@@ -790,11 +815,13 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 3010, and MATH 3000. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4610</course_number>
 			<course_name>Database Management Systems</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E</time_code>
@@ -803,7 +830,6 @@
 				<term>Fall</term>
 				<time_code>E</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Focuses on database theory and applications, with emphasis on the relational model. Topics include database design, modeling, file systems, indexing, integrity constraints, relational algebra, normalization, transaction processing, and concurrency control. Students are exposed to emerging DBMS technologies and applications. Several programming projects will be required, using a popular SQL server.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -815,16 +841,17 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 3010 and MATH 3000; or graduate standing. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4700</course_number>
 			<course_name>Computer Forensics</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course explores topics and methodologies for examining digital evidence, along with some principles of the investigative process. Includes memory, file system, operating system, network, and mobile device forensics. Addresses both theory and hands-on aspects for conducting digital forensic examinations.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -835,11 +862,13 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2750 or graduate standing. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4730</course_number>
 			<course_name>Computer Networks and Communications</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>O</time_code>
@@ -848,7 +877,6 @@
 				<term>Fall</term>
 				<time_code>D, E</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Covers communication systems in the context of the ISO and TCP/IP standards for systems interconnection. Covers various types of networks including wide area networks, local area networks, and fiber optic networks.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -860,16 +888,17 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2750 and MATH 1320, or graduate standing. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4732</course_number>
 			<course_name>Introduction to Cryptography for Computer Security</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course provides an introduction to cryptography as it applies to computer security. It describes modern cryptographic systems and potential attacks on against these systems. Topics may include both symmetric and asymmetric encryption algorithms, authentication, key exchange protocols, onion networks and blockchain technology, as well as potential attacks on these systems.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -878,16 +907,17 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: MATH 1100 or MATH 1800 or consent of instructor. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4750</course_number>
 			<course_name>Introduction to Cloud Computing</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course provides an introduction to development and deployment of applications in the cloud space. Touches on different aspects of cloud computing such as IaaS, PaaS, and SaaS. Includes significant discussion on legal and security aspects of clouds in the marketplace. May also include public, private, and hybrid clouds, and Internet of Things. Credit not granted for both CMP SCI 4750 and CMP SCI 5750.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -896,16 +926,17 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2750. </prerequisite_description>
 			<paired>CMP SCI 5750</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4782</course_number>
 			<course_name>Information Security</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course covers topics related to maintaining security in an organizational infrastructure, including risk analysis of the environment, access level and control including multi-factor authentication, and detection capabilities to ensure adequate security monitoring. Additional topics may include network level protections, firewalls, intrusion detection/prevention systems, securing web and mobile applications, securing cloud implementations, and overall architectural considerations for system security. Credit not granted for both CMP SCI 4782 and CMP SCI 5782.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -919,16 +950,17 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2750 and, CMP SCI 3702 or INFSYS 3848, or consent of instructor. </prerequisite_description>
 			<paired>CMP SCI 5782</paired>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4792</course_number>
 			<course_name>Introduction to Mobile Computing, Networking, and Security</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>H</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This course introduces fundamental concepts of mobile wireless networks, mobile edge computing, and security measures at the edge. It discusses challenges related to mobile edge computing systems in general and may include topics such as crowdsourcing/crowdsensing systems, Quality of Experience (QoE) in real-time mobile services, Internet of Things, scalability, secure and verifiable computing, and vehicular and autonomous driving networks.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -941,30 +973,31 @@
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2750 and, CMP SCI 3702 OR INFSYS 3848, or consent of instructor. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4794</course_number>
 			<course_name>Introduction to Security of IoT Systems</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
+            <course_description>This course covers the cutting-edge techniques on the emerging edge cloud and wireless/mobile Internet of Things (IoT) systems. It covers the IoT reference architecture, integrated IoT security architecture, major threats and vulnerabilities with the IoT devices and edge cloud, and defense mechanisms. It includes hands-on labs on both the vulnerabilities and defense of the systems. </course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>CMP SCI 4730</and_required>
 				</or_choice>
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 4730 or consent of instructor. </prerequisite_description>
-			<course_description>This course covers the cutting-edge techniques on the emerging edge cloud and wireless/mobile Internet of Things (IoT) systems. It covers the IoT reference architecture, integrated IoT security architecture, major threats and vulnerabilities with the IoT devices and edge cloud, and defense mechanisms. It includes hands-on labs on both the vulnerabilities and defense of the systems. </course_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
 			<course_number>4880</course_number>
 			<course_name>Individual Studies in Computer Science</course_name>
-			<credit>1-3</credit>
-			<course_description>This course allows a student to pursue individual studies under the supervision of a faculty member. Topics may include learning new technology, software development, or participation in research activities. Students must arrangements for an instructor to supervise their work. </course_description>
+            <credit>1 2 3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>A</time_code>
@@ -977,7 +1010,12 @@
 				<term>Summer</term>
 				<time_code>A</time_code>
 			</rotation_term>
+			<course_description>This course allows a student to pursue individual studies under the supervision of a faculty member. Topics may include learning new technology, software development, or participation in research activities. Students must arrangements for an instructor to supervise their work. </course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
             <prerequisite_description>Prerequisites: Consent of instructor. </prerequisite_description>
+			<required>false</required>
 		</course>
 	</Electives>
 	<MathandStatistics>
@@ -985,6 +1023,7 @@
 			<subject>MATH</subject>
 			<course_number>1030</course_number>
 			<course_name>College Algebra</course_name>
+			<credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -997,14 +1036,18 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
-            <prerequisite_description>Prerequisites: A satisfactory score on the UMSL Math Placement Examination, obtained at most one year prior to enrollment in this course, or approval of the department. </prerequisite_description>
 			<course_description>Topics may include factoring, complex numbers, rational exponents, simplifying rational functions, functions and their graphs, transformations, inverse functions, solving linear and nonlinear equations and inequalities, polynomial functions, inverse functions, logarithms, exponentials, solutions to systems of linear and nonlinear equations, systems of inequalities, matrices, and rates of change.</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
+            <prerequisite_description>Prerequisites: A satisfactory score on the UMSL Math Placement Examination, obtained at most one year prior to enrollment in this course, or approval of the department. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>MATH</subject>
 			<course_number>1035</course_number>
 			<course_name>Trigonometry</course_name>
+			<credit>2</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1017,26 +1060,34 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>2</credit>
-            <prerequisite_description>Prerequisites: MATH 1030 (may be taken concurrently) or a satisfactory score on the UMSL Math Placement Examination obtained at most one year prior to enrollment in this course.</prerequisite_description>
 			<course_description>This course is a study of the trigonometric and inverse trigonometric functions with emphasis on trigonometric identities and equations.</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
+            <prerequisite_description>Prerequisites: MATH 1030 (may be taken concurrently) or a satisfactory score on the UMSL Math Placement Examination obtained at most one year prior to enrollment in this course.</prerequisite_description>
+			<required>false</required>
 		</course>
         <course>
 			<subject>MATH</subject>
 			<course_number>1045</course_number>
 			<course_name>Pre-Calculus</course_name>
+			<credit>5</credit>
 			<rotation_term>
 				<term>Fall</term>
 				<time_code>D, E, O</time_code>
 			</rotation_term>
-			<credit>5</credit>
-            <prerequisite_description>Prerequisites: A satisfactory score on the UMSL Math Placement Examination, obtained at most one year prior to enrollment in this course.</prerequisite_description>
 			<course_description>This course is intended for students planning to take MATH 1800. It covers a range of topics including polynomials, logarithms, and complex numbers; functions and their graphs; systems of equations and inequalities; trigonometry; and more. fulfills the University's general education mathematics proficiency requirement. This course fulfills the University's general education mathematics proficiency requirement</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
+            <prerequisite_description>Prerequisites: A satisfactory score on the UMSL Math Placement Examination, obtained at most one year prior to enrollment in this course.</prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>MATH</subject>
 			<course_number>1320</course_number>
 			<course_name>Applied Statistics I</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1049,7 +1100,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>This is the first course of a one-year sequence in introductory probability and statistics. It provides a comprehensive introduction to those models and methods which are most likely to be encountered by students in their careers in applied mathematics and the sciences. Topics include descriptive statistics, basics of probability theory, random variables and their distributions, sampling distributions, confidence intervals, and hypothesis testing for population means and population proportions. A student may not receive credit for more than one of MATH 1320, MATH 1310 and MATH 1105.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -1071,6 +1121,7 @@
 			<subject>MATH</subject>
 			<course_number>1800</course_number>
 			<course_name>Analytic Geometry and Calculus I</course_name>
+            <credit>5</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1083,7 +1134,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>5</credit>
 			<course_description>This course provides an introduction to differential and integral calculus. Topics include limits, derivatives, related rates, Newton\x27s method, the Mean-Value Theorem, Max-Min problems, the integral, the Fundamental Theorem of Integral Calculus, areas, volumes, and average values.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -1108,6 +1158,7 @@
 			<subject>MATH</subject>
 			<course_number>1900</course_number>
 			<course_name>Analytic Geometry and Calculus II</course_name>
+            <credit>5</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1120,7 +1171,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>5</credit>
 			<course_description>Topics include conic sections, rotations of axes, polar coordinates, exponential and logarithmic functions, inverse (trigonometric) functions, integration techniques, applications of the integral (including mass, moments, arc length, and hydrostatic pressure), parametric equations, infinite series, power and Taylor series</course_description>
 			<prerequisite>
 				<or_choice>
@@ -1134,6 +1184,7 @@
 			<subject>MATH</subject>
 			<course_number>2450</course_number>
 			<course_name>Elementary Linear Algebra</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1146,7 +1197,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>An introduction to linear algebra. Topics will include complex numbers, geometric vectors in two and three dimensions and their linear transformations, the algebra of matrices, determinants, solutions of systems of equations, eigenvalues and eigenvectors.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -1163,6 +1213,7 @@
 			<subject>MATH</subject>
 			<course_number>3000</course_number>
 			<course_name>Discrete Structures</course_name>
+            <credit>3</credit>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1175,7 +1226,6 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
-			<credit>3</credit>
 			<course_description>Treats fundamental ideas in discrete structures and serves as a foundation for subsequent course in both Mathematics and Computer Science. Provides an introduction to techniques of mathematical reasoning with examples derived from computer science. Topics include logic, set algebra, equivalence relations and partitions, functions, mathematical induction, elementary number theory, cardinality, recurrence relations, basic combinatorial methods, trees and graphs.</course_description>
 			<prerequisite>
 				<or_choice>
@@ -1197,7 +1247,6 @@
 			<course_number>1003</course_number>
 			<course_name>University Studies</course_name>
 			<credit>1</credit>
-			<course_description>This course, required of all new freshmen in the College of Arts and Sciences, is designed to assist students in making the transition to the university experience and to UMSL by giving students the knowledge and tools needed to succeed as a scholar. The course will also familiarize students with the relationship between their education and their career and personal goals, and will assist in developing positive connections with faculty, staff, and peers at UMSL. Students will learn about faculty expectations, support services, and student life, as well as academic disciplines. The course counts toward the 120 credit hours needed for graduation.</course_description>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1206,14 +1255,18 @@
 				<term>Fall</term>
 				<time_code>D, E, O</time_code>
 			</rotation_term>
+			<course_description>This course, required of all new freshmen in the College of Arts and Sciences, is designed to assist students in making the transition to the university experience and to UMSL by giving students the knowledge and tools needed to succeed as a scholar. The course will also familiarize students with the relationship between their education and their career and personal goals, and will assist in developing positive connections with faculty, staff, and peers at UMSL. Students will learn about faculty expectations, support services, and student life, as well as academic disciplines. The course counts toward the 120 credit hours needed for graduation.</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
             <prerequisite_description>No prerequisites. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>ENGLISH</subject>
 			<course_number>1100</course_number>
 			<course_name>First-Year Writing</course_name>
 			<credit>3</credit>
-			<course_description>This course integrates critical reading, writing, and thinking skills and studies actual writing practices. Sequenced reading and writing assignments build cumulatively to more complex assignments. Course activities may include formal and informal writing, drafting and revising, editing for correctness, synthesizing source material, and documenting sources accurately.</course_description>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1226,14 +1279,18 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
+			<course_description>This course integrates critical reading, writing, and thinking skills and studies actual writing practices. Sequenced reading and writing assignments build cumulatively to more complex assignments. Course activities may include formal and informal writing, drafting and revising, editing for correctness, synthesizing source material, and documenting sources accurately.</course_description>
+			<prerequisite>
+				<or_choice></or_choice>
+			</prerequisite>
             <prerequisite_description>No prerequisites. </prerequisite_description>
+			<required>false</required>
 		</course>
 		<course>
 			<subject>ENGLISH</subject>
 			<course_number>3130</course_number>
 			<course_name>Technical Writing</course_name>
 			<credit>3</credit>
-			<course_description>This course introduces students to the major elements of industrial technical writing. Writing assignments may include technical definitions, abstracts and summaries, mechanism descriptions, instructions, process analyses, technical reports and proposals. The course also includes an introduction to research methods and documentation. This course satisfies the University's junior-level writing requirement and may not be taken on a satisfactory/unsatisfactory option.</course_description>
 			<rotation_term>
 				<term>Spring</term>
 				<time_code>D, E, O</time_code>
@@ -1246,6 +1303,7 @@
 				<term>Summer</term>
 				<time_code>O</time_code>
 			</rotation_term>
+			<course_description>This course introduces students to the major elements of industrial technical writing. Writing assignments may include technical definitions, abstracts and summaries, mechanism descriptions, instructions, process analyses, technical reports and proposals. The course also includes an introduction to research methods and documentation. This course satisfies the University's junior-level writing requirement and may not be taken on a satisfactory/unsatisfactory option.</course_description>
 			<prerequisite>
 				<or_choice>
 					<and_required>ENGLISH 1100</and_required>
