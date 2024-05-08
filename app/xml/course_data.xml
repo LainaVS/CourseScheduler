@@ -285,35 +285,7 @@
             <prerequisite_description>Prerequisites: CMP SCI 2261 and CMP SCI 3010, or graduate standing. </prerequisite_description>
 			<required>true</required>
 		</course>
-		<course>
-			<subject>CMP SCI</subject>
-			<course_number>4280</course_number>
-			<course_name>Program Translation Project</course_name>
-			<rotation_term>
-				<term>Spring</term>
-				<time_code>E, O</time_code>
-			</rotation_term>
-			<rotation_term>
-				<term>Fall</term>
-				<time_code>D, O</time_code>
-			</rotation_term>
-			<credit>3</credit>
-			<course_description>Focuses on methods, techniques, and mechanisms used to create the abstraction from high level programming to machine level execution. This course also requires an individual, semester long project.</course_description>
-			<prerequisite>
-				<or_choice>
-					<and_required>CMP SCI 2700</and_required>
-					<and_required>CMP SCI 2750</and_required>
-					<and_required>CMP SCI 3130</and_required>
-					<and_required>CMP SCI 4250</and_required>
-				</or_choice>
-				<or_choice>
-					<and_required>Graduate Standing</and_required>
-				</or_choice>
-			</prerequisite>
-            <prerequisite_description>Prerequisites: CMP SCI 2700, CMP SCI 2750, CMP SCI 3130, and CMP SCI 4250, or graduate standing. </prerequisite_description>
-			<required>true</required>
-		</course>
-		<course>
+        <course>
 			<subject>CMP SCI</subject>
 			<course_number>4500</course_number>
 			<course_name>Introduction to the Software Profession</course_name>
@@ -336,6 +308,52 @@
 			</prerequisite>
             <prerequisite_description>Prerequisites: CMP SCI 2261, CMP SCI 3010, and MATH 3000. </prerequisite_description>
 			<required>true</required>
+		</course>
+        <course>
+			<subject>CMP SCI</subject>
+			<course_number>4010</course_number>
+			<course_name>Advanced Web Development with Java</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<rotation_term>
+				<term>Fall</term>
+				<time_code>D, E</time_code>
+			</rotation_term>
+			<credit>3</credit>
+			<course_description>Covers more advanced Java topics, along with related concepts and technologies for Web development. Topics may include database connectivity, multithreading, security, networking, MVC pattern, testing and source control for Java applications, and server-side topics such as servlets and web servers.</course_description>
+			<prerequisite>
+				<or_choice>
+					<and_required>INFSYS 3806</and_required>
+					<and_required>CMP SCI 3010</and_required>
+				</or_choice>
+				<or_choice>
+					<and_required>CMP SCI 2261</and_required>
+					<and_required>CMP SCI 3010</and_required>
+				</or_choice>
+				<or_choice>
+					<and_required>Graduate Standing</and_required>
+				</or_choice>
+			</prerequisite>
+            <prerequisite_description>Prerequisites: CMP SCI 3010 and either CMP SCI 2261 or INFSYS 3806; or graduate standing. </prerequisite_description>
+		</course>
+		<course>
+			<subject>CMP SCI</subject>
+			<course_number>4011</course_number>
+			<course_name>Web Development with Advanced JavaScript</course_name>
+			<rotation_term>
+				<term>Spring</term>
+				<time_code>O</time_code>
+			</rotation_term>
+			<credit>3</credit>
+			<prerequisite>
+				<or_choice>
+					<and_required>CMP SCI 3010</and_required>
+				</or_choice>
+			</prerequisite>
+            <prerequisite_description>Prerequisites: CMP SCI 3010. </prerequisite_description>
+			<course_description>This course provides a comprehensive overview of website development using the modern MEAN (MongoDB, Express.js, Angular, Node.js) stack architecture. Students will create web applications that make use of today's modern JavaScript engine. Other topics may include React, Sass (Syntactically awesome style sheets), and Pug template engine.</course_description>
 		</course>
 		<course>
 			<subject>CMP SCI</subject>
